@@ -36,6 +36,10 @@ html {
     color: #000000;
   }
 
+  .logo-img {
+    width: 20px;
+    height: 20px;
+  }
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -70,6 +74,15 @@ html {
 
   .main-container {
     border: 1px solid steelblue;
+  }
+
+  .welcome-img {
+    width: 448.8px;
+    height: 407.36px;
+  }
+  
+  .welcome {
+    font-family: 'Inter', sans-serif;
   }
 
   .footer-container {
