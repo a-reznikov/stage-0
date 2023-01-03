@@ -130,6 +130,35 @@ html {
     border-radius: 10px;
 }
 
-  .footer-container {
-    border: 1px solid yellowgreen;
-  }
+.section-about {
+    display: flex;
+    align-items: center;
+    padding-top: 93px;
+    padding-bottom: 94px;
+}
+
+.about {
+    margin-right: 153px;
+}
+
+.about-title {
+    margin: 0px 142px 40px 0px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 52px;
+    color: #499A18;
+}
+
+.about-subtitle {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #636060;
+}
+
+.footer-container {
+border: 1px solid yellowgreen;
+}
