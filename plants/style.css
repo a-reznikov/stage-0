@@ -18,11 +18,43 @@ html {
   .container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 109px;
   }
 
   .header-container {
     border: 1px solid brown;
+    background-color: #EDF2EC;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav {
+    display: flex;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-basis:content;
+    align-items: center;
+    padding: 0;
+    line-height: 50px;
+    list-style: none;
+  }
+
+  .nav-link {
+    font-family: 'Inika', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    color: #010201;
+  }
+
+  .nav-list .nav-item:not(:last-child) {
+    padding: 0px 46px 0px 0;
   }
 
   .main-container {
