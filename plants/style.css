@@ -24,6 +24,16 @@ html {
   .header-container {
     border: 1px solid brown;
     background-color: #EDF2EC;
+    font-family: 'Inika', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    color: #000000;
   }
 
   .navbar {
@@ -45,12 +55,13 @@ html {
   }
 
   .nav-link {
-    font-family: 'Inika', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
     text-decoration: none;
     color: #010201;
+    transition: color 0.5s;
+  }
+  
+  .nav-link:hover {
+    color: #E06733;
   }
 
   .nav-list .nav-item:not(:last-child) {
