@@ -127,6 +127,13 @@ html {
     font-size: 16px;
     border: 2px solid #E06733;
     border-radius: 10px;
+    transition: 0.5s;
+}
+
+.welcome-button:hover {
+  color: #ffffff;
+  background-color: #E06733;
+  cursor: pointer;
 }
 
 .section-about {
@@ -146,7 +153,7 @@ html {
     font-weight: 400;
     font-size: 40px;
     line-height: 52px;
-    color: #499A18;
+    color: #E06733;
 }
 
 .about-subtitle {
@@ -177,7 +184,6 @@ html {
     font-weight: 400;
     font-size: 40px;
     line-height: 52px;
-    color: #499A18;
 }
 
 .service-button {
@@ -199,7 +205,15 @@ html {
     font-size: 20px;
     line-height: 26px;
     color: #E06733;
+    transition: 0.5s;
 }
+
+.buttons:hover {
+  color: #ffffff;
+  background-color: #E06733;
+  cursor: pointer;
+}
+
 
 .service-item {
   display: flex;
@@ -455,4 +469,8 @@ html {
 
 .pt {
   background-image: url(assets/img/pt.svg);
+}
+
+.font-green {
+  color: #499A18;
 }
