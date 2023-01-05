@@ -243,6 +243,106 @@ html {
     color: #717171;
 }
 
+.section-prices {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-bottom: 115px;
+}
+
+.price {
+  margin-top: 0;
+  margin-left: 0;
+  width: 332px;
+  height: 391px;
+}
+
+.price-title {
+  margin-top: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: #000000;
+}
+
+.price-items-rectangle {
+  display: flex;
+  margin-right: 0;
+  margin-bottom: 0;
+  padding: 34px 41px 34px 9px;
+  width: 300px;
+  height: 282px;
+  border: 1px solid #E3E1D5;
+  border-radius: 20px;
+}
+
+.price-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.price-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 40px;
+  width: 250px;
+  height: 50px;
+  background-color: #EDF2EC;
+  border-radius: 20px;
+}
+
+.accordion-btn-close {
+  width: 16px;
+  height: 16px;
+}
+
+.price-item-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.price-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 452px;
+  height: 405px;
+}
+
+.price-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 452px;
+  height: 191px;
+}
+
+.price-contact-text {
+  margin: 0;
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: right;
+  color: #000000;
+}
+
+.price-contact-buttons {
+  background-color: #ffffff;
+}
+
+.leafs-price-img {
+  width: 152px;
+  height: 175px;
+}
 
 .footer-container {
 border: 1px solid yellowgreen;
