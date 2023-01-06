@@ -1,0 +1,519 @@
+html {
+  scroll-behavior: smooth; 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header-container {
+  background-color: #EDF2EC;
+  font-family: 'Inika', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  height: 134px;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  color: #000000;
+}
+
+.logo-img {
+  margin-top: 0;
+  margin-left: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.logo-title {
+  margin: 0;
+  padding-left: 1px;
+}
+
+.logo-vector {
+  align-items: flex-end;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 42px 109px 42px 111px;    
+  line-height: 1.127;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+  flex-basis:content;
+  align-items: center;
+  border: none;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #010201;
+  transition: color 0.5s;
+}
+
+.nav-link:hover {
+  color: #E06733;
+  font-weight: 700;
+}
+
+.nav-list .nav-item:not(:last-child) {
+  padding: 0px 47.18px 0px 0;
+}
+
+.main-container {
+  border: 0px solid steelblue;
+}
+
+.section-gray {
+  padding: 0 109px;
+  background-color: #EDF2EC;
+}
+
+.section-white {
+  padding: 0 109px;
+}
+
+.section-welcome {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 62px;
+  padding-bottom: 62.64px;
+}
+
+.leafs {
+  width: 448.8px;
+  height: 407.36px;
+}
+
+.welcome-img {
+  display: block;
+  position: relative;
+  left: -13.22px;
+  top: -16.66px;
+}
+
+.welcome {
+  width: 549px;
+  height: 340px;
+  font-family: 'Inter', sans-serif;
+  margin-top: 36px;
+}
+
+.welcome-title {
+  margin: 0;
+  height: 101px;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 111%;
+  color: #717171;
+}
+
+.welcome-subtitle {
+  margin: 42px 0px 48px 0px;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: left;
+  padding-right: 1em;
+  line-height: 35px;
+  color:#636060;
+}
+
+.welcome-button {
+  width: 158px;
+  height: 44px;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  border: 2px solid #E06733;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.welcome-button:hover {
+  color: #ffffff;
+  background-color: #E06733;
+  cursor: pointer;
+}
+
+.section-about {
+  display: flex;
+  align-items: center;
+  padding-top: 93px;
+  padding-bottom: 94px;
+}
+
+.about {
+    margin-right: 153px;
+}
+
+.about-title {
+  margin: 0px 142px 40px 0px;
+  height: 102px;
+  font-family: 'Inika', serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 52px;
+  color: #E06733;
+}
+
+.about-subtitle {
+  margin: 0;
+  height: 208px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #636060;
+}
+
+.houseplant-img {
+  display: block;
+}
+
+.section-service {
+  padding-bottom: 121px;
+  padding-top: 40px;
+}
+
+.service-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 215px 90px 0px;
+}
+
+.service-title {
+  font-family: 'Inika', serif;
+  width: 306px;
+  height: 94px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 52px;
+}
+
+.service-button {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 29px;
+  width: 559px;
+  height: 50px;
+}
+
+.buttons {
+  padding: 12px 0;
+  margin: 0;
+  width: 161px;
+  height: 50px;
+  border: 1px solid #E06733;
+  border-radius: 5px;
+  font-family: 'Inika', serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: #E06733;
+  transition: 0.5s;
+}
+
+.buttons:hover {
+  color: #ffffff;
+  background-color: #E06733;
+  cursor: pointer;
+}
+
+
+.service-item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.service-img {
+  display: block;
+}
+
+.rectangle {
+  padding: 10px 0px 36px;
+  border: 1px solid #E3E1D5;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 1222px;
+  height: 955px;
+  flex-wrap: wrap;
+}
+
+.service-name {
+  margin: 0;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #E06733;
+}
+
+.service-description {
+  margin: 0;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #717171;
+}
+
+.section-prices {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-bottom: 115px;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 0;
+  margin-left: 0;
+  width: 332px;
+  height: 391px;
+}
+
+.price-title {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: #000000;
+}
+
+.price-items-rectangle {
+  display: flex;
+  align-self: flex-end;
+  padding: 34px 41px;
+  width: 332px;
+  height: 282px;
+  border: 1px solid #E3E1D5;
+  border-radius: 20px;
+}
+
+.price-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.price-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 40px;
+  width: 250px;
+  height: 50px;
+  background-color: #EDF2EC;
+  border-radius: 20px;
+}
+
+.accordion-btn-close {
+  width: 16px;
+  height: 16px;
+}
+
+.price-item-title {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.price-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 452px;
+  height: 405px;
+}
+
+.price-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 452px;
+  height: 191px;
+}
+
+.price-contact-text {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: right;
+  color: #000000;
+}
+
+.price-contact-buttons {
+  background-color: #ffffff;
+}
+
+.leafs-price-img {
+  width: 152px;
+  height: 175px;
+}
+
+.section-contacts {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 53px;
+}
+
+.container-contact-title {
+  flex-grow: 1;
+  padding: 7px 64px 0px 113px;
+}
+
+.contacts-title {
+  font-family: 'Inika', serif;
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 52px;
+  color: #499A18;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 35px 0px 20px;
+  margin-top: 95px;
+  width: 450px;
+  height: 50px;
+  background: #D6E7D2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px;
+}
+
+.contact-item-title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: #717171;
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 109px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 50px;
+  color: #000000;
+}
+
+.footer-data {
+  display: flex;
+  justify-content: space-between;
+  width: 182px;
+  height: 50px;
+}
+
+.link-footer {
+  text-decoration: none;
+}
+
+.footer-data-item {
+  margin: 0;
+}
+
+.social-link {
+  text-decoration: none;
+}
+
+.social {
+  display: flex;
+  width: 188px;
+  height: 50px;
+}
+
+.social-list {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  padding: 0;
+  list-style: none;
+}
+
+.social-link {
+  display: block;
+  width: 32px;
+  height: 32px;
+
+}
+
+.inst {
+  background-image: url(assets/img/inst.svg);
+}
+
+.fb {
+  background-image: url(assets/img/fb.svg);
+}
+
+.tw {
+  background-image: url(assets/img/tw.svg);
+}
+
+.pt {
+  background-image: url(assets/img/pt.svg);
+}
+
+.font-green {
+  color: #499A18;
+}
