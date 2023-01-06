@@ -31,22 +31,20 @@ body {
 
 .logo {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
-  width: 67px;
-  height: 25px;
+  align-items: baseline;
   color: #000000;
 }
 
 .logo-img {
+  margin-top: 0;
+  margin-left: 0;
   width: 20px;
   height: 20px;
 }
 
 .logo-title {
   margin: 0;
-  align-self: flex-end;
-  line-height: 21px;
+  padding-left: 1px;
 }
 
 .logo-vector {
@@ -57,7 +55,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 42px 109px 42px 105px;    
+  padding: 42px 109px 42px 111px;    
   line-height: 1.127;
 }
 
@@ -104,23 +102,33 @@ body {
 
 .section-welcome {
   display: flex;
+  justify-content: space-between;
   padding-top: 62px;
-  padding-bottom: 62px;
+  padding-bottom: 62.64px;
 }
 
-.welcome-img {
+.leafs {
   width: 448.8px;
   height: 407.36px;
 }
 
+.welcome-img {
+  display: block;
+  position: relative;
+  left: -13.22px;
+  top: -16.66px;
+}
+
 .welcome {
+  width: 549px;
+  height: 340px;
   font-family: 'Inter', sans-serif;
-  margin-left: 224.2px;
-  align-self: center;
+  margin-top: 36px;
 }
 
 .welcome-title {
   margin: 0;
+  height: 101px;
   font-weight: 700;
   font-size: 45px;
   line-height: 111%;
@@ -131,13 +139,17 @@ body {
   margin: 42px 0px 48px 0px;
   font-weight: 400;
   font-size: 20px;
-  line-height: 175%;
+  text-align: left;
+  padding-right: 1em;
+  line-height: 35px;
   color:#636060;
 }
 
 .welcome-button {
-  padding: 14px 27px 14px 27px;
+  width: 158px;
+  height: 44px;
   margin: 0;
+  font-family: 'Inter', sans-serif;
   line-height: 20px;
   font-weight: 400;
   font-size: 16px;
@@ -165,6 +177,7 @@ body {
 
 .about-title {
   margin: 0px 142px 40px 0px;
+  height: 102px;
   font-family: 'Inika', serif;
   font-weight: 400;
   font-size: 40px;
@@ -174,6 +187,7 @@ body {
 
 .about-subtitle {
   margin: 0;
+  height: 208px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -181,15 +195,19 @@ body {
   color: #636060;
 }
 
+.houseplant-img {
+  display: block;
+}
+
 .section-service {
   padding-bottom: 121px;
+  padding-top: 40px;
 }
 
 .service-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 40px 215px 90px 0px;
+  padding: 0px 215px 90px 0px;
 }
 
 .service-title {
@@ -205,6 +223,7 @@ body {
 .service-button {
   display: flex;
   justify-content: space-between;
+  padding-top: 29px;
   width: 559px;
   height: 50px;
 }
@@ -237,7 +256,12 @@ body {
   flex-direction: column;
 }
 
+.service-img {
+  display: block;
+}
+
 .rectangle {
+  padding: 10px 0px 36px;
   border: 1px solid #E3E1D5;
   border-radius: 0px 0px 20px 20px;
 }
@@ -252,18 +276,18 @@ body {
 }
 
 .service-name {
-  margin: 10px 0px;
+  margin: 0;
+  margin-bottom: 10px;
   text-align: center;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 20px;
-  line-height: 24px;
+  line-height: 20px;
   color: #E06733;
 }
 
 .service-description {
   margin: 0;
-  padding-bottom: 36px;
   text-align: center;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -280,6 +304,9 @@ body {
 }
 
 .price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-top: 0;
   margin-left: 0;
   width: 332px;
@@ -287,7 +314,7 @@ body {
 }
 
 .price-title {
-  margin-top: 0;
+  margin: 0;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 40px;
@@ -297,10 +324,9 @@ body {
 
 .price-items-rectangle {
   display: flex;
-  margin-right: 0;
-  margin-bottom: 0;
-  padding: 34px 41px 34px 9px;
-  width: 300px;
+  align-self: flex-end;
+  padding: 34px 41px;
+  width: 332px;
   height: 282px;
   border: 1px solid #E3E1D5;
   border-radius: 20px;
@@ -329,6 +355,7 @@ body {
 }
 
 .price-item-title {
+  margin: 0;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 20px;
@@ -406,7 +433,7 @@ body {
   border-radius: 0px;
 }
 
-.price-item-title {
+.contact-item-title {
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
