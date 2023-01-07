@@ -299,7 +299,7 @@ body {
 .section-prices {
   display: flex;
   justify-content: space-between;
-  padding-top: 40px;
+  padding-top: 38px;
   padding-bottom: 115px;
 }
 
@@ -393,11 +393,20 @@ body {
 
 .price-contact-buttons {
   background-color: #ffffff;
+  width: 162px;
+  font-weight: 700;
+}
+
+.leafs-price-container {
+  width: 152px;
+  height: 175px;
 }
 
 .leafs-price-img {
-  width: 152px;
-  height: 175px;
+  display: block;
+  position: relative;
+  margin-left: -5px;
+  margin-top: -5px;
 }
 
 .section-contacts {
