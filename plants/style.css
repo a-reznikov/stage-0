@@ -33,13 +33,19 @@ body {
   display: flex;
   align-items: baseline;
   color: #000000;
+  padding-bottom: 7px;
+}
+
+.logo-img-container {
+  width: 20px;
+  height: 20px;
 }
 
 .logo-img {
-  margin-top: 0;
-  margin-left: 0;
-  width: 20px;
-  height: 20px;
+  display: block;
+  position: relative;
+  left: -1px;
+  top: -1px;
 }
 
 .logo-title {
@@ -115,8 +121,8 @@ body {
 .welcome-img {
   display: block;
   position: relative;
-  left: -13.22px;
-  top: -16.66px;
+  left: -9px;
+  top: -9px;
 }
 
 .welcome {
@@ -136,7 +142,7 @@ body {
 }
 
 .welcome-subtitle {
-  margin: 42px 0px 48px 0px;
+  margin: 43px 0px 47px 0px;
   font-weight: 400;
   font-size: 20px;
   text-align: left;
@@ -470,6 +476,7 @@ body {
   justify-content: space-between;
   width: 182px;
   height: 50px;
+  padding-right: 13px;
 }
 
 .link-footer {
@@ -478,6 +485,10 @@ body {
 
 .footer-data-item {
   margin: 0;
+}
+
+.rss-text {
+  padding-left: 4px;
 }
 
 .social-link {
