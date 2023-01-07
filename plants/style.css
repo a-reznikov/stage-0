@@ -33,13 +33,19 @@ body {
   display: flex;
   align-items: baseline;
   color: #000000;
+  padding-bottom: 7px;
+}
+
+.logo-img-container {
+  width: 20px;
+  height: 20px;
 }
 
 .logo-img {
-  margin-top: 0;
-  margin-left: 0;
-  width: 20px;
-  height: 20px;
+  display: block;
+  position: relative;
+  left: -1px;
+  top: -1px;
 }
 
 .logo-title {
@@ -115,8 +121,8 @@ body {
 .welcome-img {
   display: block;
   position: relative;
-  left: -13.22px;
-  top: -16.66px;
+  left: -9px;
+  top: -9px;
 }
 
 .welcome {
@@ -136,7 +142,7 @@ body {
 }
 
 .welcome-subtitle {
-  margin: 42px 0px 48px 0px;
+  margin: 43px 0px 47px 0px;
   font-weight: 400;
   font-size: 20px;
   text-align: left;
@@ -173,6 +179,7 @@ body {
 
 .about {
     margin-right: 153px;
+    padding-top: 7px;
 }
 
 .about-title {
@@ -225,7 +232,6 @@ body {
   justify-content: space-between;
   padding-top: 29px;
   width: 559px;
-  height: 50px;
 }
 
 .buttons {
@@ -261,6 +267,10 @@ body {
 }
 
 .rectangle {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-between;
   padding: 10px 0px 36px;
   border: 1px solid #E3E1D5;
   border-radius: 0px 0px 20px 20px;
@@ -277,7 +287,6 @@ body {
 
 .service-name {
   margin: 0;
-  margin-bottom: 10px;
   text-align: center;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
@@ -299,7 +308,7 @@ body {
 .section-prices {
   display: flex;
   justify-content: space-between;
-  padding-top: 40px;
+  padding-top: 38px;
   padding-bottom: 115px;
 }
 
@@ -325,7 +334,7 @@ body {
 .price-items-rectangle {
   display: flex;
   align-self: flex-end;
-  padding: 34px 41px;
+  padding: 33px 40px;
   width: 332px;
   height: 282px;
   border: 1px solid #E3E1D5;
@@ -393,11 +402,20 @@ body {
 
 .price-contact-buttons {
   background-color: #ffffff;
+  width: 162px;
+  font-weight: 700;
+}
+
+.leafs-price-container {
+  width: 152px;
+  height: 175px;
 }
 
 .leafs-price-img {
-  width: 152px;
-  height: 175px;
+  display: block;
+  position: relative;
+  margin-left: -5px;
+  margin-top: -5px;
 }
 
 .section-contacts {
@@ -461,6 +479,7 @@ body {
   justify-content: space-between;
   width: 182px;
   height: 50px;
+  padding-right: 13px;
 }
 
 .link-footer {
@@ -469,6 +488,10 @@ body {
 
 .footer-data-item {
   margin: 0;
+}
+
+.rss-text {
+  padding-left: 4px;
 }
 
 .social-link {
