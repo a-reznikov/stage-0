@@ -179,6 +179,7 @@ body {
 
 .about {
     margin-right: 153px;
+    padding-top: 7px;
 }
 
 .about-title {
@@ -231,7 +232,6 @@ body {
   justify-content: space-between;
   padding-top: 29px;
   width: 559px;
-  height: 50px;
 }
 
 .buttons {
@@ -267,6 +267,10 @@ body {
 }
 
 .rectangle {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-between;
   padding: 10px 0px 36px;
   border: 1px solid #E3E1D5;
   border-radius: 0px 0px 20px 20px;
@@ -283,7 +287,6 @@ body {
 
 .service-name {
   margin: 0;
-  margin-bottom: 10px;
   text-align: center;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
@@ -331,7 +334,7 @@ body {
 .price-items-rectangle {
   display: flex;
   align-self: flex-end;
-  padding: 34px 41px;
+  padding: 33px 40px;
   width: 332px;
   height: 282px;
   border: 1px solid #E3E1D5;
