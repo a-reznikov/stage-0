@@ -1,8 +1,21 @@
 html {
-    scroll-behavior: smooth;
-    font-size: 10px;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Inter', sans-serif;
+}
+
+h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 50px;
+  color: $color-title;
+}
