@@ -16,7 +16,7 @@
       <div class="wrapper">
         <div class="navbar">
           <div class="logo">
-            <a href="#" class="logo__img"><img src="assets/img/logo_vector.svg" alt="Logo Plants"></a>
+            <a href="#" class="logo__img"><img src="assets/img/icons/logo_vector.svg" alt="Logo Plants"></a>
             <p class="logo-title">Plants</p>
           </div>
           <nav class="nav">
@@ -112,69 +112,73 @@
         </div>
       </section>
       <section class="section-white section-prices" id="prices">
-        <div class="price">
-          <h2 class="price-title">Prices</h2>
-          <div class="price-items-rectangle">
-            <div class="price-items">
-              <div class="price-item">
-                <p class="price-item-title">Basics</p>
-                <img src="assets/img/accordion_btn_close.svg" alt="accordion_btn_close" class="accordion-btn-close">
+        <div class="wrapper">
+          <div class="layout-2-column">
+            <div class="price">
+              <h2 class="price-title">Prices</h2>
+              <div class="price__items">
+                <div class="price-item">
+                  <span class="price-item-title">Basics</span>
+                  <img src="assets/img/icons/accordion_btn_closed.svg" alt="price closed" class="price__accordion_closed">
+                </div>
+                <div class="price-item">
+                  <p class="price-item-title">Standard</p>
+                  <img src="assets/img/icons/accordion_btn_closed.svg" alt="price closed" class="price__accordion_closed">
+                </div>
+                <div class="price-item">
+                  <p class="price-item-title">Pro care</p>
+                  <img src="assets/img/icons/accordion_btn_closed.svg" alt="price closed" class="price__accordion_closed">
+                </div>
               </div>
-              <div class="price-item">
-                <p class="price-item-title">Standard</p>
-                <img src="assets/img/accordion_btn_close.svg" alt="accordion_btn_close" class="accordion-btn-close">
+            </div>
+            <div class="price__content">
+              <div class="price-contact">
+                <p class="price-contact-text">Our best <span class="font-green">gardeners</span> are ready to help you</p>
+                <button class="button button_bordered">Contact us</button>
               </div>
-              <div class="price-item">
-                <p class="price-item-title">Pro care</p>
-                <img src="assets/img/accordion_btn_close.svg" alt="accordion_btn_close" class="accordion-btn-close">
-              </div>
+              <img src="assets/img/price/leafs_price.png" alt="leafs_price" class="price__leafs">
             </div>
           </div>
         </div>
-        <div class="price-right">
-          <div class="price-contact">
-            <p class="price-contact-text">Our best <span class="font-green">gardeners</span> are ready to help you</p>
-            <button class="buttons price-contact-buttons">Contact us</button>
-          </div>
-          <div class="leafs-price-container">
-            <img src="assets/img/leafs_price.png" alt="leafs_price" class="leafs-price-img">
-          </div>
-        </div>
       </section>
-      <section class="section-gray section-contacts" id="contacts">
-        <img src="assets/img/contact_woman_1.png" alt="contact_woman" class="contact-woman-img">
-        <div class="container-contact-title">
-          <h2 class="contacts-title">Contact us</h2>
-        </div>
-        <div class="contact-item">
-          <p class="contact-item-title">City</p>
-          <img src="assets/img/accordion_btn_contact_close.svg" alt="accordion_btn_close_contact" class="accordion-btn-close-contact">
+      <section class="contacts" id="contacts">
+        <div class="wrapper">
+          <div class="layout-3-column">
+            <img src="assets/img/contacts/contact_woman.png" alt="contact photo woman" class="contact__woman">
+            <h2 class="contacts-title">Contact us</h2>
+            <div class="contact-item">
+              <p class="contact-item-title">City</p>
+              <img src="assets/img/icons/accordion_contact_closed.svg" alt="accordion contact closed" class="contact__accordion_closed">
+            </div>
+          </div>
         </div>
       </section>
     </main>
     <footer class="footer">
       <div class="wrapper">
-        <div class="footer-data">
-          <p class="footer-data-item">©</p>
-          <p class="footer-data-item">2022</p>
-          <p class="footer-data-item"><a href="https://github.com/a-reznikov" class="link-footer" target="_blank">github</a></p>
-        </div>
-        <p class="footer-data-item rss-text"><a href="https://rs.school/js-stage0/" class="link-footer" target="_blank">Rolling Scopes School</a></p>
-        <div class="social">
-          <ul class="social-list">
-            <li class="social-item">
-              <a href="https://www.instagram.com/" class="social-link inst" target="_blank"></a>
-            </li>
-            <li class="social-item">
-              <a href="https://www.facebook.com/" class="social-link fb" target="_blank"></a>
-            </li>
-            <li class="social-item">
-              <a href="https://twitter.com/" class="social-link tw" target="_blank"></a>
-            </li>
-            <li class="social-item">
-              <a href="https://www.pinterest.com/" class="social-link pt" target="_blank"></a>
-            </li>
-          </ul>
+        <div class="layout-3-column">
+          <div class="footer__data">
+            <p class="footer-data-item">©</p>
+            <p class="footer-data-item">2022</p>
+            <p class="footer-data-item"><a href="https://github.com/a-reznikov" class="link-footer" target="_blank">github</a></p>
+          </div>
+          <p class="footer-data-item"><a href="https://rs.school/js-stage0/" class="link-footer" target="_blank">Rolling Scopes School</a></p>
+          <div class="social">
+            <ul class="social__list">
+              <li class="social-item">
+                <a href="https://www.instagram.com/" class="social-link inst" target="_blank"></a>
+              </li>
+              <li class="social-item">
+                <a href="https://www.facebook.com/" class="social-link fb" target="_blank"></a>
+              </li>
+              <li class="social-item">
+                <a href="https://twitter.com/" class="social-link tw" target="_blank"></a>
+              </li>
+              <li class="social-item">
+                <a href="https://www.pinterest.com/" class="social-link pt" target="_blank"></a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>
