@@ -24,6 +24,14 @@
   cursor: pointer;
 }
 
+.nav-item:first-child {
+  padding: 0 23px 0 0;
+}
+
+.nav-item:last-child {
+  padding: 0 0 0 23px;
+}
+
 .nav-link,
 .nav-link:active {
   text-decoration: none;

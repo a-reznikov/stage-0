@@ -1,0 +1,31 @@
+.button {
+  padding: 12px 40px;
+  font-family: 'Inika', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.0rem;
+  line-height: 2.6rem;
+  color: $color-brand-second;
+  border: 1px solid $color-brand-second;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.welcome__button {
+  padding: 14px 27px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.0rem;
+  color: $color-brand-second;
+  border: 2px solid $color-brand-second;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.button_bordered:hover {
+  background: $color-brand-second;
+  color: $color-light;
+}
