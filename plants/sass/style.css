@@ -5,7 +5,87 @@ html {
 
 * {
   box-sizing: border-box;
+}
+
+body {
   font-size: 1.6rem;
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 50px;
+  color: #717171;
+}
+
+h2 {
+  font-family: "Inika", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 52px;
+  color: #499A18;
+}
+
+h3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #E06733;
+}
+
+.wrapper {
+  max-width: 1222px;
+  margin: auto;
+}
+
+.header {
+  padding: 42px 0 42px 0;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-list {
+  display: flex;
+  font-family: "Inika", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 5rem;
+  color: #010201;
+}
+
+.nav-item {
+  list-style: none;
+  padding: 0 23px;
+  cursor: pointer;
+}
+
+.nav-link,
+.nav-link:active {
+  text-decoration: none;
+  color: #010201;
+}
+
+.nav-link:hover {
+  font-weight: 700;
+  color: #E06733;
+  transition: color 0.5s;
+}
+
+.header,
+.welcome,
+.service,
+.contacts {
+  background: #EDF2EC;
 }
 
 /*# sourceMappingURL=style.css.map */
