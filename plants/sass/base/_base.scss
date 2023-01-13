@@ -13,33 +13,18 @@ body {
 }
 
 h1 {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 45px;
-  line-height: 50px;
-  color: #717171;
+  @include font(700, 4.5rem, 5.0rem, $color-title);
 }
 
 h2 {
   font-family: 'Inika', serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 52px;
-  color: #499A18;
+  @include font(400, 4.0rem, 5.2rem, $color-brand-first);
 }
 
 h3 {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 20px;
-  color: #E06733;
+  @include font(700, 2.0rem, 2.0rem, $color-brand-second);
 }
 
 .subtitle {
-  font-size: 2.0rem;
-  line-height: 3.5rem;
-  color: $color-text;
+  @include font(400, 2.0rem, 3.5rem, $color-text);
 }
