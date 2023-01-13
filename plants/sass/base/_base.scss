@@ -17,7 +17,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Inika', serif;
+  @extend %font-second;
   @include font(400, 4.0rem, 5.2rem, $color-brand-first);
 }
 

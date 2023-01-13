@@ -7,39 +7,3 @@
   align-items: center;
   justify-content: space-between;
 }
-
-.nav-list {
-  display: flex;
-  font-family: 'Inika', serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 5.0rem;
-  color: $color-nav-link;
-}
-
-.nav-item {
-  list-style: none;
-  padding: 0 23px;
-  cursor: pointer;
-}
-
-.nav-item:first-child {
-  padding: 0 23px 0 0;
-}
-
-.nav-item:last-child {
-  padding: 0 0 0 23px;
-}
-
-.nav-link,
-.nav-link:active {
-  text-decoration: none;
-  color: $color-nav-link;
-}
-
-.nav-link:hover {
-  font-weight: 700;
-  color: $color-brand-second;
-  transition: color 0.5s;
-}
