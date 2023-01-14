@@ -1,3 +1,54 @@
+.service {
+  padding: 40px 0 121px;
+}
+
+.service__content {
+  max-width: 1007px;
+  margin-bottom: 90px;
+}
+
+.service-title {
+  max-width: 306px;
+}
+
+.service__buttons {
+  display: flex;
+  flex-grow: 1;
+  max-width: 559px;
+  >* {
+    flex-grow: 1;
+    max-width: 161px;
+  }
+}
+
+.services__first {
+  margin-bottom: 55px;
+}
+
 .service__img {
   max-width: 329px;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.item__content {
+  align-self: stretch;
+  padding: 10px 0 36px;
+  border: 1px solid #E3E1D5;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.service__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-name {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.service-description {
+  text-align: center;
+  @include font(400, 1.6rem, 2.0rem, $color-title);
 }
