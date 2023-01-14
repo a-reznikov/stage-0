@@ -1,11 +1,17 @@
 .about {
-    padding: 93px 0 94px 0;
+  padding: 93px 0 94px 0;
 }
 
 .about__content {
-    padding-right: 153px;
+  padding: 68px 0 61px;
 }
 
 .about-title {
-    padding-right: 142px;
+  max-width: 463px;
+  margin-bottom: 40px;
+}
+
+.about-text {
+  max-width: 605px;
+  @include font(400, 2.0rem, 3.0rem, $color-text);
 }

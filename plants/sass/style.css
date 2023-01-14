@@ -482,6 +482,12 @@ h3 {
   padding-left: 2px;
 }
 
+.layout-2-column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .header,
 .welcome,
 .service,
@@ -491,12 +497,6 @@ h3 {
 
 .welcome {
   padding: 62px 0 62.64px 0;
-}
-
-.layout-2-column {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .welcome__leafs {
@@ -517,11 +517,20 @@ h3 {
 }
 
 .about__content {
-  padding-right: 153px;
+  padding: 68px 0 61px;
 }
 
 .about-title {
-  padding-right: 142px;
+  max-width: 463px;
+  margin-bottom: 40px;
+}
+
+.about-text {
+  max-width: 605px;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3rem;
+  color: #636060;
 }
 
 .nav-list {
