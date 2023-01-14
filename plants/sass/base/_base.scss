@@ -3,16 +3,13 @@ html {
   font-size: 10px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-size: 1.6rem;
   font-family: 'Inter', sans-serif;
 }
 
 h1 {
+  margin-bottom: 42px;
   @include font(700, 4.5rem, 5.0rem, $color-title);
 }
 
@@ -25,6 +22,6 @@ h3 {
   @include font(700, 2.0rem, 2.0rem, $color-brand-second);
 }
 
-.subtitle {
+.text {
   @include font(400, 2.0rem, 3.5rem, $color-text);
 }

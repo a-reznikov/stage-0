@@ -118,7 +118,7 @@ dfn {
  */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: 0.67em;
 }
 
 /**
@@ -380,6 +380,17 @@ th {
   padding: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+.text {
+  margin: 0;
+}
+
 .nav-list, h2 {
   font-family: "Inika", serif;
 }
@@ -389,16 +400,13 @@ html {
   font-size: 10px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
 }
 
 h1 {
+  margin-bottom: 42px;
   font-weight: 700;
   font-size: 4.5rem;
   line-height: 5rem;
@@ -419,7 +427,7 @@ h3 {
   color: #E06733;
 }
 
-.subtitle {
+.text {
   font-weight: 400;
   font-size: 2rem;
   line-height: 3.5rem;
@@ -441,12 +449,12 @@ h3 {
 }
 
 .welcome__button {
-  padding: 14px 27px;
+  padding: 12px 25px;
   font-style: normal;
   font-weight: 400;
   font-size: 1.6rem;
-  line-height: 2rem;
-  color: #E06733;
+  line-height: 1.6rem;
+  color: #000000;
   border: 2px solid #E06733;
   border-radius: 10px;
   cursor: pointer;
@@ -471,6 +479,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-left: 2px;
 }
 
 .header,
@@ -490,8 +499,17 @@ h3 {
   align-items: center;
 }
 
+.welcome__leafs {
+  max-width: 448.8px;
+}
+
 .welcome__content {
-  padding-left: 224.2px;
+  max-width: 549px;
+}
+
+.welcome-text {
+  margin-bottom: 48px;
+  padding-right: 23.56px;
 }
 
 .about {
@@ -508,6 +526,8 @@ h3 {
 
 .nav-list {
   display: flex;
+  margin: 0;
+  padding: 0;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 5rem;
@@ -516,11 +536,11 @@ h3 {
 
 .nav-item {
   list-style: none;
-  padding: 0 23px;
+  padding: 0 46px 0 0;
   cursor: pointer;
 }
 .nav-item:last-child {
-  padding: 0 0 0 23px;
+  padding: 0;
 }
 
 .nav-link,
@@ -533,6 +553,10 @@ h3 {
   font-weight: 700;
   color: #E06733;
   transition: color 0.5s;
+}
+
+.service__img {
+  max-width: 329px;
 }
 
 /*# sourceMappingURL=style.css.map */
