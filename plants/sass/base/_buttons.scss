@@ -25,6 +25,18 @@
   transition: 0.5s;
 }
 
+.price__button {
+  padding: 12px 34px 12px 30px;
+  margin-bottom: 39px;
+  background: $color-light;
+  @extend %font-second;
+  @include font(700, 2.0rem, 2.6rem, $color-brand-second);
+  border: 1px solid $color-brand-second;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
 .button_bordered:hover {
   background: $color-brand-second;
   color: $color-light;

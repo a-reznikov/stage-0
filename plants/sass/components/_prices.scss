@@ -1,0 +1,47 @@
+.prices {
+  padding: 40px 0 115px;
+}
+
+.price {
+  max-width: 332px;
+}
+
+.price-title {
+  @extend %font-first;
+  @include font(700, 4.0rem, 4.8rem, $color-dark);
+  margin-bottom: 60px;
+}
+
+.price-text {
+  line-height: 5.0rem;
+  text-align: right;
+  margin: 0 0 38px 0;
+}
+
+.price__items {
+  padding: 34px 41px;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 40px;
+  margin-bottom: 32px;
+  @include font(700, 2.0rem, 2.0rem, $color-dark);
+  background: $color-background;
+  border-radius: 20px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.price__content {
+  display: flex;
+  flex-direction: column;
+  max-width: 452px;
+  align-items: flex-end;
+}
+
+.price__leafs {
+  max-width: 152px;
+}

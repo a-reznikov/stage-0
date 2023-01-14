@@ -391,7 +391,11 @@ h3,
   margin: 0;
 }
 
-.nav-list, h2 {
+.price-title, body {
+  font-family: "Inter", sans-serif;
+}
+
+.nav-list, .price__button, h2 {
   font-family: "Inika", serif;
 }
 
@@ -402,7 +406,6 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "Inter", sans-serif;
 }
 
 h1 {
@@ -461,6 +464,20 @@ h3 {
   transition: 0.5s;
 }
 
+.price__button {
+  padding: 12px 34px 12px 30px;
+  margin-bottom: 39px;
+  background: #FFFFFF;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  color: #E06733;
+  border: 1px solid #E06733;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
 .button_bordered:hover {
   background: #E06733;
   color: #FFFFFF;
@@ -486,6 +503,9 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.layout-2-column > * {
+  flex-basis: 50%;
 }
 
 .layout-3-column {
@@ -537,6 +557,10 @@ h3 {
   font-size: 2rem;
   line-height: 3rem;
   color: #636060;
+}
+
+.about__houseplant {
+  max-width: 464px;
 }
 
 .nav-list {
@@ -626,6 +650,59 @@ h3 {
   font-size: 1.6rem;
   line-height: 2rem;
   color: #717171;
+}
+
+.prices {
+  padding: 40px 0 115px;
+}
+
+.price {
+  max-width: 332px;
+}
+
+.price-title {
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 4.8rem;
+  color: #000000;
+  margin-bottom: 60px;
+}
+
+.price-text {
+  line-height: 5rem;
+  text-align: right;
+  margin: 0 0 38px 0;
+}
+
+.price__items {
+  padding: 34px 41px;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 40px;
+  margin-bottom: 32px;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #000000;
+  background: #EDF2EC;
+  border-radius: 20px;
+}
+.price-item:last-child {
+  margin-bottom: 0;
+}
+
+.price__content {
+  display: flex;
+  flex-direction: column;
+  max-width: 452px;
+  align-items: flex-end;
+}
+
+.price__leafs {
+  max-width: 152px;
 }
 
 /*# sourceMappingURL=style.css.map */
