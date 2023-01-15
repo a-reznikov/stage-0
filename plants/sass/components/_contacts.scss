@@ -1,0 +1,35 @@
+.contacts {
+  padding-top: 53px;
+}
+
+.contact__woman {
+  max-width: 400px;
+}
+
+.contacts-title {
+  max-width: 195.51px;
+  align-self: flex-start;
+  margin-left: 45px;
+  margin-top: 7px;
+  @extend %font-second;
+  @include font(700, 4.0rem, 5.2rem, $color-brand-first);
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-start;
+  margin-top: 95px;
+  flex-grow: 1;
+  max-width: 450px;
+  padding: 5px 35px 5px 20px;
+  background: $color-form;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px;
+}
+
+.contact-item-title {
+  @include font(400, 2.0rem, 4.0rem, $color-title);
+  letter-spacing: 0.05em;
+}
+

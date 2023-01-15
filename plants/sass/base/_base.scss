@@ -1,0 +1,34 @@
+html {
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  @extend %font-first;
+}
+
+h1 {
+  @include font(700, 4.5rem, 5.0rem, $color-title);
+}
+
+h2 {
+  @extend %font-second;
+  @include font(400, 4.0rem, 5.2rem, $color-brand-first);
+}
+
+h3 {
+  @include font(700, 2.0rem, 2.0rem, $color-brand-second);
+}
+
+.text {
+  @include font(400, 2.0rem, 3.5rem, $color-text);
+}
+
+.font-colored-first {
+  color: $color-brand-first;
+}
+
+.font-colored-second {
+  color: $color-brand-second;
+}

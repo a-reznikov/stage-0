@@ -1,0 +1,29 @@
+.nav {
+  flex-grow: 1;
+  max-width: 452px;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  @extend %font-second;
+  @include font(400, 1.6rem, 5.0rem, $color-nav-link);
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.nav-link,
+.nav-link:active {
+  text-decoration: none;
+  color: $color-nav-link;
+}
+
+.nav-link:hover {
+  font-weight: 700;
+  color: $color-brand-second;
+  transition: color 0.5s;
+}
