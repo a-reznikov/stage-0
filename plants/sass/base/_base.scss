@@ -25,3 +25,7 @@ h3 {
 .text {
   @include font(400, 2.0rem, 3.5rem, $color-text);
 }
+
+.font-colored-first {
+  color: $color-brand-first;
+}

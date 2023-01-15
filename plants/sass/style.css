@@ -441,6 +441,10 @@ h3 {
   color: #636060;
 }
 
+.font-colored-first {
+  color: #499A18;
+}
+
 .button {
   padding: 12px 0;
   font-family: "Inika", serif;
@@ -599,15 +603,21 @@ h3 {
 
 .welcome__leafs {
   max-width: 448.8px;
+  max-height: 407.36px;
 }
 
 .welcome__content {
   max-width: 549px;
+  margin-top: 4px;
+}
+
+.welcome-title {
+  margin-bottom: 44px;
 }
 
 .welcome-text {
   margin-bottom: 48px;
-  padding-right: 23.56px;
+  max-width: 525.44px;
 }
 
 .about {
