@@ -399,7 +399,7 @@ h3,
   font-family: "Inter", sans-serif;
 }
 
-.contacts-title, .nav-list, .price__button, h2 {
+.contacts-title, .nav-list, .price__button, .button, h2 {
   font-family: "Inika", serif;
 }
 
@@ -450,8 +450,6 @@ h3 {
 
 .button {
   padding: 11px 0;
-  font-family: "Inika", serif;
-  font-style: normal;
   font-weight: 400;
   font-size: 2rem;
   line-height: 2.6rem;
@@ -464,7 +462,6 @@ h3 {
 
 .welcome__button {
   padding: 12px 26px;
-  font-style: normal;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.6rem;
