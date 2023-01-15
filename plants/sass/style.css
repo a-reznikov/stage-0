@@ -549,7 +549,8 @@ h3 {
 }
 
 .rss-text {
-  max-width: 211px;
+  max-width: 213px;
+  padding-left: 4px;
 }
 
 .link-footer {
