@@ -3,6 +3,9 @@
 }
 
 .welcome__leafs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 448.8px;
   max-height: 407.36px;
 }
