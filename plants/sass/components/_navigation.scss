@@ -1,5 +1,11 @@
+.nav {
+  flex-grow: 1;
+  max-width: 452px;
+}
+
 .nav-list {
   display: flex;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
   @extend %font-second;
@@ -8,11 +14,6 @@
 
 .nav-item {
   list-style: none;
-  padding: 0 46px 0 0;
-  cursor: pointer;
-  &:last-child {
-    padding: 0;
-  }
 }
 
 .nav-link,

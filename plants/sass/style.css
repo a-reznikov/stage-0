@@ -503,6 +503,10 @@ h3 {
   padding-left: 2px;
 }
 
+.logo__img {
+  max-width: 79.17px;
+}
+
 .layout-2-column {
   display: flex;
   justify-content: space-between;
@@ -631,8 +635,14 @@ h3 {
   max-width: 464px;
 }
 
+.nav {
+  flex-grow: 1;
+  max-width: 452px;
+}
+
 .nav-list {
   display: flex;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
   font-weight: 400;
@@ -643,11 +653,6 @@ h3 {
 
 .nav-item {
   list-style: none;
-  padding: 0 46px 0 0;
-  cursor: pointer;
-}
-.nav-item:last-child {
-  padding: 0;
 }
 
 .nav-link,
