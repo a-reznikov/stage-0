@@ -413,7 +413,6 @@ body {
 }
 
 h1 {
-  margin-bottom: 42px;
   font-weight: 700;
   font-size: 4.5rem;
   line-height: 5rem;
@@ -443,6 +442,10 @@ h3 {
 
 .font-colored-first {
   color: #499A18;
+}
+
+.font-colored-second {
+  color: #E06733;
 }
 
 .button {
@@ -626,15 +629,18 @@ h3 {
 
 .about__content {
   padding: 68px 0 61px;
+  max-width: 605px;
 }
 
 .about-title {
   max-width: 463px;
+  max-height: 102px;
   margin-bottom: 40px;
 }
 
 .about-text {
   max-width: 605px;
+  max-height: 208px;
   font-weight: 400;
   font-size: 2rem;
   line-height: 3rem;

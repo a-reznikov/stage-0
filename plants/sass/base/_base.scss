@@ -9,7 +9,6 @@ body {
 }
 
 h1 {
-  margin-bottom: 42px;
   @include font(700, 4.5rem, 5.0rem, $color-title);
 }
 
@@ -28,4 +27,8 @@ h3 {
 
 .font-colored-first {
   color: $color-brand-first;
+}
+
+.font-colored-second {
+  color: $color-brand-second;
 }
