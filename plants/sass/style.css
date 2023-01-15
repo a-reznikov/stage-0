@@ -694,10 +694,13 @@ h3 {
 
 .service-title {
   max-width: 306px;
+  max-height: 94px;
 }
 
 .service__buttons {
   display: flex;
+  align-self: flex-start;
+  margin-top: 29px;
   flex-grow: 1;
   max-width: 559px;
 }
@@ -711,7 +714,7 @@ h3 {
 }
 
 .service__img {
-  max-width: 329px;
+  max-width: 330px;
   border-radius: 20px 20px 0px 0px;
 }
 
@@ -730,7 +733,7 @@ h3 {
 
 .service-name {
   text-align: center;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
 }
 
 .service-description {
