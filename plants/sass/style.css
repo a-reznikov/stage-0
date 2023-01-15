@@ -476,7 +476,7 @@ h3 {
 }
 
 .price__button {
-  padding: 12px 34px 12px 30px;
+  padding: 11px 34px 11px 30px;
   margin-bottom: 39px;
   background: #FFFFFF;
   font-weight: 700;
@@ -745,11 +745,16 @@ h3 {
 }
 
 .prices {
-  padding: 40px 0 115px;
+  padding: 39px 0 115px;
+}
+
+.prices__column {
+  align-items: flex-start;
 }
 
 .price {
   max-width: 332px;
+  max-height: 391px;
 }
 
 .price-title {
@@ -763,11 +768,13 @@ h3 {
 .price-text {
   line-height: 5rem;
   text-align: right;
-  margin: 0 0 38px 0;
+  margin: 0 0 40px 0;
 }
 
 .price__items {
-  padding: 34px 41px;
+  padding: 33px 40px;
+  border: 1px solid #E3E1D5;
+  border-radius: 20px;
 }
 
 .price-item {
@@ -786,6 +793,15 @@ h3 {
   margin-bottom: 0;
 }
 
+.price-item-title {
+  max-height: 18px;
+}
+
+.price__accordion_closed {
+  width: 16px;
+  height: 16px;
+}
+
 .price__content {
   display: flex;
   flex-direction: column;
@@ -794,7 +810,12 @@ h3 {
 }
 
 .price__leafs {
-  max-width: 152px;
+  display: flex;
+  width: 152px;
+  height: 175px;
+  background-image: url(../assets/img/price/leafs_price.png);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .contacts {
