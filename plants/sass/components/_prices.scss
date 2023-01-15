@@ -37,8 +37,13 @@
   @include font(700, 2.0rem, 2.0rem, $color-dark);
   background: $color-background;
   border-radius: 20px;
+  @extend %transition;
   &:last-child {
     margin-bottom: 0;
+  }
+  &:hover {
+    cursor: pointer;
+    background: $color-form;
   }
 }
 
