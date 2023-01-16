@@ -1,0 +1,14 @@
+.hamburger {
+  display: none;
+  width: 40px;
+  height: 24px;
+  @include media-mobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.hamburger__line {
+  @extend %hamburger-line;
+}

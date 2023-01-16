@@ -1,11 +1,18 @@
 %transition {
-    transition: 0.5s;
+  transition: 0.5s;
 }
 
 %font-first {
-    font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 %font-second {
-    font-family: 'Inika', serif;
+  font-family: 'Inika', serif;
+}
+
+%hamburger-line {
+  display: inline-block;
+  background-color: $color-title;
+  height: 2px;
+  width: 100%;
 }

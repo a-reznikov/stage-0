@@ -1,6 +1,9 @@
 .nav {
   flex-grow: 1;
   max-width: 452px;
+  @include media-mobile {
+    display: none;
+  }
 }
 
 .nav-list {
@@ -10,6 +13,9 @@
   padding: 0;
   @extend %font-second;
   @include font(400, 1.6rem, 5.0rem, $color-nav-link);
+  @include media-tablet {
+    @include font(400, 1.6rem, 4.7rem, $color-nav-link);
+  }
 }
 
 .nav-item {
