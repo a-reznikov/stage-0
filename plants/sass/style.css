@@ -508,6 +508,11 @@ h3 {
   cursor: pointer;
   transition: 0.5s;
 }
+@media (max-width: 768px) {
+  .price__button {
+    margin-bottom: 34px;
+  }
+}
 
 .button_bordered:hover {
   background: #E06733;
@@ -959,6 +964,11 @@ h3 {
 .prices {
   padding: 39px 0 115px;
 }
+@media (max-width: 768px) {
+  .prices {
+    padding: 40px 0 88px 0;
+  }
+}
 
 .prices__column {
   align-items: flex-start;
@@ -976,11 +986,29 @@ h3 {
   color: #000000;
   margin-bottom: 60px;
 }
+@media (max-width: 768px) {
+  .price-title {
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 3.5rem;
+    line-height: 4.2rem;
+    color: #000000;
+  }
+}
 
 .price-text {
   line-height: 5rem;
   text-align: right;
   margin: 0 0 40px 0;
+}
+@media (max-width: 768px) {
+  .price-text {
+    margin: 99px 0 21.59px 0;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    color: #000000;
+  }
 }
 
 .price__items {
