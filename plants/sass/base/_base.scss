@@ -18,6 +18,9 @@ h1 {
 h2 {
   @extend %font-second;
   @include font(400, 4.0rem, 5.2rem, $color-brand-first);
+  @include media-tablet {
+    @include font(400, 3.5rem, 4.6rem, $color-brand-first);
+  }
 }
 
 h3 {
