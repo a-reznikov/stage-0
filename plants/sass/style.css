@@ -858,7 +858,7 @@ h3 {
 }
 @media (max-width: 768px) {
   .service {
-    padding: 60px 0 70px 0;
+    padding: 60px 0 32px 0;
   }
 }
 
@@ -936,6 +936,11 @@ h3 {
   flex-direction: column;
   align-items: center;
   margin-bottom: 55px;
+}
+@media (max-width: 768px) {
+  .service__item {
+    margin-bottom: 38px;
+  }
 }
 
 .service-name {
