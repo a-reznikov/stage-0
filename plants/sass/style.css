@@ -425,6 +425,14 @@ h1 {
   line-height: 5rem;
   color: #717171;
 }
+@media (max-width: 768px) {
+  h1 {
+    font-weight: 700;
+    font-size: 3.5rem;
+    line-height: 5rem;
+    color: #717171;
+  }
+}
 
 h2 {
   font-weight: 400;
@@ -651,6 +659,11 @@ h3 {
 .welcome {
   padding: 62px 0 62.64px 0;
 }
+@media (max-width: 768px) {
+  .welcome {
+    padding: 40px 0 70px 0;
+  }
+}
 
 .welcome__leafs {
   display: flex;
@@ -659,49 +672,129 @@ h3 {
   max-width: 448.8px;
   max-height: 407.36px;
 }
+@media (max-width: 768px) {
+  .welcome__leafs {
+    order: 1;
+    max-width: 280px;
+  }
+}
+
+.welcome__leafs-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .welcome__content {
   max-width: 549px;
   margin-top: 4px;
 }
+@media (max-width: 768px) {
+  .welcome__content {
+    flex-basis: 55%;
+    max-width: 346px;
+  }
+}
 
 .welcome-title {
   margin-bottom: 44px;
+}
+@media (max-width: 768px) {
+  .welcome-title {
+    margin-bottom: 30px;
+  }
 }
 
 .welcome-text {
   margin-bottom: 48px;
   max-width: 525.44px;
 }
+@media (max-width: 768px) {
+  .welcome-text {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    color: #636060;
+    margin-bottom: 30px;
+  }
+}
 
 .about {
   padding: 93px 0 94px 0;
+}
+@media (max-width: 768px) {
+  .about {
+    padding: 40px 0 95px 0;
+  }
 }
 
 .about__column {
   align-items: flex-start;
 }
+@media (max-width: 768px) {
+  .about__column {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .about__column > * {
+    flex-basis: 100%;
+  }
+}
 
 .about__content {
   padding-top: 68px;
-  max-width: 605px;
+}
+@media (max-width: 768px) {
+  .about__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 100%;
+    padding-top: 0;
+    margin-bottom: 40px;
+  }
 }
 
 .about-title {
   max-width: 463px;
   margin-bottom: 38px;
 }
+@media (max-width: 768px) {
+  .about-title {
+    max-width: 423px;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 4.6rem;
+    color: #499A18;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
 
 .about-text {
-  max-width: 605px;
   font-weight: 400;
   font-size: 2rem;
   line-height: 3rem;
   color: #636060;
 }
+@media (max-width: 768px) {
+  .about-text {
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 3rem;
+    color: #636060;
+  }
+}
 
 .about__houseplant {
   max-width: 464px;
+}
+@media (max-width: 768px) {
+  .about__houseplant {
+    max-width: 250px;
+  }
 }
 
 .nav {

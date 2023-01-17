@@ -1,26 +1,56 @@
 .about {
   padding: 93px 0 94px 0;
+  @include media-tablet {
+    padding: 40px 0 95px 0;
+  }
 }
 
 .about__column {
   align-items: flex-start;
+  @include media-tablet {
+    flex-direction: column;
+    align-items: center;
+  }
+  >* {
+    @include media-tablet {
+      flex-basis: 100%;
+    }
+}
 }
 
 .about__content {
   padding-top: 68px;
-  max-width: 605px;
+  @include media-tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 100%;
+    padding-top: 0;
+    margin-bottom: 40px;
+  }
 }
 
 .about-title {
   max-width: 463px;
   margin-bottom: 38px;
+  @include media-tablet {
+    max-width: 423px;
+    @include font(400, 3.5rem, 4.6rem, $color-brand-first);
+    text-align: center;
+    margin-bottom: 40px;
+  }
 }
 
 .about-text {
-  max-width: 605px;
   @include font(400, 2.0rem, 3.0rem, $color-text);
+    @include media-tablet {
+      @include font(400, 2.0rem, 3.0rem, $color-text);
+    }
 }
 
 .about__houseplant {
   max-width: 464px;
+  @include media-tablet {
+    max-width: 250px;
+  }
 }
