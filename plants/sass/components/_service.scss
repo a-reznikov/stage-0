@@ -50,7 +50,7 @@
     }
   }
   @include media-tablet {
-    margin-top: 40px;
+    margin-top: 42px;
   }
   @include media-mobile {
     margin-top: 35px;
@@ -87,6 +87,9 @@
   padding: 10px 0 36px;
   border: 1px solid #E3E1D5;
   border-radius: 0px 0px 20px 20px;
+  @include media-tablet {
+    padding: 9px 0 19px;
+  }
 }
 
 
@@ -103,11 +106,18 @@
 .service-name {
   text-align: center;
   padding-bottom: 12px;
+  @include media-tablet {
+    padding-bottom: 10px;
+  }
 }
 
 .service-description {
   text-align: center;
   @include font(400, 1.6rem, 2.0rem, $color-title);
+  @include media-tablet {
+    max-width: 201px;
+    margin: auto;
+  }
 }
 
 .services__column {

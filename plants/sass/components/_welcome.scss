@@ -8,12 +8,6 @@
   }
 }
 
-.welcome__column {
-  @include media-tablet {
-
-}
-}
-
 .welcome__leafs {
   display: flex;
   justify-content: center;
@@ -21,6 +15,7 @@
   max-width: 448.8px;
   max-height: 407.36px;
   @include media-tablet {
+    align-self: flex-start;
     order: 1;
     max-width: 280px;
   }
@@ -41,6 +36,7 @@
   @include media-tablet {
     flex-basis: 55%;
     max-width: 346px;
+    margin-top: 0px;
   }
   @include media-mobile {
     flex-basis: 100%;
@@ -50,7 +46,7 @@
 .welcome-title {
   margin-bottom: 44px;
   @include media-tablet {
-    margin-bottom: 30px;
+    margin-bottom: 31px;
   }
   @include media-mobile {
     margin-bottom: 20.36px;
@@ -62,7 +58,8 @@
   max-width: 525.44px;
   @include media-tablet {
     @include font(400, 1.6rem, 2.5rem, $color-text);
-    margin-bottom: 30px;
+    margin-left: 5px;
+    margin-bottom: 35px;
   }
   @include media-mobile {
     margin-bottom: 20.8px;

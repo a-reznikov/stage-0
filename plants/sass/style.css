@@ -399,7 +399,7 @@ h3,
   font-family: "Inter", sans-serif;
 }
 
-.contacts-title, .nav-list, .price__button, .button, h2 {
+.contacts-title, .nav-list, .logo__link, .price__button, .button, h2 {
   font-family: "Inika", serif;
 }
 
@@ -619,17 +619,33 @@ h3 {
   justify-content: space-between;
 }
 
-.logo__img {
-  max-width: 79.17px;
+.logo {
+  display: flex;
+  align-items: baseline;
   padding-bottom: 3px;
-  padding-left: 2px;
 }
-@media (max-width: 380px) {
-  .logo__img {
-    display: block;
-    max-width: 77px;
-    padding: 0;
-  }
+
+.logo__vector {
+  display: flex;
+  max-height: 20px;
+}
+
+.logo__img {
+  display: block;
+}
+
+.logo__link {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  color: #000000;
+  transition: color 0.5s;
+}
+
+.logo__link:hover {
+  font-weight: 700;
+  color: #E06733;
 }
 
 .layout-2-column {
@@ -702,11 +718,12 @@ h3 {
 }
 
 .rss-text {
-  max-width: 211px;
+  max-width: 214px;
   padding-left: 4px;
 }
 @media (max-width: 768px) {
   .rss-text {
+    max-width: 211px;
     margin-bottom: 27.67px;
     padding-left: 0px;
   }
@@ -788,6 +805,7 @@ h3 {
 }
 @media (max-width: 768px) {
   .welcome__leafs {
+    align-self: flex-start;
     order: 1;
     max-width: 280px;
   }
@@ -812,6 +830,7 @@ h3 {
   .welcome__content {
     flex-basis: 55%;
     max-width: 346px;
+    margin-top: 0px;
   }
 }
 @media (max-width: 380px) {
@@ -825,7 +844,7 @@ h3 {
 }
 @media (max-width: 768px) {
   .welcome-title {
-    margin-bottom: 30px;
+    margin-bottom: 31px;
   }
 }
 @media (max-width: 380px) {
@@ -844,7 +863,8 @@ h3 {
     font-size: 1.6rem;
     line-height: 2.5rem;
     color: #636060;
-    margin-bottom: 30px;
+    margin-left: 5px;
+    margin-bottom: 35px;
   }
 }
 @media (max-width: 380px) {
@@ -892,7 +912,7 @@ h3 {
     align-items: center;
     flex-basis: 100%;
     padding-top: 0;
-    margin-bottom: 40px;
+    margin-bottom: 68px;
   }
 }
 @media (max-width: 380px) {
@@ -909,10 +929,10 @@ h3 {
   .about-title {
     max-width: 423px;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 380px) {
   .about-title {
     margin-bottom: 21.55px;
   }
@@ -966,6 +986,11 @@ h3 {
   flex-grow: 1;
   max-width: 452px;
 }
+@media (max-width: 768px) {
+  .nav {
+    max-height: 47px;
+  }
+}
 @media (max-width: 380px) {
   .nav {
     display: none;
@@ -981,14 +1006,6 @@ h3 {
   font-size: 1.6rem;
   line-height: 5rem;
   color: #010201;
-}
-@media (max-width: 768px) {
-  .nav-list {
-    font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 4.7rem;
-    color: #010201;
-  }
 }
 
 .nav-item {
@@ -1071,7 +1088,7 @@ h3 {
 }
 @media (max-width: 768px) {
   .service__buttons {
-    margin-top: 40px;
+    margin-top: 42px;
   }
 }
 @media (max-width: 380px) {
@@ -1113,6 +1130,11 @@ h3 {
   border: 1px solid #E3E1D5;
   border-radius: 0px 0px 20px 20px;
 }
+@media (max-width: 768px) {
+  .item__content {
+    padding: 9px 0 19px;
+  }
+}
 
 .service__item {
   display: flex;
@@ -1130,6 +1152,11 @@ h3 {
   text-align: center;
   padding-bottom: 12px;
 }
+@media (max-width: 768px) {
+  .service-name {
+    padding-bottom: 10px;
+  }
+}
 
 .service-description {
   text-align: center;
@@ -1137,6 +1164,12 @@ h3 {
   font-size: 1.6rem;
   line-height: 2rem;
   color: #717171;
+}
+@media (max-width: 768px) {
+  .service-description {
+    max-width: 201px;
+    margin: auto;
+  }
 }
 
 @media (max-width: 380px) {

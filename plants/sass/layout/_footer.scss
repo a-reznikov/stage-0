@@ -39,9 +39,10 @@
 }
 
 .rss-text {
-  max-width: 211px;
+  max-width: 214px;
   padding-left: 4px;
   @include media-tablet {
+    max-width: 211px;
     margin-bottom: 27.67px;
     padding-left: 0px;
   }
