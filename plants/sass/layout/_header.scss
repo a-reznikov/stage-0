@@ -1,0 +1,45 @@
+.header {
+  padding: 42px 0 42px 0;
+  @include media-tablet {
+    padding: 35px 0 35px 0;
+  }
+  @include media-mobile {
+    padding: 34px 0 35px 0;
+  }
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 3px;
+  @include media-mobile {
+    padding: 2px 0 0 0;
+  }
+}
+
+.logo__vector {
+  display: flex;
+  max-height: 20px;
+}
+
+.logo__img {
+  display: block;
+}
+
+.logo__link {
+  text-decoration: none;
+  @extend %font-second;
+  @include font(400, 1.6rem, 2.1rem, $color-dark);
+  transition: color 0.5s;
+}
+
+.logo__link:hover {
+  font-weight: 700;
+  color: $color-brand-second;
+}
