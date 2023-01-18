@@ -123,10 +123,15 @@
   display: flex;
   width: 152px;
   height: 175px;
+  margin-top: 39px;
   background-image: url(../assets/img/price/leafs_price.png);
   background-position: center;
   background-repeat: no-repeat;
+  @include media-tablet {
+    margin-top: 34px;
+  }
   @include media-mobile {
     display: none;
   }
+
 }

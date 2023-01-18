@@ -539,7 +539,6 @@ h3 {
 
 .price__button {
   padding: 11px 34px 11px 30px;
-  margin-bottom: 39px;
   background: #FFFFFF;
   font-weight: 700;
   font-size: 2rem;
@@ -550,15 +549,9 @@ h3 {
   cursor: pointer;
   transition: 0.5s;
 }
-@media (max-width: 768px) {
-  .price__button {
-    margin-bottom: 34px;
-  }
-}
 @media (max-width: 380px) {
   .price__button {
     padding: 6.5px 23.8px;
-    margin-bottom: 0;
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 2rem;
@@ -1361,9 +1354,15 @@ h3 {
   display: flex;
   width: 152px;
   height: 175px;
+  margin-top: 39px;
   background-image: url(../assets/img/price/leafs_price.png);
   background-position: center;
   background-repeat: no-repeat;
+}
+@media (max-width: 768px) {
+  .price__leafs {
+    margin-top: 34px;
+  }
 }
 @media (max-width: 380px) {
   .price__leafs {
