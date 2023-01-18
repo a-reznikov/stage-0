@@ -3,6 +3,9 @@
   @include media-tablet {
     padding: 40px 0 70px 0;
   }
+  @include media-mobile {
+    padding: 24px 0;
+  }
 }
 
 .welcome__column {
@@ -21,6 +24,9 @@
     order: 1;
     max-width: 280px;
   }
+  @include media-mobile {
+    display: none;
+  }
 }
 
 .welcome__leafs-img {
@@ -36,12 +42,18 @@
     flex-basis: 55%;
     max-width: 346px;
   }
+  @include media-mobile {
+    flex-basis: 100%;
+  }
 }
 
 .welcome-title {
   margin-bottom: 44px;
   @include media-tablet {
     margin-bottom: 30px;
+  }
+  @include media-mobile {
+    margin-bottom: 20.36px;
   }
 }
 
@@ -51,5 +63,8 @@
   @include media-tablet {
     @include font(400, 1.6rem, 2.5rem, $color-text);
     margin-bottom: 30px;
+  }
+  @include media-mobile {
+    margin-bottom: 20.8px;
   }
 }

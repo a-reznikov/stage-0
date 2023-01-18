@@ -3,15 +3,30 @@
   @include media-tablet {
     padding: 40px 0 88px 0;
   }
+  @include media-mobile {
+    padding: 25px 0 40px 0;
+  }
 }
 
 .prices__column {
   align-items: flex-start;
+  @include media-mobile {
+    align-items: center;
+  } 
+  >* {
+    @include media-mobile {
+      flex-basis: 100%;
+    } 
+  }
 }
 
 .price {
   max-width: 332px;
   max-height: 391px;
+  @include media-mobile {
+    max-width: 224px;
+    margin: auto;
+  }
 }
 
 .price-title {
@@ -21,6 +36,11 @@
   @include media-tablet {
     margin-bottom: 50px;
     @include font(700, 3.5rem, 4.2rem, $color-dark);
+  }
+  @include media-mobile {
+    margin-bottom: 40px;
+    @include font(700, 2.5rem, 3.0rem, $color-dark);
+    text-align: center;
   }
 }
 
@@ -32,12 +52,20 @@
     margin: 99px 0 21.59px 0;
     @include font(700, 2.5rem, 3.5rem, $color-dark);
   }
+  @include media-mobile {
+    margin: 19px 0 14px 0;
+    @include font(700, 2.0rem, 3.5rem, $color-dark);
+    text-align: center;
+  }
 }
 
 .price__items {
   padding: 33px 40px;
   border: 1px solid #E3E1D5;
   border-radius: 20px;
+  @include media-mobile {
+    padding: 29px 22px;
+  }
 }
 
 .price-item {
@@ -56,6 +84,10 @@
     cursor: pointer;
     background: $color-form;
   }
+  @include media-mobile {
+    padding: 15.91px 40px 15.91px 30px;
+    @include font(700, 1.5rem, 2.0rem, $color-dark);
+  }
 }
 
 .price-item-title {
@@ -72,6 +104,11 @@
   flex-direction: column;
   max-width: 452px;
   align-items: flex-end;
+  @include media-mobile {
+    max-width: 230px;
+    margin: auto;
+    align-items: center;
+  }
 }
 
 .price__leafs {
@@ -81,4 +118,7 @@
   background-image: url(../assets/img/price/leafs_price.png);
   background-position: center;
   background-repeat: no-repeat;
+  @include media-mobile {
+    display: none;
+  }
 }

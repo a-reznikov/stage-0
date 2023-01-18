@@ -3,6 +3,9 @@
   @include media-tablet {
     padding: 60px 0 32px 0;
   }
+  @include media-mobile {
+    padding: 30px 0 27px 0;
+  }
 }
 
 .service__content {
@@ -21,6 +24,9 @@
 .service-title {
   max-width: 306px;
   max-height: 94px;
+  @include media-mobile {
+    max-width: 187px;
+  }
 }
 
 .service__buttons {
@@ -32,9 +38,24 @@
   >* {
     flex-grow: 1;
     max-width: 161px;
+    @include media-mobile {
+      flex-basis: 48%;
+      max-width: 121px;
+      margin-bottom: 9px;
+    }
+  }
+  >:last-child {
+    @include media-mobile {
+      margin-bottom: 0px;
+    }
   }
   @include media-tablet {
     margin-top: 40px;
+  }
+  @include media-mobile {
+    margin-top: 35px;
+    max-width: 252px;
+    flex-wrap: wrap;
   }
 }
 
@@ -87,4 +108,20 @@
 .service-description {
   text-align: center;
   @include font(400, 1.6rem, 2.0rem, $color-title);
+}
+
+.services__column {
+  @include media-mobile {
+    flex-direction: column;
+  }
+  >* {
+    @include media-mobile {
+      margin-bottom: 34px;
+    }
+  }
+  >:last-child {
+    @include media-mobile {
+      margin-bottom: 0px;
+    }
+  }
 }

@@ -5,6 +5,9 @@
     padding: 33px 0 18px 0;
     @include font(400, 2.0rem, 2.4rem, $color-dark);
   }
+  @include media-mobile {
+    padding: 22px 0 16px 0;
+  }
 }
 
 .footer__column {
@@ -41,6 +44,9 @@
   @include media-tablet {
     margin-bottom: 27.67px;
     padding-left: 0px;
+  }
+  @include media-mobile {
+    margin-bottom: 12px;
   }
 }
 

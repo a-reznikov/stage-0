@@ -6,6 +6,10 @@
   border-radius: 5px;
   cursor: pointer;
   transition: 0.5s;
+  @include media-mobile {
+    padding: 7px 0;
+    @include font(400, 1.5rem, 2.0rem, $color-brand-second);
+  }
 }
 
 .welcome__button {
@@ -15,6 +19,10 @@
   border-radius: 10px;
   cursor: pointer;
   transition: 0.5s;
+  @include media-mobile {
+    padding: 7px 17px;
+    @include font(400, 1.0rem, 1.8rem, $color-dark);
+  }
 }
 
 .price__button {
@@ -29,6 +37,11 @@
   transition: 0.5s;
   @include media-tablet {
     margin-bottom: 34px;
+  }
+  @include media-mobile {
+    padding: 8px 22px;
+    margin-bottom: 0;
+    @include font(700, 1.5rem, 2.0rem, $color-brand-second);
   }
 }
 
