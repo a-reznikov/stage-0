@@ -1,11 +1,25 @@
 .footer {
   padding: 40px 0;
   @include font(400, 2.0rem, 5.0rem, $color-dark);
+  @include media-tablet {
+    padding: 33px 0 18px 0;
+    @include font(400, 2.0rem, 2.4rem, $color-dark);
+  }
 }
 
 .footer__column {
   >* {
     flex-basis: 30%;
+  }
+  @include media-tablet {
+    display: flex;
+    flex-direction: column;
+    >* {
+      @include media-tablet {
+        width: 100%;
+        align-self: center;
+      }
+    }
   }
 }
 
@@ -14,11 +28,20 @@
   justify-content: space-between;
   max-width: 182px;
   padding-right: 13px;
+  @include media-tablet {
+    margin-bottom: 16px;
+    padding-right: 0;
+    max-width: 174px;
+  }
 }
 
 .rss-text {
-  max-width: 213px;
+  max-width: 211px;
   padding-left: 4px;
+  @include media-tablet {
+    margin-bottom: 27.67px;
+    padding-left: 0px;
+  }
 }
 
 .link-footer {

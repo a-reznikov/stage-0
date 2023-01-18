@@ -604,9 +604,30 @@ h3 {
   line-height: 5rem;
   color: #000000;
 }
+@media (max-width: 768px) {
+  .footer {
+    padding: 33px 0 18px 0;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: #000000;
+  }
+}
 
 .footer__column > * {
   flex-basis: 30%;
+}
+@media (max-width: 768px) {
+  .footer__column {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) and (max-width: 768px) {
+  .footer__column > * {
+    width: 100%;
+    align-self: center;
+  }
 }
 
 .footer__data {
@@ -615,10 +636,23 @@ h3 {
   max-width: 182px;
   padding-right: 13px;
 }
+@media (max-width: 768px) {
+  .footer__data {
+    margin-bottom: 16px;
+    padding-right: 0;
+    max-width: 174px;
+  }
+}
 
 .rss-text {
-  max-width: 213px;
+  max-width: 211px;
   padding-left: 4px;
+}
+@media (max-width: 768px) {
+  .rss-text {
+    margin-bottom: 27.67px;
+    padding-left: 0px;
+  }
 }
 
 .link-footer {
