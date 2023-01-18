@@ -56,7 +56,7 @@
     @include font(700, 2.5rem, 3.5rem, $color-dark);
   }
   @include media-mobile {
-    margin: 18.75px 0 21px 0;
+    margin: 19.75px 0 20px 0;
     @include font(700, 2.0rem, 3.5rem, $color-dark);
     text-align: center;
   }
@@ -88,6 +88,7 @@
     background: $color-form;
   }
   @include media-mobile {
+    align-items: flex-end;
     padding: 15.91px 40px 15.91px 30px;
     @include font(700, 1.5rem, 2.0rem, $color-dark);
     margin-bottom: 13.92px;

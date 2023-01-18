@@ -1278,7 +1278,7 @@ h3 {
 }
 @media (max-width: 380px) {
   .price-text {
-    margin: 18.75px 0 21px 0;
+    margin: 19.75px 0 20px 0;
     font-weight: 700;
     font-size: 2rem;
     line-height: 3.5rem;
@@ -1319,6 +1319,7 @@ h3 {
 }
 @media (max-width: 380px) {
   .price-item {
+    align-items: flex-end;
     padding: 15.91px 40px 15.91px 30px;
     font-weight: 700;
     font-size: 1.5rem;
@@ -1381,6 +1382,7 @@ h3 {
 @media (max-width: 380px) {
   .contacts {
     padding-top: 25px;
+    padding-right: 4px;
   }
 }
 
