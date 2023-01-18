@@ -674,7 +674,7 @@ h3 {
 }
 @media (max-width: 768px) {
   .footer {
-    padding: 33px 0 18px 0;
+    padding: 33px 0 27px 0;
     font-weight: 400;
     font-size: 2rem;
     line-height: 2.4rem;
@@ -712,8 +712,8 @@ h3 {
 @media (max-width: 768px) {
   .footer__data {
     margin-bottom: 16px;
-    padding-right: 0;
-    max-width: 174px;
+    padding-right: 3px;
+    max-width: 173px;
   }
 }
 
@@ -724,7 +724,7 @@ h3 {
 @media (max-width: 768px) {
   .rss-text {
     max-width: 211px;
-    margin-bottom: 27.67px;
+    margin-bottom: 25px;
     padding-left: 0px;
   }
 }
@@ -1236,7 +1236,8 @@ h3 {
 }
 @media (max-width: 768px) {
   .price-title {
-    margin-bottom: 50px;
+    padding-left: 15px;
+    margin-bottom: 57px;
     font-weight: 700;
     font-size: 3.5rem;
     line-height: 4.2rem;
@@ -1261,7 +1262,8 @@ h3 {
 }
 @media (max-width: 768px) {
   .price-text {
-    margin: 99px 0 21.59px 0;
+    margin: 99px 0 29px 0;
+    padding-left: 0;
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 3.5rem;
@@ -1334,6 +1336,11 @@ h3 {
   max-width: 452px;
   align-items: flex-end;
 }
+@media (max-width: 768px) {
+  .price__content {
+    max-width: 296px;
+  }
+}
 @media (max-width: 380px) {
   .price__content {
     max-width: 230px;
@@ -1377,6 +1384,7 @@ h3 {
   .contact__woman {
     order: 3;
     max-width: 200px;
+    margin-left: 20px;
   }
 }
 @media (max-width: 380px) {
@@ -1437,7 +1445,8 @@ h3 {
 @media (max-width: 768px) {
   .contact-item {
     order: 1;
-    margin: 0 0 250px 0;
+    margin: 0 0 248.5px 0;
+    width: 100%;
   }
 }
 @media (max-width: 380px) {
@@ -1463,7 +1472,6 @@ h3 {
 }
 @media (max-width: 768px) and (max-width: 768px) {
   .contacts__column > * {
-    width: 100%;
     align-self: center;
   }
 }
