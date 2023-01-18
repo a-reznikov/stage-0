@@ -529,7 +529,7 @@ h3 {
 }
 @media (max-width: 380px) {
   .welcome__button {
-    padding: 7px 17px;
+    padding: 6px 16px;
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.8rem;
@@ -574,7 +574,7 @@ h3 {
 .hamburger {
   display: none;
   width: 40px;
-  height: 24px;
+  height: 26px;
 }
 @media (max-width: 380px) {
   .hamburger {
@@ -609,7 +609,7 @@ h3 {
 }
 @media (max-width: 380px) {
   .header {
-    padding: 36px 0 36px 0;
+    padding: 34px 0 35px 0;
   }
 }
 
@@ -623,6 +623,11 @@ h3 {
   display: flex;
   align-items: baseline;
   padding-bottom: 3px;
+}
+@media (max-width: 380px) {
+  .logo {
+    padding: 2px 0 0 0;
+  }
 }
 
 .logo__vector {
@@ -792,7 +797,7 @@ h3 {
 }
 @media (max-width: 380px) {
   .welcome {
-    padding: 24px 0;
+    padding: 26px 0 24px 0;
   }
 }
 
@@ -869,7 +874,7 @@ h3 {
 }
 @media (max-width: 380px) {
   .welcome-text {
-    margin-bottom: 20.8px;
+    margin: 0 15.48px 25.65px 0;
   }
 }
 
@@ -934,7 +939,7 @@ h3 {
 }
 @media (max-width: 380px) {
   .about-title {
-    margin-bottom: 21.55px;
+    margin-bottom: 13.29px;
   }
 }
 

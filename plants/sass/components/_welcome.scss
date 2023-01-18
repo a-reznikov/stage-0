@@ -4,7 +4,7 @@
     padding: 40px 0 70px 0;
   }
   @include media-mobile {
-    padding: 24px 0;
+    padding: 26px 0 24px 0;
   }
 }
 
@@ -62,6 +62,6 @@
     margin-bottom: 35px;
   }
   @include media-mobile {
-    margin-bottom: 20.8px;
+    margin: 0 15.48px 25.65px 0;
   }
 }

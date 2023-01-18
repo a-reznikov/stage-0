@@ -20,7 +20,7 @@
   cursor: pointer;
   transition: 0.5s;
   @include media-mobile {
-    padding: 7px 17px;
+    padding: 6px 16px;
     @include font(400, 1.0rem, 1.8rem, $color-dark);
   }
 }

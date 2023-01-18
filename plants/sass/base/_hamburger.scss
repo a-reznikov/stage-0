@@ -1,7 +1,7 @@
 .hamburger {
   display: none;
   width: 40px;
-  height: 24px;
+  height: 26px;
   @include media-mobile{
     display: flex;
     flex-direction: column;
