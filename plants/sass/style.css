@@ -508,7 +508,7 @@ h3 {
 }
 @media (max-width: 380px) {
   .button {
-    padding: 7px 0;
+    padding: 6.5px 0;
     font-weight: 400;
     font-size: 1.5rem;
     line-height: 2rem;
@@ -888,7 +888,7 @@ h3 {
 }
 @media (max-width: 380px) {
   .about {
-    padding: 30px 0 31px 0;
+    padding: 30px 0 26.55px 0;
   }
 }
 
@@ -1098,7 +1098,7 @@ h3 {
 }
 @media (max-width: 380px) {
   .service__buttons {
-    margin-top: 35px;
+    margin-top: 38px;
     max-width: 252px;
     flex-wrap: wrap;
   }
