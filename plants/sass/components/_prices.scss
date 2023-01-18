@@ -39,7 +39,8 @@
     @include font(700, 3.5rem, 4.2rem, $color-dark);
   }
   @include media-mobile {
-    margin-bottom: 40px;
+    padding-left: 0;
+    margin-bottom: 37px;
     @include font(700, 2.5rem, 3.0rem, $color-dark);
     text-align: center;
   }
@@ -55,7 +56,7 @@
     @include font(700, 2.5rem, 3.5rem, $color-dark);
   }
   @include media-mobile {
-    margin: 19px 0 14px 0;
+    margin: 18.75px 0 21px 0;
     @include font(700, 2.0rem, 3.5rem, $color-dark);
     text-align: center;
   }
@@ -66,7 +67,7 @@
   border: 1px solid #E3E1D5;
   border-radius: 20px;
   @include media-mobile {
-    padding: 29px 22px;
+    padding: 28px 21px;
   }
 }
 
@@ -89,6 +90,7 @@
   @include media-mobile {
     padding: 15.91px 40px 15.91px 30px;
     @include font(700, 1.5rem, 2.0rem, $color-dark);
+    margin-bottom: 13.92px;
   }
 }
 
