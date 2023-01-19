@@ -17,26 +17,34 @@
 .hamburger__opened {
   @include media-mobile{
     display: block;
-    z-index: 2;
     width: 20px;
     height: 20px;
-    content: "";
-    >* {
-      background-color: $color-brand-second;
-      height: 3px;
-      width: 100%;
-    }
-    .line__left {
-      position: relative;
-      transform: rotate(45deg);
-    }
-    .line__right {
-      position: relative;
-      bottom: 20px;
-      transform: rotate(-45deg);
-    }
+    margin: 0 13.5px 0 33.5px;
     .line__hiden {
       display: none;
-    }
+      }
   }
+}
+
+.hamburger__opened::before,
+.hamburger__opened::after {
+  @include media-mobile{
+    display: block;
+    position: relative;
+    width: 100%;
+    content: "";
+    background-color: $color-brand-second;
+    height: 4px;
+    border-radius: 40%;
+  }
+}
+
+.hamburger__opened::before {
+	transform: rotate(45deg);
+  top: 9px;
+}
+
+.hamburger__opened::after {
+	transform: rotate(-45deg);
+  top: 5px;
 }
