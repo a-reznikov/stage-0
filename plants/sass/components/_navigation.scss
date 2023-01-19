@@ -9,6 +9,14 @@
   }
 }
 
+.nav__opened {
+  @include media-mobile {
+    display: flex;
+    justify-content: center;
+    max-height: 27px;
+  }
+}
+
 .nav-list {
   display: flex;
   justify-content: space-between;
@@ -18,8 +26,19 @@
   @include font(400, 1.6rem, 5.0rem, $color-nav-link);
 }
 
+.nav-list-direction {
+  @include media-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
 .nav-item {
   list-style: none;
+  @include media-mobile {
+    text-align: center;
+  }
 }
 
 .nav-link,

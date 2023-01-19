@@ -8,6 +8,12 @@
   }
 }
 
+.header__nav {
+  @include media-mobile {
+    height: 100vh;
+  }
+}
+
 .header__wrapper {
   display: flex;
   align-items: center;
