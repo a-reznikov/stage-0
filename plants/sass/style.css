@@ -583,7 +583,7 @@ h3 {
     display: block;
     width: 20px;
     height: 20px;
-    margin: 0 13.5px 0 33.5px;
+    margin: 0 10px 0 37px;
   }
   .hamburger__opened .line__hiden {
     display: none;
@@ -599,7 +599,7 @@ h3 {
     content: "";
     background-color: #E06733;
     height: 4px;
-    border-radius: 40%;
+    border-radius: 5px;
   }
 }
 
@@ -1042,7 +1042,6 @@ h3 {
     display: flex;
     justify-content: center;
     max-height: 27px;
-    transition: left 0.3s ease 0s;
   }
 }
 
@@ -1076,7 +1075,8 @@ h3 {
     width: 100%;
     content: "";
     background-color: #499A18;
-    height: 1px;
+    height: 2px;
+    border-radius: 70%;
   }
 }
 

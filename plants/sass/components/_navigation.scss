@@ -14,7 +14,6 @@
     display: flex;
     justify-content: center;
     max-height: 27px;
-    transition: left  0.3s ease 0s;
   }
 }
 
@@ -43,7 +42,8 @@
     width: 100%;
     content: "";
     background-color: $color-brand-first;
-    height: 1px;
+    height: 2px;
+    border-radius: 70%;
   }
 }
 
