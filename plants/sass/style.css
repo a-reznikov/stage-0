@@ -404,10 +404,12 @@ h3,
 }
 
 .hamburger__line {
+  position: absolute;
   display: inline-block;
   background-color: #717171;
   height: 2px;
   width: 100%;
+  transition: transform 0.5s, opacity 0.5s, background-color 0.5s;
 }
 
 html {
@@ -572,46 +574,43 @@ h3 {
 }
 @media (max-width: 380px) {
   .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: block;
+    position: relative;
     z-index: 2;
   }
+}
+
+.hamburger__line:nth-child(2) {
+  transform: translateY(8px);
+}
+
+.hamburger__line:nth-child(3) {
+  transform: translateY(16px);
+}
+
+.hamburger__line:nth-child(4) {
+  transform: translateY(24px);
 }
 
 @media (max-width: 380px) {
   .hamburger__opened {
     display: block;
-    width: 20px;
-    height: 20px;
-    margin: 0 10px 0 37px;
   }
   .hamburger__opened .line__hiden {
-    display: none;
+    opacity: 0;
   }
-}
-
-@media (max-width: 380px) {
-  .hamburger__opened::before,
-  .hamburger__opened::after {
-    display: block;
-    position: relative;
-    width: 100%;
-    content: "";
-    background-color: #E06733;
-    height: 4px;
+  .hamburger__opened .line__cross {
+    width: 50%;
+    height: 3px;
     border-radius: 5px;
+    background-color: #E06733;
   }
-}
-
-.hamburger__opened::before {
-  transform: rotate(45deg);
-  top: 9px;
-}
-
-.hamburger__opened::after {
-  transform: rotate(-45deg);
-  top: 5px;
+  .hamburger__opened .line__cross:nth-child(1) {
+    transform: translateX(10px) translateY(12px) rotate(45deg);
+  }
+  .hamburger__opened .line__cross:nth-child(4) {
+    transform: translateX(10px) translateY(12px) rotate(-45deg);
+  }
 }
 
 .wrapper {
@@ -644,7 +643,7 @@ h3 {
 }
 
 @media (max-width: 380px) {
-  .header__nav {
+  .header__opened {
     height: 100vh;
     min-height: 275px;
   }
@@ -1038,8 +1037,8 @@ h3 {
   .nav {
     display: block;
     position: absolute;
-    top: 0;
-    left: -100%;
+    top: -100%;
+    left: 0;
     width: 100%;
     height: 100vh;
     max-height: 100%;
@@ -1056,7 +1055,11 @@ h3 {
 
 @media (max-width: 380px) {
   .nav__opened {
-    transform: translateX(100%);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 5rem;
+    color: #010201;
+    transform: translateY(100%);
   }
 }
 
