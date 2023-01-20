@@ -412,6 +412,13 @@ h3,
   transition: transform 0.5s, opacity 0.5s, background-color 0.5s;
 }
 
+.header,
+.welcome,
+.service,
+.contacts {
+  background: #EDF2EC;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 10px;
@@ -646,6 +653,8 @@ h3 {
   .header__opened {
     height: 100vh;
     min-height: 275px;
+    background-color: #FFFFFF;
+    transition: background-color 1s;
   }
 }
 
@@ -815,13 +824,6 @@ h3 {
 
 .pt {
   background-image: url(../assets/img/icons/pt.svg);
-}
-
-.header,
-.welcome,
-.service,
-.contacts {
-  background: #EDF2EC;
 }
 
 .welcome {
@@ -1037,19 +1039,18 @@ h3 {
   .nav {
     display: block;
     position: absolute;
+    z-index: 0;
     top: -100%;
     left: 0;
     width: 100%;
     height: 100vh;
     max-height: 100%;
-    min-height: 275px;
     padding-top: 25px;
-    background-color: #EDF2EC;
     transition: transform 0.5s;
     background-color: #FFFFFF;
   }
   .nav .nav-list {
-    display: block;
+    display: none;
   }
 }
 
@@ -1060,6 +1061,9 @@ h3 {
     line-height: 5rem;
     color: #010201;
     transform: translateY(100%);
+  }
+  .nav__opened .nav-list {
+    display: block;
   }
 }
 
