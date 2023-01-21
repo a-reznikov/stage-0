@@ -1054,19 +1054,6 @@ h3 {
   }
 }
 
-@media (max-width: 380px) {
-  .nav__opened {
-    font-weight: 400;
-    font-size: 2.4rem;
-    line-height: 5rem;
-    color: #010201;
-    transform: translateY(100%);
-  }
-  .nav__opened .nav-list {
-    display: block;
-  }
-}
-
 .nav-list {
   display: flex;
   justify-content: space-between;
@@ -1076,6 +1063,19 @@ h3 {
   font-size: 1.6rem;
   line-height: 5rem;
   color: #010201;
+}
+
+@media (max-width: 380px) {
+  .nav__opened {
+    transform: translateY(100%);
+  }
+  .nav__opened .nav-list {
+    display: block;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 5rem;
+    color: #010201;
+  }
 }
 
 .nav-item {

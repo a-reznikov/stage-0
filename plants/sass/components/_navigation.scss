@@ -23,15 +23,6 @@
   }
 }
 
-.nav__opened {
-  @include media-mobile {
-    @include font(400, 2.4rem, 5.0rem, $color-nav-link);
-    transform: translateY(100%);
-    .nav-list {
-      display: block;
-    }
-  }
-}
 
 .nav-list {
   display: flex;
@@ -40,6 +31,16 @@
   padding: 0;
   @extend %font-second;
   @include font(400, 1.6rem, 5.0rem, $color-nav-link);
+}
+
+.nav__opened {
+  @include media-mobile {
+    transform: translateY(100%);
+    .nav-list {
+      display: block;
+      @include font(400, 2.0rem, 5.0rem, $color-nav-link);
+    }
+  }
 }
 
 .nav-item {
