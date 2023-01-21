@@ -4,6 +4,8 @@
 @import "abstracts/mixins";
 @import "abstracts/placeholders";
 
+@import "components/sections-colored";
+
 @import "base/base";
 @import "base/buttons";
 @import "base/hamburger";
@@ -14,7 +16,6 @@
 @import "layout/columns";
 @import "layout/footer";
 
-@import "components/sections-colored";
 @import "components/welcome";
 @import "components/about";
 @import "components/navigation";

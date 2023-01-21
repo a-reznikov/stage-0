@@ -27,7 +27,6 @@
 
 .price__button {
   padding: 11px 34px 11px 30px;
-  margin-bottom: 39px;
   background: $color-light;
   @extend %font-second;
   @include font(700, 2.0rem, 2.6rem, $color-brand-second);
@@ -35,12 +34,8 @@
   border-radius: 5px;
   cursor: pointer;
   transition: 0.5s;
-  @include media-tablet {
-    margin-bottom: 34px;
-  }
   @include media-mobile {
     padding: 6.5px 23.8px;
-    margin-bottom: 0;
     @include font(700, 1.5rem, 2.0rem, $color-brand-second);
   }
 }
