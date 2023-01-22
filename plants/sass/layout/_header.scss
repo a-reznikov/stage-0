@@ -11,13 +11,13 @@
 .header__opened {
   @include media-tablet-mini {
     height: 100vh;
-    min-height: 275px;
+    min-height: 400px;
     background-color: $color-light;
     transition: background-color 1s;
   }
   @include media-mobile {
     height: 100vh;
-    min-height: 275px;
+    min-height: 400px;
     background-color: $color-light;
     transition: background-color 1s;
   }
