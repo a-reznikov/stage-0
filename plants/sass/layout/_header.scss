@@ -12,14 +12,14 @@
   @include media-tablet-mini {
     height: 100vh;
     min-height: 400px;
-    background-color: #FFFFFF;
+    background-color: $color-light;
     transition: background-color 1s;
     padding-bottom: 0;
   }
   @include media-mobile {
     height: 100vh;
     min-height: 400px;
-    background-color: #FFFFFF;
+    background-color: $color-light;
     transition: background-color 1s;
   }
 }

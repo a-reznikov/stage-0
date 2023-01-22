@@ -16,12 +16,12 @@
     max-height: 100%;
     padding-top: 25px;
     transition: transform 0.5s;
-    background-color: #FFFFFF;
+    background-color: $color-light;
     background-image: url(../assets/img/background/flower.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     @include media-mobile-height {
-      background-color: #FFFFFF;
+      background-color: $color-light;
       background-image: none;
     }
     .nav-list {
@@ -39,7 +39,7 @@
     max-height: 100%;
     padding-top: 25px;
     transition: transform 0.5s;
-    background-color: #FFFFFF;
+    background-color: $color-light;
     .nav-list {
       display: none;
     }
