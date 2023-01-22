@@ -14,6 +14,7 @@
     min-height: 400px;
     background-color: $color-light;
     transition: background-color 1s;
+    padding-bottom: 0;
   }
   @include media-mobile {
     height: 100vh;
