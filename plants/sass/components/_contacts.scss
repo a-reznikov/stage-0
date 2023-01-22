@@ -1,5 +1,8 @@
 .contacts {
   padding-top: 53px;
+  @include media-laptop-contacts {
+    padding-top: 40px;
+  }
   @include media-tablet {
     padding-top: 40px;
   }
@@ -12,6 +15,11 @@
 
 .contact__woman {
   max-width: 400px;
+  @include  media-laptop-contacts {
+    order: 3;
+    max-width: 300px;
+    margin-left: 20px;
+  }
   @include media-tablet {
     order: 3;
     max-width: 200px;
@@ -37,6 +45,9 @@
   margin-top: 7px;
   @extend %font-second;
   @include font(700, 4.0rem, 5.2rem, $color-brand-first);
+  @include media-laptop-contacts {
+    margin: 0 0 100px 0;
+  }
   @include media-tablet {
     margin: 0 0 100px 0;
   }
@@ -63,6 +74,11 @@
     cursor: pointer;
     background: $color-select;
   }
+  @include media-laptop-contacts {
+    order: 1;
+    margin: 0 0 120px 0;
+    width: 100%;
+  }
   @include media-tablet {
     order: 1;
     margin: 0 0 248.5px 0;
@@ -81,6 +97,15 @@
 }
 
 .contacts__column {
+  @include media-laptop-contacts {
+    display: flex;
+    flex-direction: column;
+    >* {
+      @include media-laptop-contacts {
+        align-self: center;
+      }
+    }
+  }
   @include media-tablet {
     display: flex;
     flex-direction: column;

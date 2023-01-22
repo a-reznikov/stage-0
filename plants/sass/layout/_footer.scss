@@ -41,6 +41,10 @@
 .rss-text {
   max-width: 214px;
   padding-left: 4px;
+  @include media-laptop-service-footer {
+    max-width: 350px;
+    flex-basis: 40%;
+  }
   @include media-tablet {
     max-width: 211px;
     margin-bottom: 25px;

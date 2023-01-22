@@ -9,6 +9,12 @@
 }
 
 .header__opened {
+  @include media-tablet-mini {
+    height: 100vh;
+    min-height: 275px;
+    background-color: $color-light;
+    transition: background-color 1s;
+  }
   @include media-mobile {
     height: 100vh;
     min-height: 275px;
@@ -27,6 +33,10 @@
   display: flex;
   align-items: baseline;
   padding-bottom: 3px;
+  @include media-tablet-mini {
+    padding: 2px 0 0 0;
+    z-index: 2;
+  }
   @include media-mobile {
     padding: 2px 0 0 0;
     z-index: 2;
