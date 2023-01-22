@@ -687,6 +687,7 @@ h3 {
     min-height: 400px;
     background-color: #FFFFFF;
     transition: background-color 1s;
+    padding-bottom: 0;
   }
 }
 @media (max-width: 380px) {
