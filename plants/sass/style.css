@@ -840,6 +840,7 @@ h3 {
 
 .link-footer {
   text-decoration: none;
+  color: #000000;
 }
 .link-footer:visited {
   color: #000000;
@@ -1112,6 +1113,14 @@ h3 {
     background-size: cover;
     background-repeat: no-repeat;
   }
+}
+@media (max-width: 665px) and (max-height: 400px) {
+  .nav {
+    background-color: #FFFFFF;
+    background-image: none;
+  }
+}
+@media (max-width: 665px) {
   .nav .nav-list {
     display: none;
   }
