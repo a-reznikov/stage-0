@@ -3,7 +3,12 @@
   width: 40px;
   height: 26px;
   cursor: pointer;
-  @include media-mobile{
+  @include media-tablet-mini {
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+  @include media-mobile {
     display: block;
     position: relative;
     z-index: 2;
@@ -27,6 +32,24 @@
 }
 
 .hamburger__opened {
+  @include media-tablet-mini {
+    display: block;
+    .line__hiden {
+      opacity: 0;
+    }
+    .line__cross {
+      width: 50%;
+      height: 3px;
+      border-radius: 5px;
+      background-color: $color-brand-second;
+    }
+    .line__cross:nth-child(1) {
+      transform: translateX(10px) translateY(12px) rotate(45deg);
+    }
+    .line__cross:nth-child(4) {
+      transform: translateX(10px) translateY(12px) rotate(-45deg);
+    }
+  }
   @include media-mobile{
     display: block;
     .line__hiden {

@@ -38,6 +38,10 @@
     max-width: 346px;
     margin-top: 0px;
   }
+  @include media-tablet-mini {
+    flex-basis: 100%;
+    max-width: 549px;
+  }
   @include media-mobile {
     flex-basis: 100%;
   }
