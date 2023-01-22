@@ -15,11 +15,15 @@
     height: 100vh;
     max-height: 100%;
     padding-top: 25px;
-    transition: transform .5s;
-    background-color: $color-light;
+    transition: transform 0.5s;
+    background-color: #FFFFFF;
     background-image: url(../assets/img/background/flower.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    @include media-mobile-height {
+      background-color: #FFFFFF;
+      background-image: none;
+    }
     .nav-list {
       display: none;
     }
@@ -34,8 +38,8 @@
     height: 100vh;
     max-height: 100%;
     padding-top: 25px;
-    transition: transform .5s;
-    background-color: $color-light;
+    transition: transform 0.5s;
+    background-color: #FFFFFF;
     .nav-list {
       display: none;
     }
