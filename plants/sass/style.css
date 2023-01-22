@@ -684,7 +684,7 @@ h3 {
 @media (max-width: 665px) {
   .header__opened {
     height: 100vh;
-    min-height: 275px;
+    min-height: 400px;
     background-color: #FFFFFF;
     transition: background-color 1s;
   }
@@ -692,7 +692,7 @@ h3 {
 @media (max-width: 380px) {
   .header__opened {
     height: 100vh;
-    min-height: 275px;
+    min-height: 400px;
     background-color: #FFFFFF;
     transition: background-color 1s;
   }
@@ -1153,7 +1153,7 @@ h3 {
     display: block;
     font-weight: 400;
     font-size: 3.5rem;
-    line-height: 5rem;
+    line-height: 7rem;
     color: #010201;
   }
 }
@@ -1165,7 +1165,7 @@ h3 {
     display: block;
     font-weight: 400;
     font-size: 3.5rem;
-    line-height: 5rem;
+    line-height: 7rem;
     color: #010201;
   }
 }
@@ -1692,6 +1692,7 @@ h3 {
 @media (max-width: 768px) {
   .contacts-title {
     margin: 0 0 100px 0;
+    max-width: 100%;
   }
 }
 @media (max-width: 380px) {

@@ -50,6 +50,7 @@
   }
   @include media-tablet {
     margin: 0 0 100px 0;
+    max-width: 100%;
   }
   @include media-mobile {
     margin: 0 0 81px 0;
