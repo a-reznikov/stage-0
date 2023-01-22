@@ -57,6 +57,7 @@
 
 .link-footer {
   text-decoration: none;
+  color: $color-dark;
   @extend %transition;
   &:visited {
     color: $color-dark;
