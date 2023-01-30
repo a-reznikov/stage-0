@@ -575,6 +575,11 @@ h3 {
   color: #FFFFFF;
 }
 
+.button_active {
+  background: #E06733;
+  color: #FFFFFF;
+}
+
 .hamburger {
   display: none;
   width: 40px;
@@ -1347,6 +1352,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   margin-bottom: 55px;
+  transition: 0.8s;
 }
 @media (max-width: 768px) {
   .service__item {
@@ -1407,6 +1413,10 @@ h3 {
   .services__column > :last-child {
     margin-bottom: 0px;
   }
+}
+
+.blur {
+  filter: blur(2px);
 }
 
 .prices {
