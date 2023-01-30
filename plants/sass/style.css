@@ -510,6 +510,7 @@ h3 {
   font-size: 2rem;
   line-height: 2.6rem;
   color: #E06733;
+  background: #EDF2EC;
   border: 1px solid #E06733;
   border-radius: 5px;
   cursor: pointer;
@@ -531,6 +532,7 @@ h3 {
   font-size: 1.6rem;
   line-height: 1.6rem;
   color: #000000;
+  background: #EDF2EC;
   border: 2px solid #E06733;
   border-radius: 10px;
   cursor: pointer;
