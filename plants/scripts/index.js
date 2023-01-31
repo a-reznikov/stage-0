@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   const serviceButtons = document.querySelectorAll(".button");
   let arrayActiveButtons = [];
+  let serviceItemsBlur = document.querySelectorAll(".service__item")
   serviceButtons.forEach(button => {
     button.addEventListener("click", function() {
       if (arrayActiveButtons.length < 2) {
@@ -11,12 +12,16 @@ document.addEventListener("DOMContentLoaded", function() {
           button.classList.add('button_active');
           arrayActiveButtons.push(button);
         }
-        console.log(arrayActiveButtons);
-        console.log(arrayActiveButtons.length);
-      } else {
+        //console.log(arrayActiveButtons);
+        //console.log(arrayActiveButtons.length);
+      } else if (arrayActiveButtons.length >= 2) {
         if (button.classList.contains('button_active')) {
           button.classList.remove('button_active');
-          arrayActiveButtons.shift(button);
+          if (button === arrayActiveButtons[0]){
+            arrayActiveButtons.shift(button);
+          } else {
+            arrayActiveButtons.pop(button);
+          }        
         } else {
           let button_disable = String(arrayActiveButtons[0]['id']);
           document.querySelector(`.${button_disable}`).classList.remove('button_active');
@@ -24,49 +29,37 @@ document.addEventListener("DOMContentLoaded", function() {
           button.classList.add('button_active');
           arrayActiveButtons.push(button);
         }
-        console.log(arrayActiveButtons);
-        console.log(arrayActiveButtons.length);
+        //console.log(arrayActiveButtons);
+        //console.log(arrayActiveButtons.length);
+      } else {
+        serviceItemsBlur.forEach(item => {
+          item.classList.remove("blur");
+        });
       }
-      
+      if (arrayActiveButtons.length > 0) {
+        serviceItemsBlur.forEach(item => {
+          item.classList.add("blur");
+        });
+      } else {
+        serviceItemsBlur.forEach(item => {
+          item.classList.remove("blur");
+        });
+      }
+    for (nonBlurItems in arrayActiveButtons) {
+      //console.log("nonblur", arrayActiveButtons);
+      //console.log("nonblur", arrayActiveButtons[nonBlurItems]['id']);
+      let nonBlurItem = String(arrayActiveButtons[nonBlurItems]['id']);
+      // console.log(document.querySelector(`.${nonBlurItem}`));
+      serviceItemsBlur.forEach(item => {
+        if (item.classList.contains(`${nonBlurItem}`)) {
+          // console.log(item);
+          item.classList.remove('blur');
+        }
+      });
+    }
     });
   });
-  
 
-  // let exceptGardens = document.querySelectorAll(".service__item");
-  // document.getElementById("gardens").addEventListener("click", function() {
-  //   console.log('Нажата кнопка Gardens');
-  //   document.getElementById("gardens").classList.toggle("button_active");
-  //   if (document.getElementById("gardens").classList.contains("button_active")) {
-  //     exceptGardens.forEach(item => {
-  //       if (item.classList.contains("garden-care") === false) {
-  //         item.classList.add("blur");
-  //       }
-  //     })
-  //   } else {
-  //     exceptGardens.forEach(item => {
-  //       if (item.classList.contains("garden-care") === false) {
-  //         item.classList.remove("blur");
-  //       }
-  //     })
-  //   }
-  // })
-  // document.getElementById("lawn").addEventListener("click", function() {
-  //   console.log('Нажата кнопка Lawn');
-  //   document.getElementById("lawn").classList.toggle("button_active");
-  //   if (document.getElementById("lawn").classList.contains("button_active")) {
-  //     exceptGardens.forEach(item => {
-  //       if (item.classList.contains("lawn") === false) {
-  //         item.classList.add("blur");
-  //       }
-  //     })
-  //   } else {
-  //     exceptGardens.forEach(item => {
-  //       if (item.classList.contains("lawn") === false) {
-  //         item.classList.remove("blur");
-  //       }
-  //     })
-  //   }
-  // })
   document.getElementById("burger").addEventListener("click", function() {
     document.querySelector(".header").classList.toggle("header__opened");
     document.querySelector(".nav").classList.toggle("nav__opened");
