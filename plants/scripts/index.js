@@ -1,39 +1,72 @@
 document.addEventListener("DOMContentLoaded", function() {
-  let exceptGardens = document.querySelectorAll(".service__item");
-  document.getElementById("gardens").addEventListener("click", function() {
-    console.log('Нажата кнопка Gardens');
-    document.getElementById("gardens").classList.toggle("button_active");
-    if (document.getElementById("gardens").classList.contains("button_active")) {
-      exceptGardens.forEach(item => {
-        if (item.classList.contains("garden-care") === false) {
-          item.classList.add("blur");
+  const serviceButtons = document.querySelectorAll(".button");
+  let arrayActiveButtons = [];
+  serviceButtons.forEach(button => {
+    button.addEventListener("click", function() {
+      if (arrayActiveButtons.length < 2) {
+        if (button.classList.contains('button_active')) {
+          button.classList.remove('button_active');
+          arrayActiveButtons.shift(button);
+        } else {
+          button.classList.add('button_active');
+          arrayActiveButtons.push(button);
         }
-      })
-    } else {
-      exceptGardens.forEach(item => {
-        if (item.classList.contains("garden-care") === false) {
-          item.classList.remove("blur");
+        console.log(arrayActiveButtons);
+        console.log(arrayActiveButtons.length);
+      } else {
+        if (button.classList.contains('button_active')) {
+          button.classList.remove('button_active');
+          arrayActiveButtons.shift(button);
+        } else {
+          let button_disable = String(arrayActiveButtons[0]['id']);
+          document.querySelector(`.${button_disable}`).classList.remove('button_active');
+          arrayActiveButtons.shift();
+          button.classList.add('button_active');
+          arrayActiveButtons.push(button);
         }
-      })
-    }
-  })
-  document.getElementById("lawn").addEventListener("click", function() {
-    console.log('Нажата кнопка Lawn');
-    document.getElementById("lawn").classList.toggle("button_active");
-    if (document.getElementById("lawn").classList.contains("button_active")) {
-      exceptGardens.forEach(item => {
-        if (item.classList.contains("lawn") === false) {
-          item.classList.add("blur");
-        }
-      })
-    } else {
-      exceptGardens.forEach(item => {
-        if (item.classList.contains("lawn") === false) {
-          item.classList.remove("blur");
-        }
-      })
-    }
-  })
+        console.log(arrayActiveButtons);
+        console.log(arrayActiveButtons.length);
+      }
+      
+    });
+  });
+  
+
+  // let exceptGardens = document.querySelectorAll(".service__item");
+  // document.getElementById("gardens").addEventListener("click", function() {
+  //   console.log('Нажата кнопка Gardens');
+  //   document.getElementById("gardens").classList.toggle("button_active");
+  //   if (document.getElementById("gardens").classList.contains("button_active")) {
+  //     exceptGardens.forEach(item => {
+  //       if (item.classList.contains("garden-care") === false) {
+  //         item.classList.add("blur");
+  //       }
+  //     })
+  //   } else {
+  //     exceptGardens.forEach(item => {
+  //       if (item.classList.contains("garden-care") === false) {
+  //         item.classList.remove("blur");
+  //       }
+  //     })
+  //   }
+  // })
+  // document.getElementById("lawn").addEventListener("click", function() {
+  //   console.log('Нажата кнопка Lawn');
+  //   document.getElementById("lawn").classList.toggle("button_active");
+  //   if (document.getElementById("lawn").classList.contains("button_active")) {
+  //     exceptGardens.forEach(item => {
+  //       if (item.classList.contains("lawn") === false) {
+  //         item.classList.add("blur");
+  //       }
+  //     })
+  //   } else {
+  //     exceptGardens.forEach(item => {
+  //       if (item.classList.contains("lawn") === false) {
+  //         item.classList.remove("blur");
+  //       }
+  //     })
+  //   }
+  // })
   document.getElementById("burger").addEventListener("click", function() {
     document.querySelector(".header").classList.toggle("header__opened");
     document.querySelector(".nav").classList.toggle("nav__opened");
