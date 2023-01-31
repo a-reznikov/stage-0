@@ -51,3 +51,16 @@
   background: $color-brand-second;
   color: $color-light;
 }
+
+.price-item-button {
+  display: none;
+  max-width: 86px;
+  padding: 2.5px 20px;
+  margin-top: 12px;
+  @include font(700, 1.4rem, 2.0rem, $color-title);
+  background: $color-light;
+  border-style: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}

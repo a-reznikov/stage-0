@@ -391,7 +391,7 @@ h3,
   margin: 0;
 }
 
-.contact-item, .price-item, .link-footer {
+.contact-item, .price-opened, .price-item, .link-footer {
   transition: 0.5s;
 }
 
@@ -578,6 +578,22 @@ h3 {
 .button_active {
   background: #E06733;
   color: #FFFFFF;
+}
+
+.price-item-button {
+  display: none;
+  max-width: 86px;
+  padding: 2.5px 20px;
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #717171;
+  background: #FFFFFF;
+  border-style: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .hamburger {
@@ -1600,6 +1616,18 @@ h3 {
   height: 16px;
 }
 
+.price__accordion_opened {
+  display: none;
+  width: 16px;
+  height: 16px;
+}
+
+.item-upper {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
 .price__content {
   display: flex;
   flex-direction: column;
@@ -1643,6 +1671,71 @@ h3 {
   .price__leafs {
     display: none;
   }
+}
+
+.price-item-text {
+  display: none;
+  position: relative;
+  margin-top: 18px;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #717171;
+}
+
+.price-item-text::before {
+  display: block;
+  position: absolute;
+  top: -6px;
+  width: 164px;
+  height: 0.5px;
+  content: "";
+  background-color: #AEA1A1;
+}
+
+.price-item-cost {
+  display: none;
+  max-height: 17px;
+  margin-top: 6px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  color: #000000;
+}
+
+.price-opened {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 12px;
+  background-color: #D6E7D2;
+}
+.price-opened > * {
+  display: block;
+}
+.price-opened .item-upper {
+  display: flex;
+}
+.price-opened .item-upper .price__accordion_closed {
+  display: none;
+}
+.price-opened .item-upper .price__accordion_opened {
+  display: block;
+}
+
+.font-colored-price {
+  display: inline-block;
+  max-height: 17px;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.7rem;
+  color: #E06733;
+}
+
+.font-colored-dollors {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  color: #E06733;
 }
 
 .contacts {
