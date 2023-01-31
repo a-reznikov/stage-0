@@ -60,6 +60,29 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
+  const pricesItems = document.querySelectorAll(".price-item");
+  const priceDropDown = document.querySelectorAll(".item-upper");
+  priceDropDown.forEach(dropdown => {
+    dropdown.addEventListener("click", function() {
+      console.log(dropdown['id']);
+      pricesItems.forEach(priceItem => {
+        if(priceItem.classList.contains(`${dropdown['id']}`)) {
+          priceItem.classList.add("price-opened");
+        }
+      });
+      // if (dropdown.classList.contains("basics")) {
+      //   pricesItems.forEach(priceItem => {
+      //     if (priceItem.classList.contains("basics")) {
+      //       priceItem.classList.add("price-opened");
+      //     } else {
+      //       priceItem.classList.remove("price-opened");
+      //     }
+      // });
+      // }
+      
+  });
+});
+
   document.getElementById("burger").addEventListener("click", function() {
     document.querySelector(".header").classList.toggle("header__opened");
     document.querySelector(".nav").classList.toggle("nav__opened");
