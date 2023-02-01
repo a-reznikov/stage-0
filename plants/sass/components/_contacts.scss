@@ -240,3 +240,14 @@
     display: none;
   }
 }
+
+.phone-link {
+  text-decoration: none;
+  color: $color-title;
+  &:visited {
+    color: $color-title;
+  }
+  &:hover{
+    color: $color-brand-second;
+  }
+}

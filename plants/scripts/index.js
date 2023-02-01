@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const priceDropDown = document.querySelectorAll(".item-upper");
   priceDropDown.forEach(dropdown => {
     dropdown.addEventListener("click", function() {
-      console.log(dropdown['id']);
+      //console.log(dropdown['id']);
       pricesItems.forEach(priceItem => {
         if(priceItem.classList.contains(`${dropdown['id']}`)) {
           priceItem.classList.toggle("price-opened");
@@ -72,16 +72,6 @@ document.addEventListener("DOMContentLoaded", function() {
           priceItem.classList.remove("price-opened");
         }
       });
-      // if (dropdown.classList.contains("basics")) {
-      //   pricesItems.forEach(priceItem => {
-      //     if (priceItem.classList.contains("basics")) {
-      //       priceItem.classList.add("price-opened");
-      //     } else {
-      //       priceItem.classList.remove("price-opened");
-      //     }
-      // });
-      // }
-      
   });
   });
 
@@ -97,8 +87,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const cardOpened = document.querySelectorAll(".contact__selected");
   citySelect.forEach(city => {
     city.addEventListener("click", function() {
-      console.log(city['id']);
-      console.log(city.textContent);
+      //console.log(city['id']);
+      //console.log(city.textContent);
       cardOpened.forEach(card => {
         if (card.classList.contains(`${city['id']}`)) {
           document.querySelector(".contact-item-title").innerHTML = city.textContent;

@@ -2040,4 +2040,15 @@ h3 {
   display: none;
 }
 
+.phone-link {
+  text-decoration: none;
+  color: #717171;
+}
+.phone-link:visited {
+  color: #717171;
+}
+.phone-link:hover {
+  color: #E06733;
+}
+
 /*# sourceMappingURL=style.css.map */
