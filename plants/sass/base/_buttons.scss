@@ -64,3 +64,8 @@
   cursor: pointer;
   transition: 0.5s;
 }
+
+.price-item-button:hover {
+  background: $color-brand-second;
+  color: $color-light;
+}

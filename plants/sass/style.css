@@ -596,6 +596,11 @@ h3 {
   transition: 0.5s;
 }
 
+.price-item-button:hover {
+  background: #E06733;
+  color: #FFFFFF;
+}
+
 .hamburger {
   display: none;
   width: 40px;

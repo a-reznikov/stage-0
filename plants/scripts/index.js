@@ -67,7 +67,9 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log(dropdown['id']);
       pricesItems.forEach(priceItem => {
         if(priceItem.classList.contains(`${dropdown['id']}`)) {
-          priceItem.classList.add("price-opened");
+          priceItem.classList.toggle("price-opened");
+        } else {
+          priceItem.classList.remove("price-opened");
         }
       });
       // if (dropdown.classList.contains("basics")) {
