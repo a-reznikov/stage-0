@@ -391,7 +391,7 @@ h3,
   margin: 0;
 }
 
-.contact-item, .price-opened, .price-item, .link-footer {
+.city, .contact-item, .price-opened, .price-item, .link-footer {
   transition: 0.5s;
 }
 
@@ -1825,11 +1825,41 @@ h3 {
   }
 }
 
+.contact__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  margin-top: 95px;
+  flex-grow: 1;
+  max-width: 450px;
+}
+.contact__wrapper > * {
+  flex-basis: 100%;
+}
+@media (max-width: 1200px) {
+  .contact__wrapper {
+    order: 1;
+    margin: 0 0 120px 0;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .contact__wrapper {
+    order: 1;
+    margin: 0 0 248.5px 0;
+    width: 100%;
+  }
+}
+@media (max-width: 380px) {
+  .contact__wrapper {
+    max-width: 300px;
+    margin: 0 0 131.75px 0;
+  }
+}
+
 .contact-item {
   display: flex;
   justify-content: space-between;
-  align-self: flex-start;
-  margin-top: 95px;
   flex-grow: 1;
   max-width: 450px;
   padding: 5px 35px 5px 20px;
@@ -1839,27 +1869,10 @@ h3 {
 }
 .contact-item:hover {
   cursor: pointer;
-  background: #C1E698;
-}
-@media (max-width: 1200px) {
-  .contact-item {
-    order: 1;
-    margin: 0 0 120px 0;
-    width: 100%;
-  }
-}
-@media (max-width: 768px) {
-  .contact-item {
-    order: 1;
-    margin: 0 0 248.5px 0;
-    width: 100%;
-  }
 }
 @media (max-width: 380px) {
   .contact-item {
     padding: 5px 20px 5px 20px;
-    max-width: 300px;
-    margin: 0 0 131.75px 0;
   }
 }
 
@@ -1892,6 +1905,56 @@ h3 {
   .contacts__column > * {
     align-self: center;
   }
+}
+
+.contact__accordion_opened {
+  display: none;
+}
+
+.city {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 3.5rem;
+  color: #499A18;
+  letter-spacing: 0.05em;
+  margin-bottom: 11px;
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.city:hover {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 3.5rem;
+  color: #717171;
+  border-bottom: 1px solid #717171;
+  cursor: pointer;
+}
+
+.city__select {
+  display: none;
+  flex-direction: column;
+  padding: 27px 50px 30px 26px;
+  background-color: #DCE9D9;
+}
+.city__select :last-child {
+  margin-bottom: 0px;
+}
+
+.contact__wrapper-opened .city__select {
+  display: flex;
+}
+.contact__wrapper-opened .contact-item {
+  display: flex;
+  padding: 4px 35px 4px 20px;
+  background: #C1E698;
+  border: 1px solid #D6E7D2;
+  box-shadow: none;
+}
+.contact__wrapper-opened .contact__accordion_closed {
+  display: none;
+}
+.contact__wrapper-opened .contact__accordion_opened {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
