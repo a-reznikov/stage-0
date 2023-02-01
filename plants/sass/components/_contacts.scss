@@ -175,3 +175,56 @@
     display: block;
   }
 }
+
+.contact__selected {
+  display: flex;
+  padding: 17px 76px 31px 35px;
+  margin-top: 47px;
+  border: 1px solid $color-dark;
+  border-radius: 20px;
+  .contact__selected-left {
+    flex-grow: 1;
+    max-width: 129px;
+  }
+  .contact__selected-right {
+    flex-grow: 1;
+  }
+  .contact-lable {
+    display: block;
+    letter-spacing: 0.05em;
+    @include font(400, 1.6rem, 4.0rem, $color-dark);
+  }
+  .contact-info {
+    display: block;
+    letter-spacing: 0.05em;
+    @include font(400, 1.6rem, 4.0rem, $color-title);
+  }
+  .info-city {
+    padding-left: 6px;
+  }
+  .info-phone {
+    padding-left: 3px;
+  }
+  .info-adress {
+    padding-left: 3px;
+  }
+}
+
+.contact__wrapper-selected {
+  .city__select {
+    display: none;
+  }
+  .contact-item {
+    display: flex;
+    padding: 4px 35px 4px 20px;
+    background: $color-select;
+    border: 1px solid $color-form;
+    box-shadow: none;
+  }
+  .contact__accordion_closed {
+    display: block;
+  }
+  .contact__accordion_opened {
+    display: none;
+  }
+}

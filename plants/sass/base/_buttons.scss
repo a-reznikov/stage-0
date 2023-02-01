@@ -69,3 +69,15 @@
   background: $color-brand-second;
   color: $color-light;
 }
+
+.call__button {
+  margin-top: 18px;
+  padding: 6px 44.86px;
+  @extend %font-second;
+  @include font(700, 1.0rem, 1.2rem, $color-title);
+  background: $color-background;
+  border: 1px solid $color-brand-second;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}

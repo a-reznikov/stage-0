@@ -399,7 +399,7 @@ h3,
   font-family: "Inter", sans-serif;
 }
 
-.contacts-title, .nav-list, .logo__link, .price__button, .button, h2 {
+.contacts-title, .nav-list, .logo__link, .call__button, .price__button, .button, h2 {
   font-family: "Inika", serif;
 }
 
@@ -599,6 +599,20 @@ h3 {
 .price-item-button:hover {
   background: #E06733;
   color: #FFFFFF;
+}
+
+.call__button {
+  margin-top: 18px;
+  padding: 6px 44.86px;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: #717171;
+  background: #EDF2EC;
+  border: 1px solid #E06733;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .hamburger {
@@ -1955,6 +1969,63 @@ h3 {
 }
 .contact__wrapper-opened .contact__accordion_opened {
   display: block;
+}
+
+.contact__selected {
+  display: flex;
+  padding: 17px 76px 31px 35px;
+  margin-top: 47px;
+  border: 1px solid #000000;
+  border-radius: 20px;
+}
+.contact__selected .contact__selected-left {
+  flex-grow: 1;
+  max-width: 129px;
+}
+.contact__selected .contact__selected-right {
+  flex-grow: 1;
+}
+.contact__selected .contact-lable {
+  display: block;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 4rem;
+  color: #000000;
+}
+.contact__selected .contact-info {
+  display: block;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 4rem;
+  color: #717171;
+}
+.contact__selected .info-city {
+  padding-left: 6px;
+}
+.contact__selected .info-phone {
+  padding-left: 3px;
+}
+.contact__selected .info-adress {
+  padding-left: 3px;
+}
+
+.contact__wrapper-selected .city__select {
+  display: none;
+}
+.contact__wrapper-selected .contact-item {
+  display: flex;
+  padding: 4px 35px 4px 20px;
+  background: #C1E698;
+  border: 1px solid #D6E7D2;
+  box-shadow: none;
+}
+.contact__wrapper-selected .contact__accordion_closed {
+  display: block;
+}
+.contact__wrapper-selected .contact__accordion_opened {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
