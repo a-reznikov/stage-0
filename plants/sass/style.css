@@ -1972,7 +1972,7 @@ h3 {
 }
 
 .contact__selected {
-  display: flex;
+  display: none;
   padding: 17px 76px 31px 35px;
   margin-top: 47px;
   border: 1px solid #000000;
@@ -2013,6 +2013,18 @@ h3 {
 
 .contact__wrapper-selected .city__select {
   display: none;
+}
+.contact__wrapper-selected .contact__selected.canandaigua.card__opened {
+  display: flex;
+}
+.contact__wrapper-selected .contact__selected.new-york.card__opened {
+  display: flex;
+}
+.contact__wrapper-selected .contact__selected.yonkers.card__opened {
+  display: flex;
+}
+.contact__wrapper-selected .contact__selected.sherrill.card__opened {
+  display: flex;
 }
 .contact__wrapper-selected .contact-item {
   display: flex;

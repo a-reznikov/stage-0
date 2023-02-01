@@ -83,7 +83,33 @@ document.addEventListener("DOMContentLoaded", function() {
       // }
       
   });
-});
+  });
+
+  document.querySelector(".contact-item").addEventListener("click", function() {
+    document.querySelector(".contact__wrapper").classList.toggle("contact__wrapper-opened");
+    document.querySelector(".contact-item-title").innerHTML = 'City';
+    if (document.querySelector(".contact__wrapper").classList.contains("contact__wrapper-selected")) {
+      document.querySelector(".contact__wrapper").classList.add("contact__wrapper-opened");
+      document.querySelector(".contact__wrapper").classList.remove("contact__wrapper-selected");
+    }
+  });
+  const citySelect = document.querySelectorAll(".city");
+  const cardOpened = document.querySelectorAll(".contact__selected");
+  citySelect.forEach(city => {
+    city.addEventListener("click", function() {
+      console.log(city['id']);
+      console.log(city.textContent);
+      cardOpened.forEach(card => {
+        if (card.classList.contains(`${city['id']}`)) {
+          document.querySelector(".contact-item-title").innerHTML = city.textContent;
+          card.classList.add("card__opened");
+        } else {
+          card.classList.remove("card__opened");
+        }
+      });
+      document.querySelector(".contact__wrapper").classList.toggle("contact__wrapper-selected");
+    });
+  });
 
   document.getElementById("burger").addEventListener("click", function() {
     document.querySelector(".header").classList.toggle("header__opened");

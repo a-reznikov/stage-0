@@ -188,19 +188,19 @@
               <img src="assets/img/contacts/contact_woman.png" alt="contact photo woman" class="contact__woman_img">
             </div>
             <h2 class="contacts-title">Contact us</h2>
-            <div class="contact__wrapper contact__wrapper-opened contact__wrapper-selected">
+            <div class="contact__wrapper">
               <div class="contact-item">
                 <span class="contact-item-title">City</span>
                 <img src="assets/img/icons/accordion_contact_closed.svg" alt="accordion contact closed" class="contact__accordion_closed">
                 <img src="assets/img/icons/accordion_contact_opened.svg" alt="accordion contact closed" class="contact__accordion_opened">
               </div>
               <div class="city__select">
-                <span class="city canandaigua">Canandaigua, NY</span>
-                <span class="city new-york">New York City</span>
-                <span class="city yonkers">Yonkers, NY</span>
-                <span class="city sherrill">Sherrill, NY</span>
+                <span class="city canandaigua" id="canandaigua">Canandaigua, NY</span>
+                <span class="city new-york" id="new-york">New York City</span>
+                <span class="city yonkers" id="yonkers">Yonkers, NY</span>
+                <span class="city sherrill" id="sherrill">Sherrill, NY</span>
               </div>
-              <div class="contact__selected">
+              <div class="contact__selected canandaigua">
                 <div class="contact__selected-left">
                   <span class="contact-lable">City:</span>
                   <span class="contact-lable">Phone:</span>
@@ -210,6 +210,45 @@
                   <span class="contact-info info-city">Canandaigua, NY</span>
                   <span class="contact-info info-phone">+1	585	393 0001</span>
                   <span class="contact-info info-adress">151 Charlotte Street</span>
+                  <button class="call__button button_bordered">Call us</button>
+                </div>
+              </div>
+              <div class="contact__selected new-york">
+                <div class="contact__selected-left">
+                  <span class="contact-lable">City:</span>
+                  <span class="contact-lable">Phone:</span>
+                  <span class="contact-lable">Office adress:</span>
+                </div>
+                <div class="contact__selected-right">
+                  <span class="contact-info info-city">New York City</span>
+                  <span class="contact-info info-phone">+1	212	456 0002</span>
+                  <span class="contact-info info-adress">9 East 91st Street</span>
+                  <button class="call__button button_bordered">Call us</button>
+                </div>
+              </div>
+              <div class="contact__selected yonkers">
+                <div class="contact__selected-left">
+                  <span class="contact-lable">City:</span>
+                  <span class="contact-lable">Phone:</span>
+                  <span class="contact-lable">Office adress:</span>
+                </div>
+                <div class="contact__selected-right">
+                  <span class="contact-info info-city">Yonkers, NY</span>
+                  <span class="contact-info info-phone">+1	914	678 0003</span>
+                  <span class="contact-info info-adress">511 Warburton Ave</span>
+                  <button class="call__button button_bordered">Call us</button>
+                </div>
+              </div>
+              <div class="contact__selected sherrill">
+                <div class="contact__selected-left">
+                  <span class="contact-lable">City:</span>
+                  <span class="contact-lable">Phone:</span>
+                  <span class="contact-lable">Office adress:</span>
+                </div>
+                <div class="contact__selected-right">
+                  <span class="contact-info info-city">Sherrill, NY</span>
+                  <span class="contact-info info-phone">+1	315	908 0004</span>
+                  <span class="contact-info info-adress">14 WEST Noyes BLVD</span>
                   <button class="call__button button_bordered">Call us</button>
                 </div>
               </div>
