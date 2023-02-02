@@ -1203,31 +1203,6 @@ h3 {
   color: #010201;
 }
 
-@media (max-width: 665px) {
-  .nav__opened {
-    transform: translateY(550px);
-  }
-  .nav__opened .nav-list {
-    display: block;
-    font-weight: 400;
-    font-size: 3.5rem;
-    line-height: 7rem;
-    color: #010201;
-  }
-}
-@media (max-width: 380px) {
-  .nav__opened {
-    transform: translateY(550px);
-  }
-  .nav__opened .nav-list {
-    display: block;
-    font-weight: 400;
-    font-size: 3.5rem;
-    line-height: 7rem;
-    color: #010201;
-  }
-}
-
 .nav-item {
   list-style: none;
 }
@@ -1252,6 +1227,40 @@ h3 {
   font-weight: 700;
   color: #E06733;
   transition: color 0.5s;
+}
+
+@media (max-width: 665px) {
+  .nav__opened {
+    transform: translateY(550px);
+  }
+  .nav__opened .nav-list {
+    display: block;
+  }
+  .nav__opened .nav-link {
+    font-weight: 700;
+    font-size: 3.5rem;
+    line-height: 7rem;
+    color: #636060;
+  }
+  .nav__opened .nav-link:hover {
+    font-weight: 700;
+    color: #E06733;
+    transition: color 0.5s;
+  }
+}
+@media (max-width: 380px) {
+  .nav__opened {
+    transform: translateY(550px);
+  }
+  .nav__opened .nav-list {
+    display: block;
+  }
+  .nav__opened .nav-link {
+    font-weight: 700;
+    font-size: 3.5rem;
+    line-height: 7rem;
+    color: #636060;
+  }
 }
 
 .service {

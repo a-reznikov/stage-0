@@ -56,23 +56,6 @@
   @include font(400, 1.6rem, 5.0rem, $color-nav-link);
 }
 
-.nav__opened {
-  @include media-tablet-mini {
-    transform: translateY(550px);
-    .nav-list {
-      display: block;
-      @include font(400, 3.5rem, 7.0rem, $color-nav-link);
-    }
-  }
-  @include media-mobile {
-    transform: translateY(550px);
-    .nav-list {
-      display: block;
-      @include font(400, 3.5rem, 7.0rem, $color-nav-link);
-    }
-  }
-}
-
 .nav-item {
   list-style: none;
   @include media-tablet-mini {
@@ -93,4 +76,30 @@
   font-weight: 700;
   color: $color-brand-second;
   transition: color 0.5s;
+}
+
+.nav__opened {
+  @include media-tablet-mini {
+    transform: translateY(550px);
+    .nav-list {
+      display: block;
+    }
+    .nav-link {
+      @include font(700, 3.5rem, 7.0rem, $color-text);
+    }
+    .nav-link:hover {
+      font-weight: 700;
+      color: $color-brand-second;
+      transition: color 0.5s;
+    }
+  }
+  @include media-mobile {
+    transform: translateY(550px);
+    .nav-list {
+      display: block;
+    }
+    .nav-link {
+      @include font(700, 3.5rem, 7.0rem, $color-text);
+    }
+  }
 }
