@@ -10,14 +10,14 @@
 
 .header__opened {
   @include media-tablet-mini {
-    height: 100vh;
+    height: 550px;
     min-height: 400px;
     background-color: $color-light;
     transition: background-color 1s;
     padding-bottom: 0;
   }
   @include media-mobile {
-    height: 100vh;
+    height: 550px;
     min-height: 400px;
     background-color: $color-light;
     transition: background-color 1s;

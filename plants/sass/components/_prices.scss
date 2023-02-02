@@ -30,7 +30,6 @@
 
 .price {
   max-width: 332px;
-  max-height: 391px;
   @include media-tablet-mini {
     margin: auto;
   }
@@ -105,12 +104,7 @@
   &:last-child {
     margin-bottom: 0;
   }
-  &:hover {
-    cursor: pointer;
-    background: $color-form;
-  }
   @include media-mobile {
-    align-items: flex-end;
     padding: 15.91px 40px 15.91px 30px;
     @include font(700, 1.5rem, 2.0rem, $color-dark);
     margin-bottom: 13.92px;
@@ -124,6 +118,22 @@
 .price__accordion_closed {
   width: 16px;
   height: 16px;
+}
+
+.price__accordion_opened {
+  display: none;
+  width: 16px;
+  height: 16px;
+}
+
+
+.item-upper {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .price__content {
@@ -160,4 +170,59 @@
     display: none;
   }
 
+}
+
+.price-item-text {
+  display: none;
+  position: relative;
+  margin-top: 18px;
+  max-width: 164px;
+  @include font(300, 1.0rem, 1.0rem, $color-title);
+}
+
+.price-item-text::before {
+  display: block;
+  position: absolute;
+  top: -6px;
+  width: 100%;
+  height: 0.5px;
+  content: '';
+  background-color: $color-line;
+}
+
+.price-item-cost {
+  display: none;
+  max-height: 17px;
+  margin-top: 6px;
+  @include font(400, 1.2rem, 1.7rem, $color-dark);
+}
+
+.price-opened {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 12px;
+  background-color: $color-form;
+  @extend %transition;
+  >* {
+    display: block;
+  }
+  .item-upper {
+    display: flex;
+    .price__accordion_closed {
+      display: none;
+    }
+    .price__accordion_opened {
+      display: block;
+    }
+  }
+}
+
+.font-colored-price {
+  display: inline-block;
+  max-height: 17px;
+  @include font(700, 1.6rem, 1.7rem, $color-brand-second);
+}
+
+.font-colored-dollors {
+  @include font(700, 1.2rem, 1.7rem, $color-brand-second);
 }

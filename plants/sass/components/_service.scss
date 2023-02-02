@@ -114,6 +114,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 55px;
+  transition: 0.8s;
   @include media-tablet {
     margin-bottom: 38px;
   }
@@ -163,4 +164,8 @@
       margin-bottom: 0px;
     }
   }
+}
+
+.blur  {
+  filter:blur(2px);
 }
