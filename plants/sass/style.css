@@ -730,7 +730,7 @@ h3 {
 
 @media (max-width: 665px) {
   .header__opened {
-    height: 100vh;
+    height: 550px;
     min-height: 400px;
     background-color: #FFFFFF;
     transition: background-color 1s;
@@ -739,7 +739,7 @@ h3 {
 }
 @media (max-width: 380px) {
   .header__opened {
-    height: 100vh;
+    height: 550px;
     min-height: 400px;
     background-color: #FFFFFF;
     transition: background-color 1s;
@@ -1147,11 +1147,11 @@ h3 {
     display: block;
     position: absolute;
     z-index: 0;
-    top: -100%;
+    top: -550px;
     left: 0;
     max-width: 665px;
     width: 100%;
-    height: 100vh;
+    height: 550px;
     max-height: 100%;
     padding-top: 25px;
     transition: transform 0.5s;
@@ -1177,10 +1177,10 @@ h3 {
     display: block;
     position: absolute;
     z-index: 0;
-    top: -100%;
+    top: -550px;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 550px;
     max-height: 100%;
     padding-top: 25px;
     transition: transform 0.5s;
@@ -1204,7 +1204,7 @@ h3 {
 
 @media (max-width: 665px) {
   .nav__opened {
-    transform: translateY(100%);
+    transform: translateY(550px);
   }
   .nav__opened .nav-list {
     display: block;
@@ -1216,7 +1216,7 @@ h3 {
 }
 @media (max-width: 380px) {
   .nav__opened {
-    transform: translateY(100%);
+    transform: translateY(550px);
   }
   .nav__opened .nav-list {
     display: block;
