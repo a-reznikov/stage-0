@@ -570,11 +570,12 @@ h3 {
   }
 }
 
-.button_bordered:hover {
-  background: #E06733;
-  color: #FFFFFF;
+@media (min-width: 769px) {
+  .button_bordered:hover {
+    background: #E06733;
+    color: #FFFFFF;
+  }
 }
-
 .button_active {
   background: #E06733;
   color: #FFFFFF;
@@ -1152,7 +1153,7 @@ h3 {
     max-width: 665px;
     width: 100%;
     height: 550px;
-    max-height: 100%;
+    max-height: 550px;
     padding-top: 25px;
     transition: transform 0.5s;
     background-color: #FFFFFF;
@@ -1181,7 +1182,7 @@ h3 {
     left: 0;
     width: 100%;
     height: 550px;
-    max-height: 100%;
+    max-height: 550px;
     padding-top: 25px;
     transition: transform 0.5s;
     background-color: #FFFFFF;
@@ -1200,31 +1201,6 @@ h3 {
   font-size: 1.6rem;
   line-height: 5rem;
   color: #010201;
-}
-
-@media (max-width: 665px) {
-  .nav__opened {
-    transform: translateY(550px);
-  }
-  .nav__opened .nav-list {
-    display: block;
-    font-weight: 400;
-    font-size: 3.5rem;
-    line-height: 7rem;
-    color: #010201;
-  }
-}
-@media (max-width: 380px) {
-  .nav__opened {
-    transform: translateY(550px);
-  }
-  .nav__opened .nav-list {
-    display: block;
-    font-weight: 400;
-    font-size: 3.5rem;
-    line-height: 7rem;
-    color: #010201;
-  }
 }
 
 .nav-item {
@@ -1251,6 +1227,40 @@ h3 {
   font-weight: 700;
   color: #E06733;
   transition: color 0.5s;
+}
+
+@media (max-width: 665px) {
+  .nav__opened {
+    transform: translateY(550px);
+  }
+  .nav__opened .nav-list {
+    display: block;
+  }
+  .nav__opened .nav-link {
+    font-weight: 700;
+    font-size: 3.5rem;
+    line-height: 7rem;
+    color: #636060;
+  }
+  .nav__opened .nav-link:hover {
+    font-weight: 700;
+    color: #E06733;
+    transition: color 0.5s;
+  }
+}
+@media (max-width: 380px) {
+  .nav__opened {
+    transform: translateY(550px);
+  }
+  .nav__opened .nav-list {
+    display: block;
+  }
+  .nav__opened .nav-link {
+    font-weight: 700;
+    font-size: 3.5rem;
+    line-height: 7rem;
+    color: #636060;
+  }
 }
 
 .service {
