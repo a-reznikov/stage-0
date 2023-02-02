@@ -80,4 +80,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: 0.5s;
+  @include media-mobile {
+    padding: 6px 30px;
+  }
 }

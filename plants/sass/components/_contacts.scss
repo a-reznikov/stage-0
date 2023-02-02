@@ -208,6 +208,15 @@
   .info-adress {
     padding-left: 3px;
   }
+  @include media-mobile-max {
+    padding: 17px 15px 31px 15px;
+    .contact-lable {
+      @include font(400, 1.4rem, 4.0rem, $color-dark);
+    }
+    .contact-info {
+      @include font(400, 1.4rem, 4.0rem, $color-title);
+    }
+  }
 }
 
 .contact__wrapper-selected {

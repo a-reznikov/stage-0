@@ -30,7 +30,6 @@
 
 .price {
   max-width: 332px;
-  max-height: 391px;
   @include media-tablet-mini {
     margin: auto;
   }
@@ -106,7 +105,6 @@
     margin-bottom: 0;
   }
   @include media-mobile {
-    align-items: flex-end;
     padding: 15.91px 40px 15.91px 30px;
     @include font(700, 1.5rem, 2.0rem, $color-dark);
     margin-bottom: 13.92px;
@@ -178,6 +176,7 @@
   display: none;
   position: relative;
   margin-top: 18px;
+  max-width: 164px;
   @include font(300, 1.0rem, 1.0rem, $color-title);
 }
 
@@ -185,7 +184,7 @@
   display: block;
   position: absolute;
   top: -6px;
-  width: 164px;
+  width: 100%;
   height: 0.5px;
   content: '';
   background-color: $color-line;
