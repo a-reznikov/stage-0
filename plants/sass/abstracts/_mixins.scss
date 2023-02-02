@@ -36,3 +36,7 @@
 @mixin media-mobile-height {
   @media (max-height: $mobile-height) { @content; }
 }
+
+@mixin media-tablet-min {
+  @media (min-width: $tablet-width-min) { @content; }
+}
