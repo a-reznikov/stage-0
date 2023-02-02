@@ -42,9 +42,11 @@
   }
 }
 
-.button_bordered:hover {
-  background: $color-brand-second;
-  color: $color-light;
+@include media-tablet-min {
+  .button_bordered:hover {
+    background: $color-brand-second;
+    color: $color-light;
+  }
 }
 
 .button_active {
