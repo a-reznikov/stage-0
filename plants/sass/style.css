@@ -1646,6 +1646,7 @@ h3 {
 
 .price__accordion_opened {
   display: none;
+  align-self: flex-end;
   width: 16px;
   height: 16px;
 }
@@ -1961,7 +1962,7 @@ h3 {
 .city__select {
   display: none;
   flex-direction: column;
-  padding: 27px 50px 30px 26px;
+  padding: 30px 50px 27px 26px;
   background-color: #DCE9D9;
 }
 .city__select :last-child {
@@ -2069,6 +2070,12 @@ h3 {
 }
 .contact__wrapper-selected .contact__accordion_opened {
   display: none;
+}
+.contact__wrapper-selected .contact-item-title {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 4rem;
+  color: #717171;
 }
 
 .phone-link {
