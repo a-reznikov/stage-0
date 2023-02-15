@@ -1,0 +1,1 @@
+export const time = (a, b) => a + b;
