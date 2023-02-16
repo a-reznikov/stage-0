@@ -6,6 +6,9 @@ const time = document.querySelector('.time');
 const dateFull = document.querySelector('.date');
 const greeting = document.querySelector('.greeting');
 const inputName = document.querySelector('.name');
+const body = document.querySelector('body');
+const slideNext = document.querySelector('.slide-next');
+const slidePrev = document.querySelector('.slide-prev');
 
 function showTime() {
   const date = new Date();
@@ -55,6 +58,49 @@ window.addEventListener('beforeunload', setLocalStorage);
 
 
 //Slider
+let randomNum = Math.floor(Math.random() * 20 + 1);
+
+function getRandomNum(num) {
+  let numLen = String(num).length;
+  if (numLen < 2) {
+    randomNum = String('0' + num);
+    return randomNum;
+  } else {
+    return randomNum;
+  }
+}
+
+function setBg(timeDay, numberPicture) {
+  const img = new Image();
+  img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeDay}/${numberPicture}.jpg`;
+  img.onload = () => {      
+    body.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeDay}/${numberPicture}.jpg')`;
+  }; 
+}
+
+setBg(getTimeOfDay(), getRandomNum(randomNum));
+
+function getSlideNext() {
+  randomNum = Number(getRandomNum(randomNum)) + 1;
+  if (randomNum > 20) {
+    randomNum = 1;
+  }
+  setBg(getTimeOfDay(), getRandomNum(randomNum));
+}
+
+function getSlidePrev() {
+  randomNum = Number(getRandomNum(randomNum)) - 1;
+  if (randomNum < 1) {
+    randomNum = 20;
+  }
+  setBg(getTimeOfDay(), getRandomNum(randomNum));
+}
+
+slideNext.addEventListener('click', getSlideNext);
+slidePrev.addEventListener('click', getSlidePrev);
+
+
+//Weather
 
 
 
