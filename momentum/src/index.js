@@ -28,16 +28,18 @@ function getTimeOfDay() {
   let timeOfDay = '';
   switch(dayPart) {
     case 1:  timeOfDay = "morning ";
-      break;
+      return timeOfDay;
     case 2:  timeOfDay = "afternoon";
-      break;
+    return timeOfDay;
     case 3:  timeOfDay = "evening";
-      break;
+    return timeOfDay;
     case 0:  timeOfDay = "night";
-      break;
+    return timeOfDay;
   }
-  greeting.textContent = `Good ${timeOfDay}`;
 }
+
+greeting.textContent = `Good ${getTimeOfDay()}`;
+
 
 function getLocalStorage() {
   if(localStorage.getItem('name')) {
@@ -53,5 +55,6 @@ window.addEventListener('beforeunload', setLocalStorage);
 
 
 //Slider
+
 
 
