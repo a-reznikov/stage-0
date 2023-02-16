@@ -101,6 +101,34 @@ slidePrev.addEventListener('click', getSlidePrev);
 
 
 //Weather
+const weatherIcon = document.querySelector('.weather-icon');
+const temperature = document.querySelector('.temperature');
+const weatherDescription = document.querySelector('.weather-description');
+const city = document.querySelector('.city');
+
+async function getWeather() {  
+  if (city.value === "") {
+    city.value = "Minsk"
+  }
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=bc50cc0ba8db1784f2c3e644ffa70527&units=metric`;
+  const res = await fetch(url);
+  const data = await res.json(); 
+  console.log(data.weather[0].id, data.weather[0].description, data.main.temp);
+
+  weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+  temperature.textContent = `${data.main.temp}°C`;
+  weatherDescription.textContent = data.weather[0].description;
+}
+
+function choozeCity(e) {
+  if (e.code === "Enter") {
+    console.log(city.value);
+    getWeather();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', getWeather);
+city.addEventListener('keypress', choozeCity);
 
 
 
