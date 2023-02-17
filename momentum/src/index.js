@@ -30,7 +30,7 @@ function getTimeOfDay() {
   let dayPart = Math.floor(hours / 6);
   let timeOfDay = '';
   switch(dayPart) {
-    case 1:  timeOfDay = "morning ";
+    case 1:  timeOfDay = "morning";
       return timeOfDay;
     case 2:  timeOfDay = "afternoon";
     return timeOfDay;
@@ -104,6 +104,8 @@ slidePrev.addEventListener('click', getSlidePrev);
 const weatherIcon = document.querySelector('.weather-icon');
 const temperature = document.querySelector('.temperature');
 const weatherDescription = document.querySelector('.weather-description');
+const wind = document.querySelector('.wind');
+const humidity = document.querySelector('.humidity');
 const city = document.querySelector('.city');
 
 async function getWeather() {  
@@ -116,8 +118,10 @@ async function getWeather() {
   console.log(data.weather[0].id, data.weather[0].description, data.main.temp);
 
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
-  temperature.textContent = `${data.main.temp}°C`;
+  temperature.textContent = `${Math.round(data.main.temp)} °C`;
   weatherDescription.textContent = data.weather[0].description;
+  wind.textContent = `Wind speed: ${Math.round(data.wind.speed)} m/s`;
+  humidity.textContent = `Humidity: ${data.main.humidity} %`;
 }
 
 function choozeCity(e) {
