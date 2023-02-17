@@ -134,5 +134,24 @@ function choozeCity(e) {
 document.addEventListener('DOMContentLoaded', getWeather);
 city.addEventListener('keypress', choozeCity);
 
+//Quote
 
+const quote = document.querySelector('.quote');
+const author = document.querySelector('.author');
+const changeQuote = document.querySelector('.change-quote');
+
+async function getQuotes() {  
+  const quotes = 'src/assets/quotes/quotes.json';
+  const res = await fetch(quotes);
+  const data = await res.json(); 
+  let randomQuote = Math.floor(Math.random() * 99);
+  console.log(data.quotes[randomQuote]);
+  quote.textContent = data.quotes[randomQuote].quote;
+  author.textContent = data.quotes[randomQuote].author;
+}
+
+document.addEventListener('DOMContentLoaded', getQuotes);
+changeQuote.addEventListener('click', getQuotes);
+
+//Player
 
