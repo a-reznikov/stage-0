@@ -10,10 +10,27 @@
 <body>
   <header class="header">
     <div class="player">
-      <div class="player-controls">
-        <button class="play-prev player-icon"></button>
-        <button class="play player-icon"></button>
-        <button class="play-next player-icon"></button>
+      <div class="player-panel">
+        <div class="player-controls">
+          <button class="play-prev player-icon"></button>
+          <button class="play player-icon"></button>
+          <button class="play-next player-icon"></button>
+        </div>
+        <div class="volume-container">
+          <div class="volume-line">
+            <div class="volume-progress"></div>
+          </div>
+          <div class="volume-button">
+            <div class="volume player-icon ico-play"></div>
+          </div>
+        </div>
+      </div>
+      <div class="music-play-now">Music Play Now</div>
+      <div class="time-line"></div>
+      <div class="music-time">
+        <div class="current-time">0:00</div>
+        <div class="fortime">|</div>
+        <div class="music-length"></div>
       </div>
       <ul class="play-list"></ul>
     </div>

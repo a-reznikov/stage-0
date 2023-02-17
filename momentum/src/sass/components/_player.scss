@@ -1,10 +1,28 @@
+.player {
+  width: 270px;
+}
+
+.player-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
 .player-controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 120px;
-  margin-bottom: 28px;
+  width: 50%;
 }
+
+.volume-container {
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+}
+
+
 
 .play-list {
   text-align: left;
@@ -52,4 +70,22 @@
 
 .play-next {
   background-image: url("../assets/svg/play-next.svg");
+}
+
+.time-line {
+  background: $color-light;
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  opacity: .8;
+}
+
+.volume-button {
+  align-self: flex-end;
+  .ico-play {
+    background-image: url("../assets/svg/volume_up.svg");
+  }
+  .ico-mute {
+    background-image: url("../assets/svg/volume_mute.svg");
+  }
 }

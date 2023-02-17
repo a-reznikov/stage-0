@@ -154,6 +154,8 @@ document.addEventListener('DOMContentLoaded', getQuotes);
 changeQuote.addEventListener('click', getQuotes);
 
 //Player
+const player = document.querySelector(".player");
+console.log(player);
 console.log('playList.length', playList.length);
 let playListArray = document.querySelector('.play-list');
 let isPlay = false;
@@ -210,9 +212,28 @@ function nextAudion() {
   playAudio();
 }
 
+const volumeButton = player.querySelector(".volume");
+console.log(volumeButton);
+audio.muted = false;
+
+function volumeMute() {
+  console.log("click mute")
+  if (audio.muted === false) {
+    volumeButton.classList.remove("ico-play");
+    volumeButton.classList.add("ico-mute");
+    audio.muted = true;
+  } else {
+    volumeButton.classList.remove("ico-mute");
+    volumeButton.classList.add("ico-play");
+    audio.muted = false;
+  }
+}
+
 
 play.addEventListener('click', playAudio);
 playPrev.addEventListener('click', prevAudion);
 playNext.addEventListener('click', nextAudion);
+volumeButton.addEventListener('click', volumeMute);
+
 
 //
