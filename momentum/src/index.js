@@ -1,4 +1,4 @@
-//import { time } from 'scripts/time';
+import playList from './scripts/playList';
 
 //Time and Date
 console.log("test");
@@ -154,4 +154,65 @@ document.addEventListener('DOMContentLoaded', getQuotes);
 changeQuote.addEventListener('click', getQuotes);
 
 //Player
+console.log('playList.length', playList.length);
+let playListArray = document.querySelector('.play-list');
+let isPlay = false;
+let playNum = 0;
 
+playList.forEach(element => {
+  const li = document.createElement('li');
+  li.classList.add('play-item');
+  li.textContent = element.title;
+  playListArray.append(li);
+  console.log(element.title);
+});
+
+const play = document.querySelector('.play');
+const playPrev = document.querySelector('.play-prev');
+const playNext = document.querySelector('.play-next');
+const audio = new Audio();
+
+function playAudio() {
+  console.log(playList[playNum]);
+  if (isPlay === false) {
+    audio.src = playList[playNum].src;
+    audio.currentTime = 0;
+    audio.play();
+    play.classList.add('pause');
+    isPlay = true;
+    console.log("play");
+  } else {
+    audio.pause();
+    play.classList.remove('pause');
+    isPlay = false;
+    console.log("pause");
+  }
+
+}
+
+function prevAudion() {
+  if (playNum === 0) {
+    playNum = playList.length - 1;
+  } else {
+    playNum = playNum - 1;
+  }
+  isPlay = false;
+  playAudio();
+}
+
+function nextAudion() {
+  if (playNum === playList.length - 1) {
+    playNum = 0;
+  } else {
+    playNum = playNum + 1;
+  }
+  isPlay = false;
+  playAudio();
+}
+
+
+play.addEventListener('click', playAudio);
+playPrev.addEventListener('click', prevAudion);
+playNext.addEventListener('click', nextAudion);
+
+//
