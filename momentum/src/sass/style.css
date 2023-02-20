@@ -794,11 +794,17 @@ body {
 }
 
 .time-line {
+  margin: 10px 0;
   background: #ffffff;
   width: 100%;
   height: 10px;
   cursor: pointer;
   opacity: 0.8;
+}
+.time-line .time-progress {
+  background: #6165e7;
+  height: 100%;
+  width: 0%;
 }
 
 .volume-button {
@@ -824,6 +830,16 @@ body {
   background: #6165e7;
   height: 100%;
   width: 80%;
+}
+
+.music-time {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.fortime {
+  padding: 0 5px;
 }
 
 .weather {

@@ -156,9 +156,15 @@ changeQuote.addEventListener('click', getQuotes);
 //Player
 const player = document.querySelector(".player");
 const volumeLine = document.querySelector(".volume-line");
+const timeLine = document.querySelector(".time-line");
+const timeProgress = document.querySelector(".time-progress");
+const currentTime = document.querySelector(".current-time");
+const musicLength = document.querySelector(".music-length");
+
 console.log(player);
 console.log('playList.length', playList.length);
 let playListArray = document.querySelector('.play-list');
+
 let isPlay = false;
 let playNum = 0;
 
@@ -173,10 +179,12 @@ playList.forEach(element => {
 const play = document.querySelector('.play');
 const playPrev = document.querySelector('.play-prev');
 const playNext = document.querySelector('.play-next');
+const musicPlayNow = document.querySelector('.music-play-now');
 const audio = new Audio();
 
 function playAudio() {
-  console.log(playList[playNum]);
+  console.log('playList[playNum]', playList[playNum].title);
+  musicPlayNow.textContent =  playList[playNum].title;
   if (isPlay === false) {
     audio.src = playList[playNum].src;
     audio.currentTime = 0;
@@ -234,14 +242,38 @@ function volumeMute() {
 
 //Volume change
 function volumeChange(e) {
-  const lineWidth = window.getComputedStyle(volumeLine).width;
-  console.log('lineWidth', lineWidth);
-  const newlineWidth = e.offsetX / parseInt(lineWidth);
-  console.log('newlineWidth', newlineWidth);
-  audio.volume = newlineWidth;
-  player.querySelector('.volume-progress').style.width = (newlineWidth * 100) + '%';
+  const volumeLineWidth = window.getComputedStyle(volumeLine).width;
+  const newVolumeLineWidth = e.offsetX / parseInt(volumeLineWidth);
+  audio.volume = newVolumeLineWidth;
+  player.querySelector('.volume-progress').style.width = (newVolumeLineWidth * 100) + '%';
 }
 
+
+//Time change
+function timeChange(e) {
+  const timeLineWidth = window.getComputedStyle(timeLine).width;
+  const newTimeLineWidth = e.offsetX / parseInt(timeLineWidth) * audio.duration;
+  audio.currentTime = newTimeLineWidth;
+}
+
+//Time progress
+function ChangeTimeProgress() {
+  timeProgress.style.width = audio.currentTime / audio.duration * 100 + "%";
+  currentTime.textContent = converteTime(audio.currentTime);
+  if (isPlay === false) {  
+    musicLength.textContent = "0:00"
+  } else {
+    musicLength.textContent = converteTime(audio.duration);
+  }
+}
+
+
+function converteTime(time) {
+  let seconds = Math.floor(time % 60);
+  let minutes = Math.floor(time / 60);
+  let timeplay = `${minutes}:${String(seconds).padStart(2, 0)}`;
+  return timeplay;
+}
 
 
 
@@ -250,5 +282,7 @@ playPrev.addEventListener('click', prevAudion);
 playNext.addEventListener('click', nextAudion);
 volumeButton.addEventListener('click', volumeMute);
 volumeLine.addEventListener('click', (e) => { volumeChange(e); }, false);
+timeLine.addEventListener('click', (e) => { timeChange(e); }, false);
+setInterval(ChangeTimeProgress, 250);
 
 //

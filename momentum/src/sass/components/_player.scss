@@ -75,11 +75,17 @@
 }
 
 .time-line {
+  margin: 10px 0;
   background: $color-light;
   width: 100%;
   height: 10px;
   cursor: pointer;
   opacity: .8;
+  .time-progress {
+    background: $color-player;
+    height: 100%;
+    width: 0%;
+  }
 }
 
 .volume-button {
@@ -105,4 +111,14 @@
   background: $color-player;
   height: 100%;
   width: 80%;
+}
+
+.music-time {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.fortime {
+  padding: 0 5px;
 }
