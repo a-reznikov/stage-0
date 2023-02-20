@@ -34,18 +34,22 @@
   display: flex;
   opacity: .96;
   z-index: 2;
-  padding: 30px 40px;
   font-size: 2.4rem;
-  color: $color-text;
+  color: $color-title;
 }
 
 .settings__setup {
   display: flex;
+  padding: 30px 40px;
   flex-direction: column;
   text-align: left;
-  width: 30%;
+  width: 40%;
   font-weight: 500;
   border-right: 1px solid $color-text; 
+  .setup__general {
+    color: $color-title;
+    font-weight: 600;
+  }
   >* {
     margin-bottom: 24px;
     cursor: pointer;
@@ -63,5 +67,51 @@
 }
 
 .settings__options {
-  width: 70%;
+  width: 60%;
+  padding: 30px 40px;
+}
+
+.options__title-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  .options__title {
+    color: $color-title;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .options-description {
+    color: $color-text;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  .options-action {
+    font-size: 2.0rem;
+    color: $color-title;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+}
+
+.options__items {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: $color-text;
+  .items-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 2.0rem;
+    line-height: 4.8rem;
+    border-top: 1px solid $color-text; 
+    cursor: pointer;
+    &:hover {
+      color: $color-player;
+      opacity: 0.9;
+      transition: .3s;  
+    }
+  }
 }

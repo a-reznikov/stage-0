@@ -687,6 +687,56 @@ body {
   transform: scale(1.1);
 }
 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch .checkbox {
+  display: none;
+}
+
+.checkbox__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #606063;
+  transition: 0.3s;
+  border-radius: 34px;
+}
+.checkbox__slider:hover {
+  background-color: #6165e7;
+}
+.checkbox__slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #ffffff;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.checkbox:checked + .slider {
+  background-color: #6165e7;
+}
+
+.checkbox:focus + .slider {
+  box-shadow: 0 0 1px #6165e7;
+}
+
+.checkbox:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -1031,18 +1081,22 @@ body {
   display: flex;
   opacity: 0.96;
   z-index: 2;
-  padding: 30px 40px;
   font-size: 2.4rem;
   color: #070c24;
 }
 
 .settings__setup {
   display: flex;
+  padding: 30px 40px;
   flex-direction: column;
   text-align: left;
-  width: 30%;
+  width: 40%;
   font-weight: 500;
-  border-right: 1px solid #070c24;
+  border-right: 1px solid #606063;
+}
+.settings__setup .setup__general {
+  color: #070c24;
+  font-weight: 600;
 }
 .settings__setup > * {
   margin-bottom: 24px;
@@ -1060,7 +1114,53 @@ body {
 }
 
 .settings__options {
-  width: 70%;
+  width: 60%;
+  padding: 30px 40px;
+}
+
+.options__title-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.options__title-container .options__title {
+  color: #070c24;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.options__title-container .options-description {
+  color: #606063;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.options__title-container .options-action {
+  font-size: 2rem;
+  color: #070c24;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.options__items {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: #606063;
+}
+.options__items .items-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 2rem;
+  line-height: 4.8rem;
+  border-top: 1px solid #606063;
+  cursor: pointer;
+}
+.options__items .items-block:hover {
+  color: #6165e7;
+  opacity: 0.9;
+  transition: 0.3s;
 }
 
 /*# sourceMappingURL=style.css.map */
