@@ -155,6 +155,7 @@ changeQuote.addEventListener('click', getQuotes);
 
 //Player
 const player = document.querySelector(".player");
+const volumeLine = document.querySelector(".volume-line");
 console.log(player);
 console.log('playList.length', playList.length);
 let playListArray = document.querySelector('.play-list');
@@ -212,6 +213,7 @@ function nextAudion() {
   playAudio();
 }
 
+//Volume mute
 const volumeButton = player.querySelector(".volume");
 console.log(volumeButton);
 audio.muted = false;
@@ -230,10 +232,23 @@ function volumeMute() {
 }
 
 
+//Volume change
+function volumeChange(e) {
+  const lineWidth = window.getComputedStyle(volumeLine).width;
+  console.log('lineWidth', lineWidth);
+  const newlineWidth = e.offsetX / parseInt(lineWidth);
+  console.log('newlineWidth', newlineWidth);
+  audio.volume = newlineWidth;
+  player.querySelector('.volume-progress').style.width = (newlineWidth * 100) + '%';
+}
+
+
+
+
 play.addEventListener('click', playAudio);
 playPrev.addEventListener('click', prevAudion);
 playNext.addEventListener('click', nextAudion);
 volumeButton.addEventListener('click', volumeMute);
-
+volumeLine.addEventListener('click', (e) => { volumeChange(e); }, false);
 
 //

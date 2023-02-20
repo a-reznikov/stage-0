@@ -725,7 +725,8 @@ body {
 .player-panel {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  padding-left: 10px;
+  padding-right: 5px;
   margin-bottom: 10px;
 }
 
@@ -733,13 +734,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 50%;
+  width: 45%;
 }
 
 .volume-container {
   display: flex;
-  width: 30%;
-  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  padding-left: 15px;
 }
 
 .play-list {
@@ -801,12 +803,27 @@ body {
 
 .volume-button {
   align-self: flex-end;
+  padding: 0 5px;
 }
 .volume-button .ico-play {
   background-image: url("../assets/svg/volume_up.svg");
 }
 .volume-button .ico-mute {
   background-image: url("../assets/svg/volume_mute.svg");
+}
+
+.volume-line {
+  height: 16px;
+  flex-grow: 1;
+  background: #ffffff;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.volume-progress {
+  background: #6165e7;
+  height: 100%;
+  width: 80%;
 }
 
 .weather {

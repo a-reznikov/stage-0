@@ -5,7 +5,8 @@
 .player-panel {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  padding-left: 10px;
+  padding-right: 5px;
   margin-bottom: 10px;
 }
 
@@ -13,13 +14,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 50%;
+  width: 45%;
 }
 
 .volume-container {
   display: flex;
-  width: 30%;
-  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  padding-left: 15px;
 }
 
 
@@ -82,10 +84,25 @@
 
 .volume-button {
   align-self: flex-end;
+  padding: 0 5px;
   .ico-play {
     background-image: url("../assets/svg/volume_up.svg");
   }
   .ico-mute {
     background-image: url("../assets/svg/volume_mute.svg");
   }
+}
+
+.volume-line {
+  height: 16px;
+  flex-grow: 1;
+  background: $color-light;
+  cursor: pointer;
+  opacity: .8;
+}
+
+.volume-progress {
+  background: $color-player;
+  height: 100%;
+  width: 80%;
 }
