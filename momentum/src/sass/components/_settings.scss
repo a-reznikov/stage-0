@@ -1,0 +1,67 @@
+.settings__button {
+  margin: 0 10px;
+  align-self: flex-end;
+}
+
+.settings__ico {
+  width: 32px;
+  height: 32px;
+  background-image: url("../assets/svg/setting.svg");
+  background-size: cover;
+  opacity: .8;
+  cursor: pointer;
+  transition: .3s;
+  &:active {
+    transform: rotate(90deg);
+    transition: .1s;
+  }
+}
+
+.settings__container {
+  position: absolute;
+  opacity: 0;
+  z-index: -2;
+  bottom: 60px;
+  left: 30px;
+  width: 50vw;
+  height: 75vh;
+  background: $color-light;
+  border-radius: 10px;
+  transition: .3s;
+}
+
+.settings__opened {
+  display: flex;
+  opacity: .96;
+  z-index: 2;
+  padding: 30px 40px;
+  font-size: 2.4rem;
+  color: $color-text;
+}
+
+.settings__setup {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 30%;
+  font-weight: 500;
+  border-right: 1px solid $color-text; 
+  >* {
+    margin-bottom: 24px;
+    cursor: pointer;
+    transition: .3s;  
+    &:hover {
+      color: $color-player;
+      opacity: 0.9;
+      transition: .3s;  
+    }
+    &:active {
+      transition: 0.2s;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.settings__options {
+  width: 70%;
+}

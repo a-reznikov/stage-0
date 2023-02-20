@@ -673,12 +673,14 @@ body {
 
 .player-icon:hover,
 .slider-icon:hover,
+.settings__ico:hover,
 .change-quote:hover {
   opacity: 1;
 }
 
 .player-icon:active,
 .slider-icon:active,
+.settings__ico:active,
 .change-quote:active {
   border: 0;
   outline: 0;
@@ -709,9 +711,6 @@ body {
 
 .footer {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
   width: 100%;
   height: 30vh;
   min-height: 160px;
@@ -978,6 +977,11 @@ body {
   opacity: 0.6;
 }
 
+.qoute-container {
+  align-self: center;
+  flex-grow: 1;
+}
+
 .change-quote {
   margin-bottom: 30px;
   background-image: url("../assets/svg/reload.svg");
@@ -989,6 +993,74 @@ body {
 
 .author {
   min-height: 20px;
+}
+
+.settings__button {
+  margin: 0 10px;
+  align-self: flex-end;
+}
+
+.settings__ico {
+  width: 32px;
+  height: 32px;
+  background-image: url("../assets/svg/setting.svg");
+  background-size: cover;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.settings__ico:active {
+  transform: rotate(90deg);
+  transition: 0.1s;
+}
+
+.settings__container {
+  position: absolute;
+  opacity: 0;
+  z-index: -2;
+  bottom: 60px;
+  left: 30px;
+  width: 50vw;
+  height: 75vh;
+  background: #ffffff;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.settings__opened {
+  display: flex;
+  opacity: 0.96;
+  z-index: 2;
+  padding: 30px 40px;
+  font-size: 2.4rem;
+  color: #070c24;
+}
+
+.settings__setup {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 30%;
+  font-weight: 500;
+  border-right: 1px solid #070c24;
+}
+.settings__setup > * {
+  margin-bottom: 24px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.settings__setup > *:hover {
+  color: #6165e7;
+  opacity: 0.9;
+  transition: 0.3s;
+}
+.settings__setup > *:active {
+  transition: 0.2s;
+  transform: scale(1.1);
+}
+
+.settings__options {
+  width: 70%;
 }
 
 /*# sourceMappingURL=style.css.map */

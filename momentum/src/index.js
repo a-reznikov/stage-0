@@ -1,7 +1,10 @@
 import playList from './scripts/playList';
+import settings from './scripts/settings';
+
 
 //Time and Date
 console.log("test");
+console.log("settings", settings);
 const time = document.querySelector('.time');
 const dateFull = document.querySelector('.date');
 const greeting = document.querySelector('.greeting');
@@ -283,8 +286,6 @@ function converteTime(time) {
   return timeplay;
 }
 
-
-
 play.addEventListener('click', playAudio);
 playPrev.addEventListener('click', prevAudion);
 playNext.addEventListener('click', nextAudion);
@@ -293,4 +294,20 @@ volumeLine.addEventListener('click', (e) => { volumeChange(e); }, false);
 timeLine.addEventListener('click', (e) => { timeChange(e); }, false);
 setInterval(ChangeTimeProgress, 250);
 
-//
+
+
+//Settings
+const settingsButton = document.querySelector('.settings__ico');
+const settingsContainer = document.querySelector('.settings__container');
+
+console.log(settingsButton);
+console.log(settingsContainer);
+
+
+function showSettings() {
+  console.log(settingsContainer);
+  settingsContainer.classList.toggle('settings__opened');
+}
+
+
+settingsButton.addEventListener('click', showSettings);
