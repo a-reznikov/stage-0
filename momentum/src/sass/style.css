@@ -749,6 +749,7 @@ body {
 }
 
 .play-item {
+  display: flex;
   position: relative;
   padding: 5px;
   padding-left: 20px;
@@ -760,14 +761,6 @@ body {
 
 .play-item:hover {
   opacity: 1;
-}
-
-.play-item::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 2px;
-  font-weight: 900;
 }
 
 .item-active::before {
@@ -805,6 +798,7 @@ body {
   background: #6165e7;
   height: 100%;
   width: 0%;
+  transition: 0.2s;
 }
 
 .volume-button {
@@ -830,6 +824,7 @@ body {
   background: #6165e7;
   height: 100%;
   width: 80%;
+  transition: 0.2s;
 }
 
 .music-time {
@@ -840,6 +835,14 @@ body {
 
 .fortime {
   padding: 0 5px;
+}
+
+.play-song {
+  background-size: cover;
+  width: 18.5px;
+  height: 18.5px;
+  margin-right: 10px;
+  align-self: center;
 }
 
 .weather {

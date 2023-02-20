@@ -170,9 +170,17 @@ let playNum = 0;
 
 playList.forEach(element => {
   const li = document.createElement('li');
+  const songPlayButton = document.createElement('button');
+  const songTitleList = document.createElement('span');
   li.classList.add('play-item');
-  li.textContent = element.title;
+  songPlayButton.classList.add('play');
+  songPlayButton.classList.add('player-icon');
+  songPlayButton.classList.add('play-song');
+  songTitleList.classList.add('song-title-list');
+  songTitleList.textContent = element.title;
   playListArray.append(li);
+  li.append(songPlayButton);
+  li.append(songTitleList);
   console.log(element.title);
 });
 
@@ -198,8 +206,8 @@ function playAudio() {
     isPlay = false;
     console.log("pause");
   }
-
 }
+
 
 function prevAudion() {
   if (playNum === 0) {

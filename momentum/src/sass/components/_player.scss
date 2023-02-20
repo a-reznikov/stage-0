@@ -31,6 +31,7 @@
 }
 
 .play-item {
+  display: flex;
   position: relative;
   padding: 5px;
   padding-left: 20px;
@@ -44,13 +45,13 @@
   opacity: 1;
 }
 
-.play-item::before {
-  content: "\2713";  
-  position: absolute;
-  left: 0;
-  top: 2px;
-  font-weight: 900;
-}
+// .play-item::before {
+//   content: '-'; 
+//   position: absolute;
+//   left: 0;
+//   top: 2px;
+//   font-weight: 900;
+// }
 
 .item-active::before {
   color: $color-active;
@@ -85,6 +86,7 @@
     background: $color-player;
     height: 100%;
     width: 0%;
+    transition: .2s;
   }
 }
 
@@ -111,6 +113,7 @@
   background: $color-player;
   height: 100%;
   width: 80%;
+  transition: .2s;
 }
 
 .music-time {
@@ -121,4 +124,12 @@
 
 .fortime {
   padding: 0 5px;
+}
+
+.play-song {
+  background-size: cover;
+  width: 18.5px;
+  height: 18.5px;
+  margin-right: 10px;
+  align-self: center;
 }
