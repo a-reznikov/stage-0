@@ -12,12 +12,19 @@ const inputName = document.querySelector('.name');
 const body = document.querySelector('body');
 const slideNext = document.querySelector('.slide-next');
 const slidePrev = document.querySelector('.slide-prev');
+let langGlobal = settings.language[0];
+let langTime = `${langGlobal}-${langGlobal.charAt(0).toUpperCase() + langGlobal.slice(1)}`;
+
+let windText = '';
+let humidityText = '';
+
+//console.log(langTime);
 
 function showTime() {
   const date = new Date();
   const currentTime = date.toLocaleTimeString();
   const options = {weekday: 'long', month: 'long', day: 'numeric'};
-  const currentDate = date.toLocaleDateString('en-En', options);
+  const currentDate = date.toLocaleDateString(`${langTime}`, options);
   time.textContent = currentTime;
   dateFull.textContent =  currentDate;
   getTimeOfDay();
@@ -36,15 +43,36 @@ function getTimeOfDay() {
     case 1:  timeOfDay = "morning";
       return timeOfDay;
     case 2:  timeOfDay = "afternoon";
-    return timeOfDay;
+      return timeOfDay;
     case 3:  timeOfDay = "evening";
-    return timeOfDay;
+      return timeOfDay;
     case 0:  timeOfDay = "night";
-    return timeOfDay;
+      return timeOfDay;
   }
 }
 
-greeting.textContent = `Good ${getTimeOfDay()}`;
+function greetingTranslation() {
+  if (langGlobal === 'en') {
+    windText = 'Wind speed: ';
+    humidityText = 'Humidity: ';
+    greeting.textContent = `Good ${getTimeOfDay()}`;
+  } else if (langGlobal === 'ru') {
+    windText = 'Скорость ветра: ';
+    humidityText = 'Влажность: ';
+    switch(`${getTimeOfDay()}`) {
+      case "morning":  greeting.textContent = `Доброе утро`;
+        return greeting;
+      case "afternoon":  greeting.textContent = `Добрый день`;
+        return greeting;
+      case "evening":  greeting.textContent = `Добрый вечер`;
+        return greeting;
+      case "night":  greeting.textContent = `Доброй ночи`;
+        return greeting;
+    }
+  }
+}
+
+greetingTranslation();
 
 
 //Slider
@@ -102,7 +130,7 @@ async function getWeather() {
   if (city.value === "") {
     city.value = "Minsk"
   }
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=bc50cc0ba8db1784f2c3e644ffa70527&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=${langGlobal}&appid=bc50cc0ba8db1784f2c3e644ffa70527&units=metric`;
   const res = await fetch(url);
   const data = await res.json(); 
   //console.log(data.weather[0].id, data.weather[0].description, data.main.temp);
@@ -110,8 +138,8 @@ async function getWeather() {
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
   temperature.textContent = `${Math.round(data.main.temp)} °C`;
   weatherDescription.textContent = data.weather[0].description;
-  wind.textContent = `Wind speed: ${Math.round(data.wind.speed)} m/s`;
-  humidity.textContent = `Humidity: ${data.main.humidity} %`;
+  wind.textContent = `${windText}${Math.round(data.wind.speed)} m/s`;
+  humidity.textContent = `${humidityText}${data.main.humidity} %`;
 }
 
 function choozeCity(e) {
@@ -300,15 +328,11 @@ function getLanguage(set) {
   set.forEach(elementId => {
     swichButtonsLang.forEach(element => {
       if (element.id === elementId) {
-        //let block = document.querySelector(`.${element.id}`);
-        //block.style.opacity = 1;
         element.checked = 'checked';
-        //saveSatting.push(element.id);
       } else {
         element.checked = false;
       }
     });
-    //console.log(element);
   });
 }
 
@@ -324,6 +348,11 @@ swichButtonsLang.forEach(lang => {
       clearSelectedLang();
       lang.checked = 'checked';
       saveLang[0] = lang.id;
+      langGlobal = saveLang[0];
+      langTime = `${langGlobal}-${langGlobal.charAt(0).toUpperCase() + langGlobal.slice(1)}`;
+      greetingTranslation();
+      getWeather();
+      showTime();
     } else {
       lang.checked = 'checked';
     }
@@ -373,7 +402,6 @@ swichButtons.forEach(element => {
   element.addEventListener('click', function() {
     let block = document.querySelector(`.${element.id}`);
     if (element.checked) {
-      //console.log("cheked", element.id);
       if (saveSatting.indexOf(element.id) === -1) {
         saveSatting.push(element.id);
         block.style.opacity = 1;
@@ -404,8 +432,11 @@ function getLocalStorage() {
   }
   if(localStorage.getItem('lang')) {
     let oldSettingsLang = localStorage.getItem('lang').split(',');
+    console.log('Load from Save langGlobal =', oldSettingsLang[0]);
+    saveLang[0] = oldSettingsLang[0];
     getLanguage(oldSettingsLang);
   } else {
+    console.log('Load from Settings langGlobal =', settings.language[0]);
     getLanguage(settings.language);
   }
 
