@@ -1,5 +1,5 @@
 const settings = {
-  language: 'en',
+  language: ['ru'],
   photoSource: 'github',
   blocks: ['time', 'date','greeting-container', 'qoute-container', 'weather', 'player']
 }

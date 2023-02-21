@@ -38,6 +38,13 @@
   color: $color-title;
 }
 
+.setup__general.selected,
+.setup__photos.selected,
+.setup__languages.selected {
+  color: $color-title;
+    font-weight: 600;
+}
+
 .settings__setup {
   display: flex;
   padding: 30px 40px;
@@ -46,10 +53,6 @@
   width: 40%;
   font-weight: 500;
   border-right: 1px solid $color-text; 
-  .setup__general {
-    color: $color-title;
-    font-weight: 600;
-  }
   >* {
     margin-bottom: 24px;
     cursor: pointer;
@@ -66,9 +69,24 @@
   }
 }
 
+
 .settings__options {
   width: 60%;
   padding: 30px 40px;
+}
+
+.general,
+.photos,
+.languages {
+  display: none;
+  flex-direction: column;
+  text-align: left;
+}
+
+.general.opened,
+.photos.opened,
+.languages.opened {
+  display: flex;
 }
 
 .options__title-container {

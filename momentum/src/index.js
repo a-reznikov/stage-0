@@ -287,8 +287,48 @@ setInterval(ChangeTimeProgress, 250);
 const settingsButton = document.querySelector('.settings__ico');
 const settingsContainer = document.querySelector('.settings__container');
 const swichButtons = document.querySelectorAll('.checkbox');
+const swichButtonsLang = document.querySelectorAll('.checkbox__lang');
+const optionsList = document.querySelectorAll('.options__list');
+const setupList = document.querySelectorAll('.setup');
 let saveSatting = [];
+let saveLang = [];
 
+//console.log(swichButtonsLang);
+//console.log(settings.language);
+
+function getLanguage(set) {
+  set.forEach(elementId => {
+    swichButtonsLang.forEach(element => {
+      if (element.id === elementId) {
+        //let block = document.querySelector(`.${element.id}`);
+        //block.style.opacity = 1;
+        element.checked = 'checked';
+        //saveSatting.push(element.id);
+      } else {
+        element.checked = false;
+      }
+    });
+    //console.log(element);
+  });
+}
+
+function clearSelectedLang() {
+  swichButtonsLang .forEach(element => {
+    element.checked = false;
+  });
+}
+
+swichButtonsLang.forEach(lang => {
+  lang.addEventListener('click', function () {
+    if (lang.checked === true) {
+      clearSelectedLang();
+      lang.checked = 'checked';
+      saveLang[0] = lang.id;
+    } else {
+      lang.checked = 'checked';
+    }
+  })
+});
 
 function getSettings(set) {
   set.forEach(elementId => {
@@ -307,6 +347,27 @@ function getSettings(set) {
 function showSettings() {
   settingsContainer.classList.toggle('settings__opened');
 }
+
+function clearSelectedSetup() {
+  setupList.forEach(element => {
+    element.classList.remove('selected');
+  });
+}
+
+
+setupList.forEach(setup => {
+  setup.addEventListener('click', function() {
+    clearSelectedSetup();
+    setup.classList.toggle('selected');
+    optionsList.forEach(element => {
+      if (element.classList.contains(setup.id)) {
+        element.classList.add('opened');
+      } else {
+        element.classList.remove('opened');
+      }
+    });
+  })
+});
 
 swichButtons.forEach(element => {
   element.addEventListener('click', function() {
@@ -335,11 +396,17 @@ function getLocalStorage() {
   }
   if(localStorage.getItem('setting')) {
     let oldSettings = localStorage.getItem('setting').split(',');
-    console.log('Load from SaveSettings', oldSettings);
+    //console.log('Load from SaveSettings', oldSettings);
     getSettings(oldSettings);
   } else {
-    console.log('Load from settings.blocks', settings.blocks);
+    //console.log('Load from settings.blocks', settings.blocks);
     getSettings(settings.blocks);
+  }
+  if(localStorage.getItem('lang')) {
+    let oldSettingsLang = localStorage.getItem('lang').split(',');
+    getLanguage(oldSettingsLang);
+  } else {
+    getLanguage(settings.language);
   }
 
 }
@@ -348,7 +415,8 @@ window.addEventListener('load', getLocalStorage);
 function setLocalStorage() {
   localStorage.setItem('name', inputName.value);
   localStorage.setItem('setting', saveSatting);
-  console.log('Reload', saveSatting);
+  localStorage.setItem('lang', saveLang);
+  //console.log('Reload', saveLang);
 }
 window.addEventListener('beforeunload', setLocalStorage);
 

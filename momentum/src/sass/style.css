@@ -696,6 +696,9 @@ body {
 .switch__options .checkbox {
   display: none;
 }
+.switch__options .checkbox__lang {
+  display: none;
+}
 
 .slider__button {
   position: absolute;
@@ -718,15 +721,18 @@ body {
   transition: 0.3s;
 }
 
-.checkbox:checked + .slider__button {
+.checkbox:checked + .slider__button,
+.checkbox__lang:checked + .slider__button {
   background-color: #6165e7;
 }
 
-.checkbox:focus + .slider__button {
+.checkbox:focus + .slider__button,
+.checkbox__lang:focus + .slider__button {
   box-shadow: 0 0 1px #6165e7;
 }
 
-.checkbox:checked + .slider__button:before {
+.checkbox:checked + .slider__button:before,
+.checkbox__lang:checked + .slider__button:before {
   transform: translateX(26px);
 }
 
@@ -1097,6 +1103,13 @@ body {
   color: #070c24;
 }
 
+.setup__general.selected,
+.setup__photos.selected,
+.setup__languages.selected {
+  color: #070c24;
+  font-weight: 600;
+}
+
 .settings__setup {
   display: flex;
   padding: 30px 40px;
@@ -1105,10 +1118,6 @@ body {
   width: 40%;
   font-weight: 500;
   border-right: 1px solid #606063;
-}
-.settings__setup .setup__general {
-  color: #070c24;
-  font-weight: 600;
 }
 .settings__setup > * {
   margin-bottom: 24px;
@@ -1128,6 +1137,20 @@ body {
 .settings__options {
   width: 60%;
   padding: 30px 40px;
+}
+
+.general,
+.photos,
+.languages {
+  display: none;
+  flex-direction: column;
+  text-align: left;
+}
+
+.general.opened,
+.photos.opened,
+.languages.opened {
+  display: flex;
 }
 
 .options__title-container {
