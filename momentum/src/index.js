@@ -3,8 +3,8 @@ import settings from './scripts/settings';
 
 
 //Time and Date
-console.log("test");
-console.log("settings", settings);
+//console.log("test");
+//console.log("settings", settings);
 const time = document.querySelector('.time');
 const dateFull = document.querySelector('.date');
 const greeting = document.querySelector('.greeting');
@@ -45,19 +45,6 @@ function getTimeOfDay() {
 }
 
 greeting.textContent = `Good ${getTimeOfDay()}`;
-
-
-function getLocalStorage() {
-  if(localStorage.getItem('name')) {
-    inputName.value = localStorage.getItem('name');
-  }
-}
-window.addEventListener('load', getLocalStorage);
-
-function setLocalStorage() {
-  localStorage.setItem('name', inputName.value);
-}
-window.addEventListener('beforeunload', setLocalStorage);
 
 
 //Slider
@@ -118,7 +105,7 @@ async function getWeather() {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=bc50cc0ba8db1784f2c3e644ffa70527&units=metric`;
   const res = await fetch(url);
   const data = await res.json(); 
-  console.log(data.weather[0].id, data.weather[0].description, data.main.temp);
+  //console.log(data.weather[0].id, data.weather[0].description, data.main.temp);
 
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
   temperature.textContent = `${Math.round(data.main.temp)} °C`;
@@ -129,7 +116,7 @@ async function getWeather() {
 
 function choozeCity(e) {
   if (e.code === "Enter") {
-    console.log(city.value);
+    //console.log(city.value);
     getWeather();
   }
 }
@@ -148,7 +135,7 @@ async function getQuotes() {
   const res = await fetch(quotes);
   const data = await res.json(); 
   let randomQuote = Math.floor(Math.random() * 99);
-  console.log(data.quotes[randomQuote]);
+  //console.log(data.quotes[randomQuote]);
   quote.textContent = data.quotes[randomQuote].quote;
   author.textContent = data.quotes[randomQuote].author;
 }
@@ -164,8 +151,8 @@ const timeProgress = document.querySelector(".time-progress");
 const currentTime = document.querySelector(".current-time");
 const musicLength = document.querySelector(".music-length");
 
-console.log(player);
-console.log('playList.length', playList.length);
+//console.log(player);
+//console.log('playList.length', playList.length);
 let playListArray = document.querySelector('.play-list');
 
 let isPlay = false;
@@ -184,7 +171,7 @@ playList.forEach(element => {
   playListArray.append(li);
   li.append(songPlayButton);
   li.append(songTitleList);
-  console.log(element.title);
+  //console.log(element.title);
 });
 
 const play = document.querySelector('.play');
@@ -194,7 +181,7 @@ const musicPlayNow = document.querySelector('.music-play-now');
 const audio = new Audio();
 
 function playAudio() {
-  console.log('playList[playNum]', playList[playNum].title);
+  //console.log('playList[playNum]', playList[playNum].title);
   musicPlayNow.textContent =  playList[playNum].title;
   if (isPlay === false) {
     audio.src = playList[playNum].src;
@@ -202,12 +189,12 @@ function playAudio() {
     audio.play();
     play.classList.add('pause');
     isPlay = true;
-    console.log("play");
+    //console.log("play");
   } else {
     audio.pause();
     play.classList.remove('pause');
     isPlay = false;
-    console.log("pause");
+    //console.log("pause");
   }
 }
 
@@ -234,11 +221,11 @@ function nextAudion() {
 
 //Volume mute
 const volumeButton = player.querySelector(".volume");
-console.log(volumeButton);
+//console.log(volumeButton);
 audio.muted = false;
 
 function volumeMute() {
-  console.log("click mute")
+ // console.log("click mute")
   if (audio.muted === false) {
     volumeButton.classList.remove("ico-play");
     volumeButton.classList.add("ico-mute");
@@ -299,15 +286,70 @@ setInterval(ChangeTimeProgress, 250);
 //Settings
 const settingsButton = document.querySelector('.settings__ico');
 const settingsContainer = document.querySelector('.settings__container');
+const swichButtons = document.querySelectorAll('.checkbox');
+let saveSatting = [];
 
-console.log(settingsButton);
-console.log(settingsContainer);
 
+function getSettings(set) {
+  set.forEach(elementId => {
+    swichButtons.forEach(element => {
+      if (element.id === elementId) {
+        let block = document.querySelector(`.${element.id}`);
+        block.style.opacity = 1;
+        element.checked = 'checked';
+        saveSatting.push(element.id);
+      }
+    });
+    //console.log(element);
+  });
+}
 
 function showSettings() {
-  console.log(settingsContainer);
   settingsContainer.classList.toggle('settings__opened');
 }
 
+swichButtons.forEach(element => {
+  element.addEventListener('click', function() {
+    let block = document.querySelector(`.${element.id}`);
+    if (element.checked) {
+      //console.log("cheked", element.id);
+      if (saveSatting.indexOf(element.id) === -1) {
+        saveSatting.push(element.id);
+        block.style.opacity = 1;
+      }
+      //console.log("Settings", settings.blocks);
+    } else {
+      //console.log("Not cheked", element.id);
+      if (saveSatting.indexOf(element.id) !== -1) {
+        saveSatting.splice(saveSatting.indexOf(element.id), 1);
+        block.style.opacity = 0;
+      }
+      //console.log("Settings", settings.blocks);
+    }
+  })
+});
+
+function getLocalStorage() {
+  if(localStorage.getItem('name')) {
+    inputName.value = localStorage.getItem('name');
+  }
+  if(localStorage.getItem('setting')) {
+    let oldSettings = localStorage.getItem('setting').split(',');
+    console.log('Load from SaveSettings', oldSettings);
+    getSettings(oldSettings);
+  } else {
+    console.log('Load from settings.blocks', settings.blocks);
+    getSettings(settings.blocks);
+  }
+
+}
+window.addEventListener('load', getLocalStorage);
+
+function setLocalStorage() {
+  localStorage.setItem('name', inputName.value);
+  localStorage.setItem('setting', saveSatting);
+  console.log('Reload', saveSatting);
+}
+window.addEventListener('beforeunload', setLocalStorage);
 
 settingsButton.addEventListener('click', showSettings);

@@ -6,6 +6,8 @@
   min-height: 48px;
   width: 100vw;
   font-size: 4.0rem;
+  transition: .3s;
+  opacity: 0;
   @include media-tablet {
     min-height: 40px;
     font-size: 32px;

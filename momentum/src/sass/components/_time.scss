@@ -4,6 +4,8 @@
   font-family: 'Arial-MT';
   font-size: 10.0rem;
   letter-spacing: -4px;  
+  transition: .3s;
+  opacity: 0;
   @include media-tablet {
     min-height: 80px;
     font-size: 7.2rem; 
@@ -14,4 +16,6 @@
   min-height: 28px;
   font-size: 2.4rem;
   margin-bottom: 20px;
+  transition: .3s;
+  opacity: 0;
 }

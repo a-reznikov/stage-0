@@ -687,17 +687,17 @@ body {
   transform: scale(1.1);
 }
 
-.switch {
+.switch__options {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
 }
-.switch .checkbox {
+.switch__options .checkbox {
   display: none;
 }
 
-.checkbox__slider {
+.slider__button {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -706,12 +706,8 @@ body {
   bottom: 0;
   background-color: #606063;
   transition: 0.3s;
-  border-radius: 34px;
 }
-.checkbox__slider:hover {
-  background-color: #6165e7;
-}
-.checkbox__slider:before {
+.slider__button:before {
   position: absolute;
   content: "";
   height: 26px;
@@ -720,21 +716,25 @@ body {
   bottom: 4px;
   background-color: #ffffff;
   transition: 0.3s;
-  border-radius: 50%;
 }
 
-.checkbox:checked + .slider {
+.checkbox:checked + .slider__button {
   background-color: #6165e7;
 }
 
-.checkbox:focus + .slider {
+.checkbox:focus + .slider__button {
   box-shadow: 0 0 1px #6165e7;
 }
 
-.checkbox:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
+.checkbox:checked + .slider__button:before {
   transform: translateX(26px);
+}
+
+.slider__button {
+  border-radius: 34px;
+}
+.slider__button:before {
+  border-radius: 50%;
 }
 
 .header {
@@ -769,6 +769,8 @@ body {
 
 .player {
   width: 270px;
+  transition: 0.3s;
+  opacity: 0;
 }
 
 .player-panel {
@@ -903,6 +905,8 @@ body {
   width: 180px;
   min-height: 180px;
   text-align: left;
+  transition: 0.3s;
+  opacity: 0;
 }
 
 .weather-error {
@@ -963,6 +967,8 @@ body {
   font-family: "Arial-MT";
   font-size: 10rem;
   letter-spacing: -4px;
+  transition: 0.3s;
+  opacity: 0;
 }
 @media (max-width: 768px) {
   .time {
@@ -975,6 +981,8 @@ body {
   min-height: 28px;
   font-size: 2.4rem;
   margin-bottom: 20px;
+  transition: 0.3s;
+  opacity: 0;
 }
 
 .greeting-container {
@@ -985,6 +993,8 @@ body {
   min-height: 48px;
   width: 100vw;
   font-size: 4rem;
+  transition: 0.3s;
+  opacity: 0;
 }
 @media (max-width: 768px) {
   .greeting-container {
@@ -1030,6 +1040,8 @@ body {
 .qoute-container {
   align-self: center;
   flex-grow: 1;
+  transition: 0.3s;
+  opacity: 0;
 }
 
 .change-quote {

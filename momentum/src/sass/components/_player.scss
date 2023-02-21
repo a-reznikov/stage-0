@@ -1,5 +1,7 @@
 .player {
   width: 270px;
+  transition: .3s;
+  opacity: 0;
 }
 
 .player-panel {

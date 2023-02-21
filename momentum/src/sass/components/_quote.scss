@@ -1,6 +1,8 @@
 .qoute-container {
   align-self: center;
   flex-grow: 1;
+  transition: .3s;
+  opacity: 0;
 }
 
 .change-quote {
