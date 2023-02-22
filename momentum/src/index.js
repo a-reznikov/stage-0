@@ -14,6 +14,7 @@ const slideNext = document.querySelector('.slide-next');
 const slidePrev = document.querySelector('.slide-prev');
 let langGlobal = settings.language[0];
 let langTime = `${langGlobal}-${langGlobal.charAt(0).toUpperCase() + langGlobal.slice(1)}`;
+let sourcePhoto = settings.photoSource[0];
 
 let windText = '';
 let humidityText = '';
@@ -88,6 +89,38 @@ function getRandomNum(num) {
   }
 }
 
+function getLinkToImage(tag) {
+  const img = new Image();
+  if (sourcePhoto === 'unsplash') {
+    const url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${tag}&client_id=rFNda98nRaQNNJVmFzvMRRIsiJfFl0KTXe4vLdcd-Ik`;
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        img.src = data.urls.regular;
+        img.onload = () => {      
+          body.style.backgroundImage = `url('${img.src}')`;
+        }; 
+      });
+  } else if (sourcePhoto === 'flickr') {
+    const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=e75103dd642cdbd338bfce618d58606e&tags=${tag}&extras=url_h&format=json&nojsoncallback=1`;
+    const photosArray = [];
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        data.photos.photo.forEach(element => {
+          if (element.width_h > element.height_h && element.url_h !== "") {
+            photosArray.push(element.url_h);
+          }
+        });
+        let randomPhoto = Math.floor(Math.random() * photosArray.length + 1);
+        img.src = photosArray[randomPhoto];
+        img.onload = () => {      
+          body.style.backgroundImage = `url('${img.src}')`;
+        }; 
+      });
+  }
+}
+
 function setBg(timeDay, numberPicture) {
   const img = new Image();
   img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeDay}/${numberPicture}.jpg`;
@@ -99,19 +132,31 @@ function setBg(timeDay, numberPicture) {
 setBg(getTimeOfDay(), getRandomNum(randomNum));
 
 function getSlideNext() {
-  randomNum = Number(getRandomNum(randomNum)) + 1;
-  if (randomNum > 20) {
-    randomNum = 1;
+  if (sourcePhoto === 'github') {
+    console.log('Source github');
+    randomNum = Number(getRandomNum(randomNum)) + 1;
+    if (randomNum > 20) {
+      randomNum = 1;
+    }
+    setBg(getTimeOfDay(), getRandomNum(randomNum));
+  } else {
+    reloadBg();
+    console.log('Source from Api')
   }
-  setBg(getTimeOfDay(), getRandomNum(randomNum));
 }
 
 function getSlidePrev() {
-  randomNum = Number(getRandomNum(randomNum)) - 1;
-  if (randomNum < 1) {
-    randomNum = 20;
+  if (sourcePhoto === 'github') {
+    console.log('Source github');
+    randomNum = Number(getRandomNum(randomNum)) - 1;
+    if (randomNum < 1) {
+      randomNum = 20;
+    }
+    setBg(getTimeOfDay(), getRandomNum(randomNum));
+  } else {
+    reloadBg();
+    console.log('Source from Api')
   }
-  setBg(getTimeOfDay(), getRandomNum(randomNum));
 }
 
 slideNext.addEventListener('click', getSlideNext);
@@ -326,10 +371,12 @@ const settingsButton = document.querySelector('.settings__ico');
 const settingsContainer = document.querySelector('.settings__container');
 const swichButtons = document.querySelectorAll('.checkbox');
 const swichButtonsLang = document.querySelectorAll('.checkbox__lang');
+const swichButtonsSource = document.querySelectorAll('.checkbox__source');
 const optionsList = document.querySelectorAll('.options__list');
 const setupList = document.querySelectorAll('.setup');
 let saveSatting = [];
 let saveLang = [];
+let saveSource = [];
 
 //console.log(swichButtonsLang);
 //console.log(settings.language);
@@ -347,7 +394,7 @@ function getLanguage(set) {
 }
 
 function clearSelectedLang() {
-  swichButtonsLang .forEach(element => {
+  swichButtonsLang.forEach(element => {
     element.checked = false;
   });
 }
@@ -426,6 +473,70 @@ swichButtons.forEach(element => {
   })
 });
 
+//Photos
+let tegPhotos = document.querySelector('.teg__photos');
+
+function getSource(set) {
+  set.forEach(elementId => {
+    swichButtonsSource.forEach(element => {
+      if (element.id === elementId) {
+        element.checked = 'checked';
+      } else {
+        element.checked = false;
+      }
+    });
+  });
+}
+
+function clearSelectedSource() {
+  swichButtonsSource.forEach(element => {
+    element.checked = false;
+  });
+}
+
+swichButtonsSource.forEach(source => {
+  source.addEventListener('click', function () {
+    if (source.checked === true) {
+      clearSelectedSource();
+      source.checked = 'checked';
+      saveSource[0] = source.id;
+      sourcePhoto = saveSource[0];
+    } else {
+      source.checked = 'checked';
+    }
+  })
+});
+
+function choozeTag(e) {
+  if (e.code === "Enter") {
+    reloadBg();
+  }
+}
+
+tegPhotos.addEventListener('keypress', choozeTag);
+
+function reloadBg() {
+  if (sourcePhoto === 'github') {
+    console.log('Source github');
+    setBg(getTimeOfDay(), getRandomNum(randomNum));
+  } else if (sourcePhoto === 'unsplash') {
+    if (tegPhotos.value !== "") {
+      getLinkToImage(tegPhotos.value);
+      console.log('Source unsplash with teg', tegPhotos.value);
+    } else {
+      getLinkToImage(getTimeOfDay());
+      console.log('Source unsplash with timeday')
+    }
+  } else if (sourcePhoto === 'flickr') {
+    if (tegPhotos.value !== "") {
+      getLinkToImage(tegPhotos.value);
+      console.log('Source flickr with teg', tegPhotos.value);
+    } else {
+      getLinkToImage(getTimeOfDay());
+      console.log('Source flickr with timeday')
+    }
+  }
+}
 
 //Translate
 
@@ -447,6 +558,7 @@ function translateAll() {
   getQuotes();
 }
 
+
 function getLocalStorage() {
   if(localStorage.getItem('name')) {
     inputName.value = localStorage.getItem('name');
@@ -461,15 +573,26 @@ function getLocalStorage() {
   }
   if(localStorage.getItem('lang')) {
     let oldSettingsLang = localStorage.getItem('lang').split(',');
-    console.log('Load from Save langGlobal =', oldSettingsLang[0]);
+    //console.log('Load from Save langGlobal =', oldSettingsLang[0]);
     saveLang[0] = oldSettingsLang[0];
     langGlobal = saveLang[0];
     langTime = `${langGlobal}-${langGlobal.charAt(0).toUpperCase() + langGlobal.slice(1)}`;
     getLanguage(oldSettingsLang);
     translateAll();
   } else {
-    console.log('Load from Settings langGlobal =', settings.language[0]);
+    //console.log('Load from Settings langGlobal =', settings.language[0]);
     getLanguage(settings.language);
+  }
+  if (localStorage.getItem('source')) {
+    let oldSettingsSource = localStorage.getItem('source').split(',');
+    //console.log('Load from Save Source =', oldSettingsSource[0]);
+    saveSource[0] = oldSettingsSource[0];
+    sourcePhoto = saveSource[0];
+    getSource(oldSettingsSource);
+    reloadBg();
+  } else {
+    //console.log('Load from Settings Source =', settings.photoSource[0]);
+    getSource(settings.photoSource);
   }
 
 }
@@ -479,6 +602,7 @@ function setLocalStorage() {
   localStorage.setItem('name', inputName.value);
   localStorage.setItem('setting', saveSatting);
   localStorage.setItem('lang', saveLang);
+  localStorage.setItem('source', saveSource);
   //console.log('Reload', saveLang);
 }
 window.addEventListener('beforeunload', setLocalStorage);

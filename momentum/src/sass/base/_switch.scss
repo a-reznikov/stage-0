@@ -6,6 +6,9 @@
   .checkbox {
     display: none;
   }
+  .checkbox__source {
+    display: none;
+  }
   .checkbox__lang {
     display: none;
   }
@@ -33,16 +36,19 @@
 }
 
 .checkbox:checked + .slider__button,
+.checkbox__source:checked + .slider__button,
 .checkbox__lang:checked + .slider__button {
   background-color: $color-player;
 }
 
 .checkbox:focus + .slider__button,
+.checkbox__source:focus + .slider__button,
 .checkbox__lang:focus + .slider__button {
   box-shadow: 0 0 1px $color-player;
 }
 
 .checkbox:checked + .slider__button:before,
+.checkbox__source:checked + .slider__button:before,
 .checkbox__lang:checked + .slider__button:before {
   transform: translateX(26px);
 }

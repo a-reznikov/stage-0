@@ -696,6 +696,9 @@ body {
 .switch__options .checkbox {
   display: none;
 }
+.switch__options .checkbox__source {
+  display: none;
+}
 .switch__options .checkbox__lang {
   display: none;
 }
@@ -722,16 +725,19 @@ body {
 }
 
 .checkbox:checked + .slider__button,
+.checkbox__source:checked + .slider__button,
 .checkbox__lang:checked + .slider__button {
   background-color: #6165e7;
 }
 
 .checkbox:focus + .slider__button,
+.checkbox__source:focus + .slider__button,
 .checkbox__lang:focus + .slider__button {
   box-shadow: 0 0 1px #6165e7;
 }
 
 .checkbox:checked + .slider__button:before,
+.checkbox__source:checked + .slider__button:before,
 .checkbox__lang:checked + .slider__button:before {
   transform: translateX(26px);
 }
