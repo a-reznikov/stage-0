@@ -678,6 +678,8 @@ body {
 .links__title:hover,
 .links__item:hover,
 .new-links:hover,
+.button-back:hover,
+.create__link:hover,
 .change-quote:hover {
   opacity: 1;
 }
@@ -689,6 +691,8 @@ body {
 .links__title:active,
 .links__item:active,
 .new-links:active,
+.button-back:active,
+.create__link:active,
 .change-quote:active {
   border: 0;
   outline: 0;
@@ -1234,6 +1238,7 @@ body {
 
 .links__container {
   display: flex;
+  position: relative;
   flex-direction: column;
   margin-top: 10px;
   padding: 10px 5px;
@@ -1241,10 +1246,67 @@ body {
   border-radius: 10px;
   opacity: 0;
   transition: 0.3s;
+  z-index: -1;
+}
+.links__container .links__name {
+  margin-top: 10px;
 }
 
 .links__opened {
   opacity: 0.9;
+  z-index: 2;
+}
+
+.add-links__container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  padding: 10px 20px;
+  background: #ffffff;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #606063;
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: -1;
+}
+.add-links__container span {
+  text-align: left;
+}
+.add-links__container .create__link {
+  width: 120px;
+  cursor: pointer;
+  background: #6165e7;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border: 0;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 1.6rem;
+  transition: 0.3s;
+}
+.add-links__container .buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button-back {
+  width: 32px;
+  height: 32px;
+  background-image: url("../assets/svg/backarrow.svg");
+  background-size: cover;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.add-links__opened {
+  opacity: 0.9;
+  z-index: 3;
 }
 
 .links__title {
@@ -1276,6 +1338,18 @@ body {
   border-bottom: 1px solid #ffffff;
   background-color: transparent;
   color: #ffffff;
+  font-size: 2.4rem;
+}
+
+.input-links-name,
+.input-links-link {
+  padding: 0 10px;
+  margin-bottom: 10px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #606063;
+  background-color: transparent;
+  color: #606063;
   font-size: 2.4rem;
 }
 

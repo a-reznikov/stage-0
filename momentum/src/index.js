@@ -549,7 +549,11 @@ function reloadBg() {
 const searchInput = document.querySelector('.search-input');
 const linksTitle = document.querySelector('.links__title');
 const linksContainer = document.querySelector('.links__container');
+const newLinks = document.querySelector('.new-links');
+const addLinksContainer = document.querySelector('.add-links__container');
 const searchLogo = document.querySelector('.search-logo');
+const chromeTab = document.querySelector('.chrome_tab');
+const apps = document.querySelector('.apps');
 
 function searchOpen(e) {
   if (e.code === "Enter") {
@@ -566,12 +570,28 @@ function showLinks() {
   linksContainer.classList.toggle('links__opened');
 }
 
+function showNewLinks() {
+  addLinksContainer.classList.toggle('add-links__opened');
+}
+
 function changeLogo() {
   searchLogo.classList.toggle('yandex');
 }
 
-linksTitle.addEventListener('click', showLinks)
-searchLogo.addEventListener('click', changeLogo)
+function openChromeTab() {
+  window.open("https://google.com/", "_blank");
+}
+
+function openApps() {
+  window.open("https://chrome.google.com/webstore/", "_blank");
+}
+
+
+linksTitle.addEventListener('click', showLinks);
+newLinks.addEventListener('click', showNewLinks);
+searchLogo.addEventListener('click', changeLogo);
+chromeTab.addEventListener('click', openChromeTab);
+apps.addEventListener('click', openApps);
 
 //Translate
 const setupGeneral = document.querySelector('.setup__general');

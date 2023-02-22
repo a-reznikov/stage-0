@@ -4,6 +4,7 @@
 
 .links__container {
   display: flex;
+  position: relative;
   flex-direction: column;
   margin-top: 10px;
   padding: 10px 5px;
@@ -11,10 +12,67 @@
   border-radius: 10px;
   opacity: 0;
   transition: .3s;
+  z-index: -1;
+  .links__name {
+    margin-top: 10px;
+  }
 }
 
 .links__opened {
   opacity: .9;
+  z-index: 2;
+}
+
+.add-links__container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  padding: 10px 20px;
+  background: $color-light;
+  font-size: 2.0rem;
+  font-weight: 500;
+  color: $color-text;
+  border-radius: 10px;
+  opacity: 0;
+  transition: .3s;
+  z-index: -1;
+  span {
+    text-align: left;
+  }
+  .create__link {
+    width: 120px;
+    cursor: pointer;
+    background: $color-player;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: 0;
+    border-radius: 20px;
+    color: $color-light;
+    font-size: 1.6rem;
+    transition: .3s;
+  }
+  .buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.button-back {
+  width: 32px;
+  height: 32px;
+  background-image: url("../assets/svg/backarrow.svg");
+  background-size: cover;
+  cursor: pointer;
+  opacity: .8;
+  transition: .3s;
+}
+
+.add-links__opened {
+  opacity: .9;
+  z-index: 3;
 }
 
 .links__title {
@@ -46,6 +104,18 @@
   border-bottom: 1px solid  $color-light;
   background-color: transparent;
   color: $color-light;
+  font-size: 2.4rem;
+}
+
+.input-links-name,
+.input-links-link {
+  padding: 0 10px;
+  margin-bottom: 10px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid $color-text;;
+  background-color: transparent;
+  color: $color-text;
   font-size: 2.4rem;
 }
 
