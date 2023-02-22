@@ -547,13 +547,31 @@ function reloadBg() {
 //Links
 
 const searchInput = document.querySelector('.search-input');
+const linksTitle = document.querySelector('.links__title');
+const linksContainer = document.querySelector('.links__container');
+const searchLogo = document.querySelector('.search-logo');
 
 function searchOpen(e) {
   if (e.code === "Enter") {
-    window.open(`https://www.google.com/search?q=${searchInput.value}`, '_blank');
+    if (searchLogo.classList.contains('yandex')) {
+      window.open(`https://yandex.ru/search/?text=${searchInput.value}`, '_blank');
+    } else {
+      window.open(`https://www.google.com/search?q=${searchInput.value}`, '_blank');
+    }
   }
 }
 searchInput.addEventListener('keypress', searchOpen);
+
+function showLinks() {
+  linksContainer.classList.toggle('links__opened');
+}
+
+function changeLogo() {
+  searchLogo.classList.toggle('yandex');
+}
+
+linksTitle.addEventListener('click', showLinks)
+searchLogo.addEventListener('click', changeLogo)
 
 //Translate
 const setupGeneral = document.querySelector('.setup__general');

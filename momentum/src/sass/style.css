@@ -676,6 +676,8 @@ body {
 .settings__ico:hover,
 .search-logo:hover,
 .links__title:hover,
+.links__item:hover,
+.new-links:hover,
 .change-quote:hover {
   opacity: 1;
 }
@@ -685,6 +687,8 @@ body {
 .settings__ico:active,
 .search-logo:active,
 .links__title:active,
+.links__item:active,
+.new-links:active,
 .change-quote:active {
   border: 0;
   outline: 0;
@@ -1231,23 +1235,37 @@ body {
 .links__container {
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
+  padding: 10px 5px;
+  background: #6165e7;
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.links__opened {
+  opacity: 0.9;
 }
 
 .links__title {
-  font-size: 2rem;
+  font-size: 2.4rem;
   cursor: pointer;
   opacity: 0.8;
   transition: 0.3s;
 }
 
 .search-logo {
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
   background-image: url("../assets/svg/google_logo.svg");
   background-size: cover;
   cursor: pointer;
   opacity: 0.8;
   transition: 0.3s;
+}
+
+.yandex {
+  background-image: url("../assets/svg/yandex_logo.svg");
 }
 
 .search-input {
@@ -1258,10 +1276,12 @@ body {
   border-bottom: 1px solid #ffffff;
   background-color: transparent;
   color: #ffffff;
+  font-size: 2.4rem;
 }
 
 .links__item {
   display: flex;
+  position: relative;
   padding: 5px;
   list-style: none;
   opacity: 0.8;
@@ -1269,11 +1289,48 @@ body {
   transition: 0.3s;
 }
 
+.links__item::before {
+  position: relative;
+  left: -5px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/svg/web_logo.svg");
+  background-size: cover;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.chrome_tab::before {
+  background-image: url("../assets/svg/chrome_logo.svg");
+}
+
+.apps::before {
+  background-image: url("../assets/svg/apps_logo.svg");
+}
+
 .new-links {
+  position: relative;
   align-self: flex-start;
   padding: 5px;
   opacity: 0.8;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.new-links::before {
+  position: relative;
+  display: inline-block;
+  left: -5px;
+  bottom: -3px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/svg/plus_logo.svg");
+  background-size: cover;
+  cursor: pointer;
+  opacity: 0.8;
   transition: 0.3s;
 }
 
