@@ -1204,4 +1204,18 @@ body {
   transition: 0.3s;
 }
 
+.tag__container {
+  flex-direction: column;
+}
+.tag__container .tag__title {
+  margin-bottom: 0;
+}
+.tag__container .teg__photos {
+  padding: 10px;
+  font-size: 1.6rem;
+  width: 92%;
+  padding: 4%;
+  border-radius: 5px;
+}
+
 /*# sourceMappingURL=style.css.map */

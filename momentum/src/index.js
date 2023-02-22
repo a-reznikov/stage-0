@@ -474,7 +474,7 @@ swichButtons.forEach(element => {
 });
 
 //Photos
-let tegPhotos = document.querySelector('.teg__photos');
+const tegPhotos = document.querySelector('.teg__photos');
 
 function getSource(set) {
   set.forEach(elementId => {
@@ -501,6 +501,7 @@ swichButtonsSource.forEach(source => {
       source.checked = 'checked';
       saveSource[0] = source.id;
       sourcePhoto = saveSource[0];
+      reloadBg();
     } else {
       source.checked = 'checked';
     }
@@ -518,6 +519,7 @@ tegPhotos.addEventListener('keypress', choozeTag);
 function reloadBg() {
   if (sourcePhoto === 'github') {
     console.log('Source github');
+    tegPhotos.value = "";
     setBg(getTimeOfDay(), getRandomNum(randomNum));
   } else if (sourcePhoto === 'unsplash') {
     if (tegPhotos.value !== "") {
@@ -563,6 +565,9 @@ function getLocalStorage() {
   if(localStorage.getItem('name')) {
     inputName.value = localStorage.getItem('name');
   }
+  if(localStorage.getItem('tag')) {
+    tegPhotos.value = localStorage.getItem('tag');
+  }
   if(localStorage.getItem('setting')) {
     let oldSettings = localStorage.getItem('setting').split(',');
     //console.log('Load from SaveSettings', oldSettings);
@@ -603,6 +608,7 @@ function setLocalStorage() {
   localStorage.setItem('setting', saveSatting);
   localStorage.setItem('lang', saveLang);
   localStorage.setItem('source', saveSource);
+  localStorage.setItem('tag', tegPhotos.value );
   //console.log('Reload', saveLang);
 }
 window.addEventListener('beforeunload', setLocalStorage);
