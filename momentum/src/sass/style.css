@@ -1208,7 +1208,9 @@ body {
   flex-direction: column;
 }
 .tag__container .tag__title {
-  margin-bottom: 0;
+  margin: 20px 0;
+  text-align: center;
+  line-height: 2.4rem;
 }
 .tag__container .teg__photos {
   padding: 10px;

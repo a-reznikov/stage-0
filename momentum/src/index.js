@@ -545,6 +545,71 @@ function reloadBg() {
 }
 
 //Translate
+const setupGeneral = document.querySelector('.setup__general');
+const setupPhotos = document.querySelector('.setup__photos');
+const setupLanguages = document.querySelector('.setup__languages');
+const optionGeneral = document.querySelector('.option_general');
+const descriptionGeneral = document.querySelector('.description_general');
+const actionGeneral = document.querySelector('.action_general');
+const blockTime = document.querySelector('.block-time');
+const blockDate = document.querySelector('.block-date');
+const blockGreeting = document.querySelector('.block-greeting');
+const blockQuote = document.querySelector('.block-quote');
+const blockWeather = document.querySelector('.block-weather');
+const blockPlayer = document.querySelector('.block-player');
+const optionPhotos = document.querySelector('.option_photos');
+const descriptionPhotos = document.querySelector('.description_photos');
+const actionPhotos = document.querySelector('.action_photos');
+const tagTitle = document.querySelector('.tag__title');
+const optionLanguages = document.querySelector('.option_languages');
+const descriptionLanguages = document.querySelector('.description_languages');
+const actionLanguages = document.querySelector('.action_languages');
+
+
+function translateSettings() {
+  if (langGlobal === 'en') {
+    setupGeneral.textContent =  'General';
+    setupPhotos.textContent =  'Photos';
+    setupLanguages.textContent =  'Languages';
+    optionGeneral.textContent =  'General';
+    descriptionGeneral.textContent =  'Customize your dashboard';
+    actionGeneral.textContent =  'Show:';
+    blockTime.textContent =  'Clock';
+    blockDate.textContent =  'Date';
+    blockGreeting.textContent =  'Greeting';
+    blockQuote.textContent =  'Quotes';
+    blockWeather.textContent =  'Weather';
+    blockPlayer.textContent =  'Audio player';
+    optionPhotos.textContent =  'Photos';
+    descriptionPhotos.textContent =  'Select a photo source';
+    actionPhotos.textContent =  'Sources:';
+    tagTitle.textContent =  'Get photos by tag (only in English):';
+    optionLanguages.textContent =  'Languages';
+    descriptionLanguages.textContent =  'Available languages for the app';
+    actionLanguages.textContent =  'Change:';
+
+  } else if (langGlobal === 'ru') {
+    setupGeneral.textContent =  'Общие';
+    setupPhotos.textContent =  'Фото';
+    setupLanguages.textContent =  'Язык';
+    optionGeneral.textContent =  'Общие';
+    descriptionGeneral.textContent =  'Настройте свою информационную панель';
+    actionGeneral.textContent =  'Показать:';
+    blockTime.textContent =  'Часы';
+    blockDate.textContent =  'Дата';
+    blockGreeting.textContent =  'Приветствие';
+    blockQuote.textContent =  'Цитаты';
+    blockWeather.textContent =  'Погода';
+    blockPlayer.textContent =  'Аудио плеер';
+    optionPhotos.textContent =  'Фото';
+    descriptionPhotos.textContent =  'Выберите источник фотографий';
+    actionPhotos.textContent =  'Источники:';
+    tagTitle.textContent =  'Фотографий по тегам (только на английском языке):';
+    optionLanguages.textContent =  'Язык';
+    descriptionLanguages.textContent =  'Доступные языки для приложения';
+    actionLanguages.textContent =  'Изменить:';
+  }
+}
 
 function translateAll() {
   if (langGlobal === 'en') {
@@ -562,6 +627,7 @@ function translateAll() {
   getWeather();
   showTime();
   getQuotes();
+  translateSettings() 
 }
 
 
