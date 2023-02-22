@@ -159,10 +159,14 @@ const author = document.querySelector('.author');
 const changeQuote = document.querySelector('.change-quote');
 
 async function getQuotes() {  
-  const quotes = 'src/assets/quotes/quotes.json';
+  let quotesLang = `quotes-${langGlobal}`;
+  const quotes = `src/assets/quotes/${quotesLang}.json`;
   const res = await fetch(quotes);
   const data = await res.json(); 
   let randomQuote = Math.floor(Math.random() * 99);
+  if (langGlobal === 'ru') {
+    randomQuote = Math.floor(Math.random() * 19);
+  }
   //console.log(data.quotes[randomQuote]);
   quote.textContent = data.quotes[randomQuote].quote;
   author.textContent = data.quotes[randomQuote].author;
@@ -207,6 +211,12 @@ const playPrev = document.querySelector('.play-prev');
 const playNext = document.querySelector('.play-next');
 const musicPlayNow = document.querySelector('.music-play-now');
 const audio = new Audio();
+
+if (langGlobal === 'en') {
+  musicPlayNow.textContent =  'Music dont play now';
+} else {
+  musicPlayNow.textContent =  'Музыка не воспроизводится';
+}
 
 function playAudio() {
   //console.log('playList[playNum]', playList[playNum].title);
@@ -350,9 +360,7 @@ swichButtonsLang.forEach(lang => {
       saveLang[0] = lang.id;
       langGlobal = saveLang[0];
       langTime = `${langGlobal}-${langGlobal.charAt(0).toUpperCase() + langGlobal.slice(1)}`;
-      greetingTranslation();
-      getWeather();
-      showTime();
+      translateAll();
     } else {
       lang.checked = 'checked';
     }
@@ -418,6 +426,27 @@ swichButtons.forEach(element => {
   })
 });
 
+
+//Translate
+
+function translateAll() {
+  if (langGlobal === 'en') {
+    musicPlayNow.textContent =  'Music dont play now';
+    if (city.value === "Минск") {
+      city.value = "Minsk";
+    }
+  } else if (langGlobal === 'ru') {
+    musicPlayNow.textContent =  'Музыка не воспроизводится';
+    if (city.value === "Minsk") {
+      city.value = "Минск";
+    }
+  }
+  greetingTranslation();
+  getWeather();
+  showTime();
+  getQuotes();
+}
+
 function getLocalStorage() {
   if(localStorage.getItem('name')) {
     inputName.value = localStorage.getItem('name');
@@ -434,7 +463,10 @@ function getLocalStorage() {
     let oldSettingsLang = localStorage.getItem('lang').split(',');
     console.log('Load from Save langGlobal =', oldSettingsLang[0]);
     saveLang[0] = oldSettingsLang[0];
+    langGlobal = saveLang[0];
+    langTime = `${langGlobal}-${langGlobal.charAt(0).toUpperCase() + langGlobal.slice(1)}`;
     getLanguage(oldSettingsLang);
+    translateAll();
   } else {
     console.log('Load from Settings langGlobal =', settings.language[0]);
     getLanguage(settings.language);
