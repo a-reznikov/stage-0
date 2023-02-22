@@ -12,6 +12,7 @@ const inputName = document.querySelector('.name');
 const body = document.querySelector('body');
 const slideNext = document.querySelector('.slide-next');
 const slidePrev = document.querySelector('.slide-prev');
+const tegPhotos = document.querySelector('.teg__photos');
 let langGlobal = settings.language[0];
 let langTime = `${langGlobal}-${langGlobal.charAt(0).toUpperCase() + langGlobal.slice(1)}`;
 let sourcePhoto = settings.photoSource[0];
@@ -57,9 +58,13 @@ function greetingTranslation() {
     windText = 'Wind speed: ';
     humidityText = 'Humidity: ';
     greeting.textContent = `Good ${getTimeOfDay()}`;
+    inputName.placeholder = "Enter your name...";
+    tegPhotos.placeholder = "tag search...";
   } else if (langGlobal === 'ru') {
     windText = 'Скорость ветра: ';
     humidityText = 'Влажность: ';
+    inputName.placeholder = "Введите Ваше имя...";
+    tegPhotos.placeholder = "поиск по тегу...";
     switch(`${getTimeOfDay()}`) {
       case "morning":  greeting.textContent = `Доброе утро`;
         return greeting;
@@ -474,7 +479,6 @@ swichButtons.forEach(element => {
 });
 
 //Photos
-const tegPhotos = document.querySelector('.teg__photos');
 
 function getSource(set) {
   set.forEach(elementId => {
