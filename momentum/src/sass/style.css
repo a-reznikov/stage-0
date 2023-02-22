@@ -674,6 +674,8 @@ body {
 .player-icon:hover,
 .slider-icon:hover,
 .settings__ico:hover,
+.search-logo:hover,
+.links__title:hover,
 .change-quote:hover {
   opacity: 1;
 }
@@ -681,6 +683,8 @@ body {
 .player-icon:active,
 .slider-icon:active,
 .settings__ico:active,
+.search-logo:active,
+.links__title:active,
 .change-quote:active {
   border: 0;
   outline: 0;
@@ -1218,6 +1222,59 @@ body {
   width: 92%;
   padding: 4%;
   border-radius: 5px;
+}
+
+.search-container {
+  display: flex;
+}
+
+.links__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.links__title {
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.search-logo {
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/svg/google_logo.svg");
+  background-size: cover;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.search-input {
+  padding: 0 10px;
+  margin: 0 10px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.links__item {
+  display: flex;
+  padding: 5px;
+  list-style: none;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.new-links {
+  align-self: flex-start;
+  padding: 5px;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -544,6 +544,17 @@ function reloadBg() {
   }
 }
 
+//Links
+
+const searchInput = document.querySelector('.search-input');
+
+function searchOpen(e) {
+  if (e.code === "Enter") {
+    window.open(`https://www.google.com/search?q=${searchInput.value}`, '_blank');
+  }
+}
+searchInput.addEventListener('keypress', searchOpen);
+
 //Translate
 const setupGeneral = document.querySelector('.setup__general');
 const setupPhotos = document.querySelector('.setup__photos');
