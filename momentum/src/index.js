@@ -1,5 +1,6 @@
 import playList from './scripts/playList';
 import settings from './scripts/settings';
+import uploadLinks from './scripts/uploadLinks';
 
 
 //Time and Date
@@ -554,6 +555,18 @@ const addLinksContainer = document.querySelector('.add-links__container');
 const searchLogo = document.querySelector('.search-logo');
 const chromeTab = document.querySelector('.chrome_tab');
 const apps = document.querySelector('.apps');
+const buttonBack = document.querySelector('.button-back');
+const createLink = document.querySelector('.create__link');
+const linksList = document.querySelector('.links__list');
+const inputLinksName = document.querySelector('.input-links-name');
+const inputLinksLink = document.querySelector('.input-links-link');
+let linksItems = [];
+let linksDeleteButton = [];
+const saveLinks = {
+  nameLinks: [],
+  hrefLinks: [],
+};
+
 
 function searchOpen(e) {
   if (e.code === "Enter") {
@@ -572,6 +585,8 @@ function showLinks() {
 
 function showNewLinks() {
   addLinksContainer.classList.toggle('add-links__opened');
+  inputLinksName.value = "";
+  inputLinksLink.value = "";
 }
 
 function changeLogo() {
@@ -586,12 +601,67 @@ function openApps() {
   window.open("https://chrome.google.com/webstore/", "_blank");
 }
 
+function createNewLink() {
+  const linksItem = document.createElement('li');
+  const linksItemHref = document.createElement('a')
+  linksItem.classList.add('links__item');
+  linksItemHref.classList.add('links-item-href');
+  linksItemHref.textContent = inputLinksName.value;
+  linksItemHref.href = `${inputLinksLink.value}`;
+  linksItemHref.target= "_blank";
+  linksList.append(linksItem);
+  linksItem.append(linksItemHref);
+  saveLinks.nameLinks.push(`${inputLinksName.value}`);
+  saveLinks.hrefLinks.push(`${inputLinksLink.value}`);
+  linksDeleteButton = document.querySelectorAll('.links__delete');
+  showNewLinks();
+}
+
+function getLinks(setLinks) {
+  setLinks.nameLinks.forEach(element => {
+    const linksItem = document.createElement('li');
+    const linksItemHref = document.createElement('a')
+    const LinksDelete = document.createElement('div')
+    linksItem.classList.add('links__item');
+    linksItemHref.classList.add('links-item-href');
+    LinksDelete.classList.add('links__delete');
+    linksItemHref.textContent = element;
+    linksItemHref.href = `${setLinks.hrefLinks[setLinks.nameLinks.indexOf(element)]}`;
+    linksItemHref.target= "_blank";
+    linksList.append(linksItem);
+    linksItem.append(linksItemHref);
+    linksItem.append(LinksDelete);
+  });
+}
+
+function deleteLink() {
+  linksItems.forEach(element => {
+    //if (linksDeleteButton.parentNode === element) {
+      //linksList.remove(element);
+    //}
+  });
+}
+
+linksDeleteButton.forEach(childButton => {
+  childButton.addEventListener('click', function () {
+    console.log(linksDeleteButton);
+    console.log('childButton', childButton);
+    linksItems.forEach(parent => {
+      if (parent.parentNode === childButton) {
+        linksList.remove(parent);
+      }
+    });
+  })
+});
+
 
 linksTitle.addEventListener('click', showLinks);
 newLinks.addEventListener('click', showNewLinks);
 searchLogo.addEventListener('click', changeLogo);
 chromeTab.addEventListener('click', openChromeTab);
 apps.addEventListener('click', openApps);
+buttonBack.addEventListener('click', showNewLinks);
+createLink.addEventListener('click', createNewLink);
 
 //Translate
 const setupGeneral = document.querySelector('.setup__general');
@@ -718,6 +788,18 @@ function getLocalStorage() {
     //console.log('Load from Settings Source =', settings.photoSource[0]);
     getSource(settings.photoSource);
   }
+  if (localStorage.getItem('saveNameLinks')) {
+    saveLinks.nameLinks = localStorage.getItem('saveNameLinks').split(',');
+    saveLinks.hrefLinks = localStorage.getItem('saveHrefLinks').split(',');
+    console.log('Load from Save Links =', saveLinks.nameLinks);
+    getLinks(saveLinks);
+    linksItems = document.querySelectorAll('.links__item');
+    console.log('Load from Save Links =', linksItems[2]);
+    linksDeleteButton = document.querySelectorAll('.links__delete');
+  } else {
+    console.log('Load from Settings Links =');
+    getLinks(uploadLinks);
+  }
 
 }
 window.addEventListener('load', getLocalStorage);
@@ -727,6 +809,8 @@ function setLocalStorage() {
   localStorage.setItem('setting', saveSatting);
   localStorage.setItem('lang', saveLang);
   localStorage.setItem('source', saveSource);
+  localStorage.setItem('saveNameLinks', saveLinks.nameLinks);
+  localStorage.setItem('saveHrefLinks', saveLinks.hrefLinks);
   localStorage.setItem('tag', tegPhotos.value );
   //console.log('Reload', saveLang);
 }

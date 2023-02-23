@@ -1257,11 +1257,18 @@ body {
   z-index: 2;
 }
 
+.links__list {
+  display: block;
+  overflow: auto;
+  max-height: 145px;
+}
+
 .add-links__container {
   display: flex;
   position: absolute;
+  width: 100%;
   top: 0;
-  right: 0;
+  left: 0;
   flex-direction: column;
   padding: 10px 20px;
   background: #ffffff;
@@ -1292,6 +1299,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.links-item-href {
+  position: relative;
+  width: 100%;
+  padding-left: 25px;
+  left: -25px;
+  text-align: left;
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 .button-back {
@@ -1356,7 +1375,8 @@ body {
 .links__item {
   display: flex;
   position: relative;
-  padding: 5px;
+  width: 90%;
+  padding: 5px 5px 5px 20px;
   list-style: none;
   opacity: 0.8;
   cursor: pointer;
@@ -1376,6 +1396,19 @@ body {
   transition: 0.3s;
 }
 
+.links__delete {
+  position: absolute;
+  right: -25px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/svg/delete_logo.svg");
+  background-size: cover;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
 .chrome_tab::before {
   background-image: url("../assets/svg/chrome_logo.svg");
 }
@@ -1387,7 +1420,7 @@ body {
 .new-links {
   position: relative;
   align-self: flex-start;
-  padding: 5px;
+  padding: 5px 5px 5px 20px;
   opacity: 0.8;
   cursor: pointer;
   transition: 0.3s;
