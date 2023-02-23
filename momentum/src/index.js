@@ -560,8 +560,8 @@ const createLink = document.querySelector('.create__link');
 const linksList = document.querySelector('.links__list');
 const inputLinksName = document.querySelector('.input-links-name');
 const inputLinksLink = document.querySelector('.input-links-link');
-let linksItems = [];
-let linksDeleteButton = [];
+let linksItems = document.querySelectorAll('.links__item');
+let linksDeleteButton = document.querySelectorAll('.links__delete');
 const saveLinks = {
   nameLinks: [],
   hrefLinks: [],
@@ -642,17 +642,27 @@ function deleteLink() {
   });
 }
 
-linksDeleteButton.forEach(childButton => {
-  childButton.addEventListener('click', function () {
-    console.log(linksDeleteButton);
-    console.log('childButton', childButton);
-    linksItems.forEach(parent => {
-      if (parent.parentNode === childButton) {
-        linksList.remove(parent);
-      }
-    });
-  })
-});
+linksList.addEventListener('click', function (event) {
+  if (event.target.nodeName === 'links__delete'){
+    event.target.closest('li').remove()
+  }
+})
+
+// linksList.addEventListener("click", function(e) {
+//   let parenItem = e.target.closest('li');
+//   if (e.target.classList.contains("links__delete") || e.target.closest(".links__delete"))
+//     //console.log('linksDeleteButton', e.target);
+//     linksItems.forEach(element => {
+//       if (element === parenItem) {
+//         console.log(linksList.indexOf(parenItem));
+//         //linksItems.remove(parenItem);
+//       }
+//     });
+//     //parenItem = e.target.closest('.links__item');
+//     console.log(parenItem);
+//     console.log(e.target);
+//     //linksList.remove(parenItem);
+// });
 
 
 linksTitle.addEventListener('click', showLinks);
@@ -794,7 +804,6 @@ function getLocalStorage() {
     console.log('Load from Save Links =', saveLinks.nameLinks);
     getLinks(saveLinks);
     linksItems = document.querySelectorAll('.links__item');
-    console.log('Load from Save Links =', linksItems[2]);
     linksDeleteButton = document.querySelectorAll('.links__delete');
   } else {
     console.log('Load from Settings Links =');
