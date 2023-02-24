@@ -11,6 +11,7 @@
   display: flex;
   position: relative;
   flex-direction: column;
+  height: 0px;
   margin-top: 10px;
   padding: 10px 5px;
   background: $color-player;
@@ -25,6 +26,7 @@
 
 .links__opened {
   opacity: .9;
+  height: 100%;
   z-index: 2;
 }
 
@@ -51,24 +53,13 @@
   transition: .3s;
   z-index: -1;
   span {
-    text-align: left;
+    display: none;
   }
   .create__link {
-    width: 120px;
-    cursor: pointer;
-    background: $color-player;
-    padding: 10px 15px;
-    margin: 10px 0;
-    border: 0;
-    border-radius: 20px;
-    color: $color-light;
-    font-size: 1.6rem;
-    transition: .3s;
+    display: none;
   }
   .buttons-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: none;
   }
 }
 
@@ -97,6 +88,28 @@
 .add-links__opened {
   opacity: .9;
   z-index: 3;
+  span {
+    display: block;
+    text-align: left;
+  }
+  .create__link {
+    display: block;
+    width: 120px;
+    cursor: pointer;
+    background: $color-player;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: 0;
+    border-radius: 20px;
+    color: $color-light;
+    font-size: 1.6rem;
+    transition: .3s;
+  }
+  .buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .links__title {
@@ -121,6 +134,7 @@
 }
 
 .search-input {
+  width: 310px;
   padding: 0 10px;
   margin: 0 10px;
   border: 0;
@@ -129,6 +143,12 @@
   background-color: transparent;
   color: $color-light;
   font-size: 2.4rem;
+  @include media-laptop {
+    width: 210px;
+  }
+  @include media-mobile {
+    width: 110px;
+  }
 }
 
 .input-links-name,

@@ -139,7 +139,6 @@ setBg(getTimeOfDay(), getRandomNum(randomNum));
 
 function getSlideNext() {
   if (sourcePhoto === 'github') {
-    console.log('Source github');
     randomNum = Number(getRandomNum(randomNum)) + 1;
     if (randomNum > 20) {
       randomNum = 1;
@@ -153,7 +152,6 @@ function getSlideNext() {
 
 function getSlidePrev() {
   if (sourcePhoto === 'github') {
-    console.log('Source github');
     randomNum = Number(getRandomNum(randomNum)) - 1;
     if (randomNum < 1) {
       randomNum = 20;
@@ -326,7 +324,6 @@ let playItemArr = Array.prototype.slice.call(playItem);
 
 playItemArr.forEach(song => {
   song.addEventListener('click', function() {
-    console.log("miss click", song);
     previousSong = playNum;
     playNum = playItemArr.indexOf(song);
     if (previousSong === playNum) {
@@ -537,6 +534,7 @@ swichButtons.forEach(element => {
   })
 });
 
+
 //Photos
 
 function getSource(set) {
@@ -581,7 +579,6 @@ tegPhotos.addEventListener('keypress', choozeTag);
 
 function reloadBg() {
   if (sourcePhoto === 'github') {
-    console.log('Source github');
     tegPhotos.value = "";
     setBg(getTimeOfDay(), getRandomNum(randomNum));
   } else if (sourcePhoto === 'unsplash') {
@@ -602,6 +599,8 @@ function reloadBg() {
     }
   }
 }
+
+isPlay = false;
 
 //Links
 
@@ -640,6 +639,7 @@ searchInput.addEventListener('keypress', searchOpen);
 
 function showLinks() {
   linksContainer.classList.toggle('links__opened');
+  addLinksContainer.classList.remove('add-links__opened');
 }
 
 function showNewLinks() {
@@ -712,6 +712,27 @@ linksList.addEventListener('click', function (event) {
     });
   }
 })
+
+let linksDeleteButtonArray = Array.prototype.slice.call(linksDeleteButton);
+
+function closeContainer(e) {
+  if (settingsContainer.classList.contains('settings__opened') && !settingsContainer.contains(e.target) && !settingsButton.contains(e.target)) {
+    showSettings();
+  }
+  if (linksContainer.classList.contains('links__opened') && !linksContainer.contains(e.target) && !linksTitle.contains(e.target)) {
+    if (linksDeleteButtonArray.length === 0) {
+      showLinks();
+    }
+    linksDeleteButton.forEach(element => {
+      if (!element.contains(e.target)) {
+        showLinks();
+      }
+    });
+  }
+}
+
+window.addEventListener('click', (e) => { closeContainer(e); }, false);
+
 
 
 
@@ -875,12 +896,10 @@ function getLocalStorage() {
   if (localStorage.getItem('saveNameLinks')) {
     saveLinks.nameLinks = localStorage.getItem('saveNameLinks').split(',');
     saveLinks.hrefLinks = localStorage.getItem('saveHrefLinks').split(',');
-    console.log('Load from Save Links =', saveLinks.nameLinks);
     getLinks(saveLinks);
     linksItems = document.querySelectorAll('.links__item');
     linksDeleteButton = document.querySelectorAll('.links__delete');
   } else {
-    console.log('Load from Settings Links =');
     getLinks(uploadLinks);
   }
 

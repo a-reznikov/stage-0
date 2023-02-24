@@ -6,7 +6,7 @@
   letter-spacing: -4px;  
   transition: .3s;
   opacity: 0;
-  @include media-tablet {
+  @include media-mobile {
     min-height: 80px;
     font-size: 7.2rem; 
   }

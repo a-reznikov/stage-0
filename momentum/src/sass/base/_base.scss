@@ -15,6 +15,9 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   overflow-x: hidden;
   min-width: 320px;
   min-height: 100vh;
