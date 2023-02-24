@@ -467,14 +467,11 @@ swichButtons.forEach(element => {
         saveSatting.push(element.id);
         block.style.opacity = 1;
       }
-      //console.log("Settings", settings.blocks);
     } else {
-      //console.log("Not cheked", element.id);
       if (saveSatting.indexOf(element.id) !== -1) {
         saveSatting.splice(saveSatting.indexOf(element.id), 1);
         block.style.opacity = 0;
       }
-      //console.log("Settings", settings.blocks);
     }
   })
 });
@@ -562,7 +559,8 @@ const inputLinksName = document.querySelector('.input-links-name');
 const inputLinksLink = document.querySelector('.input-links-link');
 let linksItems = document.querySelectorAll('.links__item');
 let linksDeleteButton = document.querySelectorAll('.links__delete');
-const saveLinks = {
+let newlinksHref = document.querySelectorAll('.links-item-href');
+let saveLinks = {
   nameLinks: [],
   hrefLinks: [],
 };
@@ -604,13 +602,16 @@ function openApps() {
 function createNewLink() {
   const linksItem = document.createElement('li');
   const linksItemHref = document.createElement('a')
+  const LinksDelete = document.createElement('div')
   linksItem.classList.add('links__item');
   linksItemHref.classList.add('links-item-href');
+  LinksDelete.classList.add('links__delete');
   linksItemHref.textContent = inputLinksName.value;
   linksItemHref.href = `${inputLinksLink.value}`;
   linksItemHref.target= "_blank";
   linksList.append(linksItem);
   linksItem.append(linksItemHref);
+  linksItem.append(LinksDelete);
   saveLinks.nameLinks.push(`${inputLinksName.value}`);
   saveLinks.hrefLinks.push(`${inputLinksLink.value}`);
   linksDeleteButton = document.querySelectorAll('.links__delete');
@@ -634,35 +635,23 @@ function getLinks(setLinks) {
   });
 }
 
-function deleteLink() {
-  linksItems.forEach(element => {
-    //if (linksDeleteButton.parentNode === element) {
-      //linksList.remove(element);
-    //}
-  });
-}
+
 
 linksList.addEventListener('click', function (event) {
-  if (event.target.nodeName === 'links__delete'){
-    event.target.closest('li').remove()
+  if (event.target.nodeName === 'DIV'){
+    event.target.closest('li').remove();
+    newlinksHref = document.querySelectorAll('.links-item-href');
+    saveLinks = {
+      nameLinks: [],
+      hrefLinks: [],
+    };
+    newlinksHref.forEach(newHref => {
+      saveLinks.nameLinks.push(`${newHref.textContent}`);
+      saveLinks.hrefLinks.push(`${newHref.href}`);
+    });
   }
 })
 
-// linksList.addEventListener("click", function(e) {
-//   let parenItem = e.target.closest('li');
-//   if (e.target.classList.contains("links__delete") || e.target.closest(".links__delete"))
-//     //console.log('linksDeleteButton', e.target);
-//     linksItems.forEach(element => {
-//       if (element === parenItem) {
-//         console.log(linksList.indexOf(parenItem));
-//         //linksItems.remove(parenItem);
-//       }
-//     });
-//     //parenItem = e.target.closest('.links__item');
-//     console.log(parenItem);
-//     console.log(e.target);
-//     //linksList.remove(parenItem);
-// });
 
 
 linksTitle.addEventListener('click', showLinks);
@@ -693,6 +682,8 @@ const tagTitle = document.querySelector('.tag__title');
 const optionLanguages = document.querySelector('.option_languages');
 const descriptionLanguages = document.querySelector('.description_languages');
 const actionLanguages = document.querySelector('.action_languages');
+const linksName = document.querySelector('.links__name');
+const linksLink = document.querySelector('.links__link');
 
 
 function translateSettings() {
@@ -743,11 +734,25 @@ function translateSettings() {
 function translateAll() {
   if (langGlobal === 'en') {
     musicPlayNow.textContent =  'Music dont play now';
+    linksTitle.textContent =  'Links';
+    chromeTab.textContent =  'New tab';
+    apps.textContent =  'Webstore Chrome';
+    newLinks.textContent =  'New Link';
+    createLink.textContent =  'Create';
+    linksName.textContent =  'Name';
+    linksLink.textContent =  'Link';
     if (city.value === "Минск") {
       city.value = "Minsk";
     }
   } else if (langGlobal === 'ru') {
     musicPlayNow.textContent =  'Музыка не воспроизводится';
+    linksTitle.textContent =  'Ссылки';
+    chromeTab.textContent =  'Новая вкладка';
+    apps.textContent =  'Интернет-магазин Chrome';
+    newLinks.textContent =  'Новая ссылка';
+    createLink.textContent =  'Создать';
+    linksName.textContent =  'Название';
+    linksLink.textContent =  'Ссылка';
     if (city.value === "Minsk") {
       city.value = "Минск";
     }
@@ -756,7 +761,7 @@ function translateAll() {
   getWeather();
   showTime();
   getQuotes();
-  translateSettings() 
+  translateSettings();
 }
 
 
