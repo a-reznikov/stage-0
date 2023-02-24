@@ -1,0 +1,21 @@
+@import "base/owfont-regular";
+
+@import "abstract/constants";
+@import "abstract/mixins";
+
+@import "base/base";
+@import "base/animation";
+@import "base/switch";
+
+@import "layouts/header";
+@import "layouts/main";
+@import "layouts/footer";
+
+@import "components/player";
+@import "components/weather";
+@import "components/slider";
+@import "components/time";
+@import "components/greeting";
+@import "components/quote";
+@import "components/settings";
+@import "components/links";

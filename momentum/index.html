@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="src/assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="src/sass/style.css" />
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+    <div class="player">
+      <div class="player-container">
+        <div class="player-panel">
+          <div class="player-controls">
+            <button class="play-prev player-icon"></button>
+            <button class="play player-icon"></button>
+            <button class="play-next player-icon"></button>
+          </div>
+          <div class="volume-container">
+            <div class="volume-line">
+              <div class="volume-progress"></div>
+            </div>
+            <div class="volume-button">
+              <div class="volume player-icon ico-play"></div>
+            </div>
+          </div>
+        </div>
+        <div class="music-play-now"></div>
+        <div class="time-line">
+          <div class="time-progress"></div>
+        </div>
+        <div class="music-time">
+          <div class="current-time">0:00</div>
+          <div class="fortime">|</div>
+          <div class="music-length">0:00</div>
+        </div>
+      </div>
+      <ul class="play-list"></ul>
+    </div>
+    <div class="links">
+      <div class="search-container">
+        <span class="links__title">Links</span>
+        <input id="search-input" type="text" data-test="search-input" class="search-input">
+        <div class="search-logo"></div>
+      </div>
+      <div class="links__container">
+        <ul class="links__list">
+          <li class="links__item chrome_tab">New tab</li>
+          <li class="links__item apps">Webstore Chrome</li>
+        </ul>
+        <div class="new-links">New Link</div>
+        <div class="add-links__container">
+          <span class="links__name">Name</span>
+          <input type="text" class="input-links-name">
+          <span class="links__link">Link</span>
+          <input type="text" class="input-links-link">
+          <div class="buttons-container">
+            <div class="button-back"></div>
+            <button class="create__link">Create</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="weather">
+      <input type="text" class="city" />
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name" input />
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="settings__container">
+      <div class="settings__setup">
+        <span class="setup setup__general selected" id="general">General</span>
+        <span class="setup setup__photos" id="photos">Photos</span>
+        <span class="setup setup__languages" id="languages">Languages</span>
+      </div>
+      <div class="settings__options">
+        <div class="options__title-container">
+          <div class="general options__list opened">
+            <span class="options__title option_general">General</span>
+            <span class="options-description description_general">Customize your dashboard</span>
+            <span class="options-action action_general">Show</span>
+            <div class="options__items">
+              <dev class="items-block">
+                <span class="block-time">Clock</span>
+                <label class="switch__options">
+                  <input class="checkbox" type="checkbox" id="time">
+                  <span class="slider__button round"></span>
+                </label>
+              </dev>
+              <dev class="items-block">
+                <span class="block-date">Date</span>
+                <label class="switch__options">
+                  <input class="checkbox" type="checkbox" id="date">
+                  <span class="slider__button round"></span>
+                </label>
+              </dev>
+              <dev class="items-block">
+                <span class="block-greeting">Greeting</span>
+                <label class="switch__options">
+                  <input class="checkbox" type="checkbox" id="greeting-container">
+                  <span class="slider__button round"></span>
+                </label>
+              </dev>
+              <dev class="items-block">
+                <span class="block-quote">Quotes</span>
+                <label class="switch__options">
+                  <input class="checkbox" type="checkbox" id="qoute-container">
+                  <span class="slider__button round"></span>
+                </label>
+              </dev>
+              <dev class="items-block">
+                <span class="block-weather">Weather</span>
+                <label class="switch__options">
+                  <input class="checkbox" type="checkbox" id="weather">
+                  <span class="slider__button round"></span>
+                </label>
+              </dev>
+              <dev class="items-block">
+                <span class="block-player">Audio player</span>
+                <label class="switch__options">
+                  <input class="checkbox" type="checkbox" id="player">
+                  <span class="slider__button round"></span>
+                </label>
+              </dev>
+              <dev class="items-block">
+                <span class="block-links">Links</span>
+                <label class="switch__options">
+                  <input class="checkbox" type="checkbox" id="links">
+                  <span class="slider__button round"></span>
+                </label>
+              </dev>
+            </div>
+          </div>
+          <div class="photos options__list">
+            <span class="options__title option_photos">Photos</span>
+            <span class="options-description description_photos">Select a photo source</span>
+            <span class="options-action action_photos">Source</span>
+            <div class="options__items">
+              <dev class="items-block">
+                <span class="block-github">GitHub</span>
+                <label class="switch__options">
+                  <input class="checkbox__source" type="checkbox" id="github">
+                  <span class="slider__button round"></span>
+                </label>
+              </dev>
+              <dev class="items-block">
+                <span class="block-unsplash">Unsplash</span>
+                <label class="switch__options">
+                  <input class="checkbox__source" type="checkbox" id="unsplash">
+                  <span class="slider__button round"></span>
+                </label>
+              </dev>
+              <dev class="items-block">
+                <span class="block-flickr">Flickr</span>
+                <label class="switch__options">
+                  <input class="checkbox__source" type="checkbox" id="flickr">
+                  <span class="slider__button round"></span>
+                </label>
+              </dev>
+              <dev class="items-block tag__container">
+                <span class="tag__title options-action">Get photos by tag (only in English):</span>
+                <input class="teg__photos" type="text" id="teg__photos" />
+              </dev>
+            </div>
+          </div>
+          <div class="languages options__list">
+            <span class="options__title option_languages">Languages</span>
+            <span class="options-description description_languages">Change the application language</span>
+            <span class="options-action action_languages">Change</span>
+            <div class="options__items">
+              <dev class="items-block">
+                <span class="block-english">English</span>
+                <label class="switch__options">
+                  <input class="checkbox__lang" type="checkbox" id="en">
+                  <span class="slider__button round"></span>
+                </label>
+              </dev>
+              <dev class="items-block">
+                <span class="block-russian">Русский</span>
+                <label class="switch__options">
+                  <input class="checkbox__lang" type="checkbox" id="ru">
+                  <span class="slider__button round"></span>
+                </label>
+              </dev>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="settings__button">
+      <div class="settings__ico"></div>
+    </div>
+    <div class="qoute-container">
+      <button class="change-quote"></button>
+      <div>
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+    </div>
+    <a href="https://rs.school/js/" target="_blank" class="rss-link"></a>
+  </footer>
+  <script src="dist/main.js"></script>
+</body>
+</html>

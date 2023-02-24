@@ -1,0 +1,233 @@
+.links {
+  transition: .3s;
+  opacity: 0;
+}
+
+.search-container {
+  display: flex;
+}
+
+.links__container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 0px;
+  margin-top: 10px;
+  padding: 10px 5px;
+  background: $color-player;
+  border-radius: 10px;
+  opacity: 0;
+  transition: .3s;
+  z-index: -1;
+  .links__name {
+    margin-top: 10px;
+  }
+}
+
+.links__opened {
+  opacity: .9;
+  height: 100%;
+  z-index: 2;
+}
+
+.links__list {
+  display: block;
+  overflow: auto;
+  max-height: 145px;
+}
+
+.add-links__container {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  padding: 10px 20px;
+  background: $color-light;
+  font-size: 2.0rem;
+  font-weight: 500;
+  color: $color-text;
+  border-radius: 10px;
+  opacity: 0;
+  transition: .3s;
+  z-index: -1;
+  span {
+    display: none;
+  }
+  .create__link {
+    display: none;
+  }
+  .buttons-container {
+    display: none;
+  }
+}
+
+.links-item-href {
+  position: relative;
+  width: 100%;
+  padding-left: 25px;
+  left: -25px;
+  text-align: left;
+  text-decoration: none;
+  color: $color-light;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.button-back {
+  width: 32px;
+  height: 32px;
+  background-image: url("../assets/svg/backarrow.svg");
+  background-size: cover;
+  cursor: pointer;
+  opacity: .8;
+  transition: .3s;
+}
+
+.add-links__opened {
+  opacity: .9;
+  z-index: 3;
+  span {
+    display: block;
+    text-align: left;
+  }
+  .create__link {
+    display: block;
+    width: 120px;
+    cursor: pointer;
+    background: $color-player;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: 0;
+    border-radius: 20px;
+    color: $color-light;
+    font-size: 1.6rem;
+    transition: .3s;
+  }
+  .buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.links__title {
+  font-size: 2.4rem;
+  cursor: pointer;
+  opacity: .8;
+  transition: .3s;
+}
+
+.search-logo {
+  width: 32px;
+  height: 32px;
+  background-image: url("../assets/svg/google_logo.svg");
+  background-size: cover;
+  cursor: pointer;
+  opacity: .8;
+  transition: .3s;
+}
+
+.yandex {
+  background-image: url("../assets/svg/yandex_logo.svg");
+}
+
+.search-input {
+  width: 310px;
+  padding: 0 10px;
+  margin: 0 10px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid  $color-light;
+  background-color: transparent;
+  color: $color-light;
+  font-size: 2.4rem;
+  @include media-laptop {
+    width: 210px;
+  }
+  @include media-mobile {
+    width: 110px;
+  }
+}
+
+.input-links-name,
+.input-links-link {
+  padding: 0 10px;
+  margin-bottom: 10px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid $color-text;;
+  background-color: transparent;
+  color: $color-text;
+  font-size: 2.4rem;
+}
+
+.links__item {
+  display: flex;
+  position: relative;
+  width: 90%;
+  padding: 5px 5px 5px 20px;
+  list-style: none;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.links__item::before {
+  position: relative;
+  left: -5px;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/svg/web_logo.svg");
+  background-size: cover;
+  cursor: pointer;
+  opacity: .8;
+  transition: .3s;
+}
+
+.links__delete {
+  position: absolute;
+  right: -25px;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/svg/delete_logo.svg");
+  background-size: cover;
+  cursor: pointer;
+  opacity: .8;
+  transition: .3s;
+}
+
+.chrome_tab::before {
+  background-image: url("../assets/svg/chrome_logo.svg");
+}
+
+.apps::before {
+  background-image: url("../assets/svg/apps_logo.svg");
+}
+
+.new-links {
+  position: relative;
+  align-self: flex-start;
+  padding: 5px 5px 5px 20px;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.new-links::before {
+  position: relative;
+  display: inline-block;
+  left: -5px;
+  bottom: -3px;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/svg/plus_logo.svg");
+  background-size: cover;
+  cursor: pointer;
+  opacity: .8;
+  transition: .3s;
+}

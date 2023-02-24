@@ -1,0 +1,45 @@
+.player-icon,
+.slider-icon,
+.change-quote {
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  opacity: .8;
+  cursor: pointer;
+  transition: .3s;  
+}
+
+.player-icon:hover,
+.slider-icon:hover,
+.settings__ico:hover,
+.search-logo:hover,
+.links__title:hover,
+.links__item:hover,
+.new-links:hover,
+.button-back:hover,
+.create__link:hover,
+.rss-link:hover,
+.change-quote:hover {
+  opacity: 1;
+}
+
+.player-icon:active,
+.slider-icon:active,
+.settings__ico:active,
+.search-logo:active,
+.links__title:active,
+.links__item:active,
+.new-links:active,
+.button-back:active,
+.create__link:active,
+.rss-link:active,
+.change-quote:active {
+  border: 0;
+  outline: 0;  
+  transform: scale(1.1);
+}
