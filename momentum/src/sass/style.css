@@ -841,6 +841,19 @@ body {
   transition: 0.3s;
 }
 
+.play-item-now {
+  opacity: 0.9;
+  background: #6165e7;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.play-item-now .song-title-list {
+  opacity: 1;
+}
+.play-item-now .play-song {
+  opacity: 1;
+}
+
 .play-item:hover {
   opacity: 1;
 }
@@ -905,7 +918,7 @@ body {
 .volume-progress {
   background: #6165e7;
   height: 100%;
-  width: 80%;
+  width: 20%;
   transition: 0.2s;
 }
 

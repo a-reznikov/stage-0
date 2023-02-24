@@ -43,17 +43,22 @@
   transition: .3s;
 }
 
+.play-item-now {
+  opacity: 0.9;
+  background: $color-player;
+  border-radius: 10px;
+  transition: .3s;
+  .song-title-list {
+    opacity: 1;
+  }
+  .play-song {
+    opacity: 1;
+  }
+}
+
 .play-item:hover {
   opacity: 1;
 }
-
-// .play-item::before {
-//   content: '-'; 
-//   position: absolute;
-//   left: 0;
-//   top: 2px;
-//   font-weight: 900;
-// }
 
 .item-active::before {
   color: $color-active;
@@ -114,7 +119,7 @@
 .volume-progress {
   background: $color-player;
   height: 100%;
-  width: 80%;
+  width: 20%;
   transition: .2s;
 }
 

@@ -276,7 +276,11 @@ const play = document.querySelector('.play');
 const playPrev = document.querySelector('.play-prev');
 const playNext = document.querySelector('.play-next');
 const musicPlayNow = document.querySelector('.music-play-now');
+const songTitleList = document.querySelector('.song-title-list');
+let playItem = document.querySelectorAll('.play-item');
+let playSongButton = document.querySelectorAll('.play-song');
 const audio = new Audio();
+console.log(playSongButton);
 
 if (langGlobal === 'en') {
   musicPlayNow.textContent =  'Music dont play now';
@@ -284,26 +288,58 @@ if (langGlobal === 'en') {
   musicPlayNow.textContent =  'Музыка не воспроизводится';
 }
 
+let timePause = 0;
+let previousSong = 0;
+
 function playAudio() {
   //console.log('playList[playNum]', playList[playNum].title);
   musicPlayNow.textContent =  playList[playNum].title;
+  const previousPlayButton = playItem[previousSong].querySelector('.play-song');
+  playItem[previousSong].classList.remove('play-item-now');
+  previousPlayButton.classList.remove('pause');
+  playItem[playNum].classList.add('play-item-now');
+  const playButton = playItem[playNum].querySelector('.play-song');
+  console.log(playButton);
+  console.log(playNum);
   if (isPlay === false) {
     audio.src = playList[playNum].src;
-    audio.currentTime = 0;
+    audio.currentTime = timePause;
     audio.play();
+    playButton.classList.add('pause');
     play.classList.add('pause');
     isPlay = true;
     //console.log("play");
   } else {
+    timePause = audio.currentTime;
     audio.pause();
+    playButton.classList.remove('pause');
     play.classList.remove('pause');
     isPlay = false;
     //console.log("pause");
   }
 }
 
+let playItemArr = Array.prototype.slice.call(playItem);
+
+playItemArr.forEach(song => {
+  song.addEventListener('click', function() {
+    previousSong = playNum;
+    playNum = playItemArr.indexOf(song);
+    isPlay = false;
+    timePause = 0;
+    playAudio();
+  })
+});
+
+// playSongButton.forEach(songButton => {
+//   songButton.addEventListener('click', function() {
+
+//   })
+// });
 
 function prevAudion() {
+  previousSong = playNum;
+  timePause = 0;
   if (playNum === 0) {
     playNum = playList.length - 1;
   } else {
@@ -314,6 +350,8 @@ function prevAudion() {
 }
 
 function nextAudion() {
+  previousSong = playNum;
+  timePause = 0;
   if (playNum === playList.length - 1) {
     playNum = 0;
   } else {
@@ -341,6 +379,7 @@ function volumeMute() {
   }
 }
 
+audio.volume = 0.2;
 
 //Volume change
 function volumeChange(e) {
@@ -690,6 +729,7 @@ const blockGreeting = document.querySelector('.block-greeting');
 const blockQuote = document.querySelector('.block-quote');
 const blockWeather = document.querySelector('.block-weather');
 const blockPlayer = document.querySelector('.block-player');
+const blockLinks = document.querySelector('.block-links');
 const optionPhotos = document.querySelector('.option_photos');
 const descriptionPhotos = document.querySelector('.description_photos');
 const actionPhotos = document.querySelector('.action_photos');
@@ -715,6 +755,7 @@ function translateSettings() {
     blockQuote.textContent =  'Quotes';
     blockWeather.textContent =  'Weather';
     blockPlayer.textContent =  'Audio player';
+    blockLinks.textContent =  'Links';
     optionPhotos.textContent =  'Photos';
     descriptionPhotos.textContent =  'Select a photo source';
     actionPhotos.textContent =  'Sources:';
@@ -736,6 +777,7 @@ function translateSettings() {
     blockQuote.textContent =  'Цитаты';
     blockWeather.textContent =  'Погода';
     blockPlayer.textContent =  'Аудио плеер';
+    blockLinks.textContent =  'Ссылки';
     optionPhotos.textContent =  'Фото';
     descriptionPhotos.textContent =  'Выберите источник фотографий';
     actionPhotos.textContent =  'Источники:';
