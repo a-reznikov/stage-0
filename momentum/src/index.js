@@ -187,6 +187,7 @@ async function getWeather() {
   const data = await res.json(); 
   //console.log(data.weather[0].id, data.weather[0].description, data.main.temp);
   if (data.cod === '404' ) {
+    weatherIcon.className = 'weather-icon owf';
     weatherIcon.classList.add(`owf-404`);
     weatherDescription.textContent = '';
     wind.textContent = '';
@@ -196,12 +197,15 @@ async function getWeather() {
     } else if (langGlobal === 'ru') {
       temperature.textContent = `город не найден`;
     }
+  } else {
+    weatherIcon.className = 'weather-icon owf';
+    weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+    temperature.textContent = `${Math.round(data.main.temp)} °C`;
+    weatherDescription.textContent = data.weather[0].description;
+    wind.textContent = `${windText}${Math.round(data.wind.speed)} ${speedWind}`;
+    humidity.textContent = `${humidityText}${data.main.humidity} %`;
   }
-  weatherIcon.classList.add(`owf-${data.weather[0].id}`);
-  temperature.textContent = `${Math.round(data.main.temp)} °C`;
-  weatherDescription.textContent = data.weather[0].description;
-  wind.textContent = `${windText}${Math.round(data.wind.speed)} ${speedWind}`;
-  humidity.textContent = `${humidityText}${data.main.humidity} %`;
+  
 }
 
 function choozeCity(e) {
