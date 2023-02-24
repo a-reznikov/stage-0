@@ -129,9 +129,9 @@ function getLinkToImage(tag) {
 
 function setBg(timeDay, numberPicture) {
   const img = new Image();
-  img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeDay}/${numberPicture}.jpg`;
+  img.src = `https://raw.githubusercontent.com/a-reznikov/stage1-tasks/assets/images/${timeDay}/${numberPicture}.jpg`;
   img.onload = () => {      
-    body.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeDay}/${numberPicture}.jpg')`;
+    body.style.backgroundImage = `url('https://raw.githubusercontent.com/a-reznikov/stage1-tasks/assets/images/${timeDay}/${numberPicture}.jpg')`;
   }; 
 }
 
@@ -176,6 +176,7 @@ const weatherDescription = document.querySelector('.weather-description');
 const wind = document.querySelector('.wind');
 const humidity = document.querySelector('.humidity');
 const city = document.querySelector('.city');
+let speedWind = 'm/s';
 
 async function getWeather() {  
   if (city.value === "") {
@@ -185,11 +186,21 @@ async function getWeather() {
   const res = await fetch(url);
   const data = await res.json(); 
   //console.log(data.weather[0].id, data.weather[0].description, data.main.temp);
-
+  if (data.cod === '404' ) {
+    weatherIcon.classList.add(`owf-404`);
+    weatherDescription.textContent = '';
+    wind.textContent = '';
+    humidity.textContent = '';
+    if (langGlobal === 'en') {
+      temperature.textContent = `${data.message}`;
+    } else if (langGlobal === 'ru') {
+      temperature.textContent = `город не найден`;
+    }
+  }
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
   temperature.textContent = `${Math.round(data.main.temp)} °C`;
   weatherDescription.textContent = data.weather[0].description;
-  wind.textContent = `${windText}${Math.round(data.wind.speed)} m/s`;
+  wind.textContent = `${windText}${Math.round(data.wind.speed)} ${speedWind}`;
   humidity.textContent = `${humidityText}${data.main.humidity} %`;
 }
 
@@ -741,6 +752,7 @@ function translateAll() {
     createLink.textContent =  'Create';
     linksName.textContent =  'Name';
     linksLink.textContent =  'Link';
+    speedWind = 'm/s'
     if (city.value === "Минск") {
       city.value = "Minsk";
     }
@@ -753,6 +765,7 @@ function translateAll() {
     createLink.textContent =  'Создать';
     linksName.textContent =  'Название';
     linksLink.textContent =  'Ссылка';
+    speedWind = 'м/с'
     if (city.value === "Minsk") {
       city.value = "Минск";
     }
@@ -768,6 +781,9 @@ function translateAll() {
 function getLocalStorage() {
   if(localStorage.getItem('name')) {
     inputName.value = localStorage.getItem('name');
+  }
+  if(localStorage.getItem('city')) {
+    city.value = localStorage.getItem('city');
   }
   if(localStorage.getItem('tag')) {
     tegPhotos.value = localStorage.getItem('tag');
@@ -820,6 +836,7 @@ window.addEventListener('load', getLocalStorage);
 
 function setLocalStorage() {
   localStorage.setItem('name', inputName.value);
+  localStorage.setItem('city', city.value);
   localStorage.setItem('setting', saveSatting);
   localStorage.setItem('lang', saveLang);
   localStorage.setItem('source', saveSource);

@@ -628,6 +628,13 @@
   content: "\ee22";
 }
 
+/* not-found */
+.owf-404:before,
+.owf-404-d:before,
+.owf-404-n:before {
+  content: "☹";
+}
+
 @font-face {
   font-family: "Arial-MT";
   src: url("../assets/fonts/Arial-MT.woff"); /* Путь к файлу со шрифтом */
