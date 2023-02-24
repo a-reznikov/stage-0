@@ -280,7 +280,6 @@ const songTitleList = document.querySelector('.song-title-list');
 let playItem = document.querySelectorAll('.play-item');
 let playSongButton = document.querySelectorAll('.play-song');
 const audio = new Audio();
-console.log(playSongButton);
 
 if (langGlobal === 'en') {
   musicPlayNow.textContent =  'Music dont play now';
@@ -299,8 +298,6 @@ function playAudio() {
   previousPlayButton.classList.remove('pause');
   playItem[playNum].classList.add('play-item-now');
   const playButton = playItem[playNum].querySelector('.play-song');
-  console.log(playButton);
-  console.log(playNum);
   if (isPlay === false) {
     audio.src = playList[playNum].src;
     audio.currentTime = timePause;
@@ -321,21 +318,28 @@ function playAudio() {
 
 let playItemArr = Array.prototype.slice.call(playItem);
 
+// playSongButton.forEach(songButton => {
+//   songButton.addEventListener('click', function() {
+//     console.log(songButton);
+//   })
+// });
+
 playItemArr.forEach(song => {
   song.addEventListener('click', function() {
+    console.log("miss click", song);
     previousSong = playNum;
     playNum = playItemArr.indexOf(song);
-    isPlay = false;
-    timePause = 0;
-    playAudio();
+    if (previousSong === playNum) {
+      timePause = audio.currentTime;
+      playAudio();
+    } else {
+      isPlay = false;
+      timePause = 0;
+      playAudio();
+    }
   })
 });
 
-// playSongButton.forEach(songButton => {
-//   songButton.addEventListener('click', function() {
-
-//   })
-// });
 
 function prevAudion() {
   previousSong = playNum;
@@ -401,10 +405,13 @@ function timeChange(e) {
 function ChangeTimeProgress() {
   timeProgress.style.width = audio.currentTime / audio.duration * 100 + "%";
   currentTime.textContent = converteTime(audio.currentTime);
-  if (isPlay === false) {  
-    musicLength.textContent = "0:00"
+  if (isNaN(audio.duration)) {
+    musicLength.textContent = "0:00";
   } else {
     musicLength.textContent = converteTime(audio.duration);
+  }
+  if (audio.currentTime === audio.duration) {
+    nextAudion();
   }
 }
 

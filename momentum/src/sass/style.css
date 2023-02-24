@@ -933,11 +933,13 @@ body {
 }
 
 .play-song {
+  position: relative;
   background-size: cover;
   width: 18.5px;
   height: 18.5px;
   margin-right: 10px;
   align-self: center;
+  z-index: 10;
 }
 
 .weather {
