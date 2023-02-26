@@ -9,6 +9,10 @@
   text-align: left;
   transition: .3s;
   opacity: 0;
+  // @include media-mobile {
+  //   width: 100%;
+  //   align-items: center;
+  // }
 }
 
 .weather-error {

@@ -146,7 +146,7 @@ function getSlideNext() {
     setBg(getTimeOfDay(), getRandomNum(randomNum));
   } else {
     reloadBg();
-    console.log('Source from Api')
+    //console.log('Source from Api')
   }
 }
 
@@ -159,7 +159,7 @@ function getSlidePrev() {
     setBg(getTimeOfDay(), getRandomNum(randomNum));
   } else {
     reloadBg();
-    console.log('Source from Api')
+    //console.log('Source from Api')
   }
 }
 
@@ -701,6 +701,7 @@ function getLinks(setLinks) {
 linksList.addEventListener('click', function (event) {
   if (event.target.nodeName === 'DIV'){
     event.target.closest('li').remove();
+    console.log('Click from Remove')
     newlinksHref = document.querySelectorAll('.links-item-href');
     saveLinks = {
       nameLinks: [],
@@ -716,18 +717,18 @@ linksList.addEventListener('click', function (event) {
 let linksDeleteButtonArray = Array.prototype.slice.call(linksDeleteButton);
 
 function closeContainer(e) {
+  let isClickDelete = false;
   if (settingsContainer.classList.contains('settings__opened') && !settingsContainer.contains(e.target) && !settingsButton.contains(e.target)) {
     showSettings();
   }
-  if (linksContainer.classList.contains('links__opened') && !linksContainer.contains(e.target) && !linksTitle.contains(e.target)) {
-    if (linksDeleteButtonArray.length === 0) {
-      showLinks();
+  linksDeleteButton.forEach(element => {
+    if (element.contains(e.target)) {
+      isClickDelete = true;
     }
-    linksDeleteButton.forEach(element => {
-      if (!element.contains(e.target)) {
-        showLinks();
-      }
-    });
+  });
+  if (linksContainer.classList.contains('links__opened') && !linksContainer.contains(e.target) && !linksTitle.contains(e.target) && isClickDelete === false) {
+    console.log('Click from Close')
+    showLinks();
   }
 }
 

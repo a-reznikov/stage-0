@@ -10,7 +10,7 @@
   opacity: 0;
   @include media-mobile {
     min-height: 40px;
-    font-size: 32px;
+    font-size: 3.2rem;
     flex-direction: column;
   }
 }
@@ -41,8 +41,14 @@
     padding: 5px;
   }
   @include media-mobile {
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
     font-size: 3.2rem;
     padding: 5px;
+  }
+  @include media-mobile-micro {
+    font-size: 2.4rem; 
   }
 }
 

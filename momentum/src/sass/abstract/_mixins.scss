@@ -13,3 +13,7 @@
 @mixin media-mobile-mini {
   @media (max-width: $mobile-mini-width) { @content; }
 }
+
+@mixin media-mobile-micro {
+  @media (max-width: $mobile-micro-width) { @content; }
+}
