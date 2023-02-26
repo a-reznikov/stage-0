@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="assets/img/icons/favicon.ico">
+    <title>Plants</title>
+    <link rel="stylesheet" href="sass/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inika&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrapper header__wrapper">
+        <div class="logo">
+          <div class="logo__vector">
+            <img src="assets/img/icons/logo_vector.svg" class="logo__img" alt="Logo Plants">
+          </div>
+          <span class="logo-title"><a href="#" class="logo__link" id="logo__link">Plants</a></span>
+        </div>
+        <nav class="nav">
+          <ul class="nav-list" id="nav-list">
+            <li class="nav-item"><a href="#home" class="nav-link" id="home__link">Home</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link" id="about__link">About us</a></li>
+            <li class="nav-item"><a href="#service" class="nav-link" id="service__link">Service</a></li>
+            <li class="nav-item"><a href="#prices" class="nav-link" id="prices__link">Price</a></li>
+            <li class="nav-item"><a href="#contacts" class="nav-link" id="contacts__link">Contacts</a></li>
+          </ul>
+        </nav>
+        <span class="hamburger" id="burger">
+          <span class="hamburger__line line__cross"></span>
+          <span class="hamburger__line line__hiden"></span>
+          <span class="hamburger__line line__hiden"></span>
+          <span class="hamburger__line line__cross"></span> 
+        </span>
+      </div>
+    </header>
+    <main class="main" id="main">
+      <section class="welcome" id="home">
+        <div class="wrapper welcome__wrapper">
+          <div class="layout-2-column welcome__column">
+            <div class="welcome__leafs">
+              <img src="assets/img/welcome/leafs.png" alt="leafs" class="welcome__leafs-img">
+            </div>
+            <div class="welcome__content">
+              <h1 class="welcome-title">We grow <span class="font-colored-first">plants</span> and give you oxygen</h1>
+              <div class="text welcome-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</div>
+              <button class="welcome__button button_bordered" onclick="window.location.href = '#about'">LEARN MORE</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about" id="about">
+        <div class="wrapper">
+          <div class="layout-2-column about__column">
+            <div class="about__content">
+              <h2 class="about-title">We are <span class="font-colored-second">professional experienced</span> gardeners</h2>
+              <p class="text about-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+            </div>
+            <div class="about__houseplant">
+              <img src="assets/img/about/houseplant_1.png" alt="houseplant" class="about__houseplant-img">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="service" id="service">
+        <div class="wrapper">
+          <div class="layout-2-column service__content">
+            <h2 class="service-title">Service and our projects</h2>
+            <div class="layout-3-column service__buttons">
+              <button class="button button_bordered gardens" id="gardens">Gardens</button>
+              <button class="button button_bordered lawn" id="lawn">Lawn</button>
+              <button class="button button_bordered planting" id="planting">Planting</button>
+            </div>
+          </div>
+          <div class="services">
+            <div class="layout-3-column services__column">
+              <article class="service__item garden-care gardens">
+                <div class="service__img">
+                  <img src="assets/img/service/garden_care_1_full.jpg" alt="Garden care" class="service__img_full">
+                </div>
+                <div class="item__content">
+                  <h3 class="service-name">Garden care</h3>
+                  <p class="text service-description">Lorem Ipsum has been the industry</p>
+                </div>
+              </article>
+              <article class="service__item planting">
+                <div class="service__img">
+                  <img src="assets/img/service/planting_1_full.jpg" alt="Planting" class="service__img_full">
+                </div>
+                <div class="item__content">
+                  <h3 class="service-name">Planting</h3>
+                  <p class="text service-description">Lorem Ipsum has been the industry</p>
+                </div>
+              </article>
+              <article class="service__item lawn-care lawn">
+                <div class="service__img lawn_img">
+                  <img src="assets/img/service/lawn_care_full.jpg" alt="Lawn care" class="service__img_full_lawn">
+                </div>
+                <div class="item__content">
+                  <h3 class="service-name">Lawn care</h3>
+                  <p class="text service-description">Lorem Ipsum has been the industry</p>
+                </div>
+              </article>
+              <article class="service__item planting">
+                <div class="service__img">
+                  <img src="assets/img/service/planting_2_full.jpg" alt="Planting" class="service__img_full">
+                </div>
+                <div class="item__content">
+                  <h3 class="service-name">Planting</h3>
+                  <p class="text service-description">Lorem Ipsum has been the industry</p>
+                </div>
+              </article>
+              <article class="service__item garden-care gardens">
+                <div class="service__img">
+                  <img src="assets/img/service/garden_care_2_full.jpg" alt="Garden care" class="service__img_full">
+                </div>
+                <div class="item__content">
+                  <h3 class="service-name">Garden care</h3>
+                  <p class="text service-description">Lorem Ipsum has been the industry</p>
+                </div>
+              </article>
+              <article class="service__item planting">
+                <div class="service__img">
+                  <img src="assets/img/service/planting_3_full.jpg" alt="Planting" class="service__img_full">
+                </div>
+                <div class="item__content">
+                  <h3 class="service-name">Planting</h3>
+                  <p class="text service-description">Lorem Ipsum has been the industry</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="prices" id="prices">
+        <div class="wrapper">
+          <div class="layout-2-column prices__column">
+            <div class="price">
+              <h2 class="price-title">Prices</h2>
+              <div class="price__items">
+                <div class="price-item basics">
+                  <div class="item-upper basics" id="basics">
+                    <span class="price-item-title">Basics</span>
+                    <img src="assets/img/icons/accordion_btn_closed.svg" alt="price closed" class="price__accordion_closed">
+                    <img src="assets/img/icons/accordion_btn_opened.svg" alt="price closed" class="price__accordion_opened">
+                  </div>
+                  <span class="price-item-text">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</span>
+                  <span class="price-item-cost"><span class="font-colored-price"><span class="font-colored-dollors">$</span>15 </span> / per hour</span>
+                  <button class="price-item-button" onclick="window.location.href = '#contacts'">Order</button>
+                </div>
+                <div class="price-item standard">
+                  <div class="item-upper standard" id="standard">
+                    <span class="price-item-title">Standard</span>
+                    <img src="assets/img/icons/accordion_btn_closed.svg" alt="price closed" class="price__accordion_closed">
+                    <img src="assets/img/icons/accordion_btn_opened.svg" alt="price closed" class="price__accordion_opened">
+                  </div>
+                  <span class="price-item-text">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</span>
+                  <span class="price-item-cost"><span class="font-colored-price"><span class="font-colored-dollors">$</span>25 </span> / per hour</span>
+                  <button class="price-item-button" onclick="window.location.href = '#contacts'">Order</button>
+                </div>
+                <div class="price-item pro-care">
+                  <div class="item-upper pro-care" id="pro-care">
+                    <span class="price-item-title">Pro care</span>
+                    <img src="assets/img/icons/accordion_btn_closed.svg" alt="price closed" class="price__accordion_closed">
+                    <img src="assets/img/icons/accordion_btn_opened.svg" alt="price closed" class="price__accordion_opened">
+                  </div>
+                  <span class="price-item-text">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</span>
+                  <span class="price-item-cost"><span class="font-colored-price"><span class="font-colored-dollors">$</span>35 </span> / per hour</span>
+                  <button class="price-item-button" onclick="window.location.href = '#contacts'">Order</button>
+                </div>
+              </div>
+            </div>
+            <div class="price__content">
+              <p class="price-title price-text">Our best <span class="font-colored-first">gardeners</span> are ready to help you</p>
+              <button class="price__button button_bordered" onclick="window.location.href = '#contacts'">Contact us</button>
+              <div class="price__leafs">
+              </div>
+          </div>
+          </div>
+        </div>
+      </section>
+      <section class="contacts" id="contacts">
+        <div class="wrapper">
+          <div class="layout-3-column contacts__column">
+            <div class="contact__woman">
+              <img src="assets/img/contacts/contact_woman.png" alt="contact photo woman" class="contact__woman_img">
+            </div>
+            <h2 class="contacts-title">Contact us</h2>
+            <div class="contact__wrapper">
+              <div class="contact-item">
+                <span class="contact-item-title">City</span>
+                <img src="assets/img/icons/accordion_contact_closed.svg" alt="accordion contact closed" class="contact__accordion_closed">
+                <img src="assets/img/icons/accordion_contact_opened.svg" alt="accordion contact closed" class="contact__accordion_opened">
+              </div>
+              <div class="city__select">
+                <span class="city canandaigua" id="canandaigua">Canandaigua, NY</span>
+                <span class="city new-york" id="new-york">New York City</span>
+                <span class="city yonkers" id="yonkers">Yonkers, NY</span>
+                <span class="city sherrill" id="sherrill">Sherrill, NY</span>
+              </div>
+              <div class="contact__selected canandaigua">
+                <div class="contact__selected-left">
+                  <span class="contact-lable">City:</span>
+                  <span class="contact-lable">Phone:</span>
+                  <span class="contact-lable">Office adress:</span>
+                </div>
+                <div class="contact__selected-right">
+                  <span class="contact-info info-city">Canandaigua, NY</span>
+                  <span class="contact-info info-phone"><a class="phone-link" href="tel:+15853930001">+1	585	393 0001</a></span>
+                  <span class="contact-info info-adress">151 Charlotte Street</span>
+                  <button class="call__button button_bordered" onclick="window.location.href='tel:+15853930001'">Call us</button>
+                </div>
+              </div>
+              <div class="contact__selected new-york">
+                <div class="contact__selected-left">
+                  <span class="contact-lable">City:</span>
+                  <span class="contact-lable">Phone:</span>
+                  <span class="contact-lable">Office adress:</span>
+                </div>
+                <div class="contact__selected-right">
+                  <span class="contact-info info-city">New York City</span>
+                  <span class="contact-info info-phone"><a class="phone-link" href="tel:+12124560002">+1	212	456 0002</a></span>
+                  <span class="contact-info info-adress">9 East 91st Street</span>
+                  <button class="call__button button_bordered" onclick="window.location.href='tel:+12124560002'">Call us</button>
+                </div>
+              </div>
+              <div class="contact__selected yonkers">
+                <div class="contact__selected-left">
+                  <span class="contact-lable">City:</span>
+                  <span class="contact-lable">Phone:</span>
+                  <span class="contact-lable">Office adress:</span>
+                </div>
+                <div class="contact__selected-right">
+                  <span class="contact-info info-city">Yonkers, NY</span>
+                  <span class="contact-info info-phone"><a class="phone-link" href="tel:+19146780003">+1	914	678 0003</a></span>
+                  <span class="contact-info info-adress">511 Warburton Ave</span>
+                  <button class="call__button button_bordered" onclick="window.location.href='tel:+19146780003'">Call us</button>
+                </div>
+              </div>
+              <div class="contact__selected sherrill">
+                <div class="contact__selected-left">
+                  <span class="contact-lable">City:</span>
+                  <span class="contact-lable">Phone:</span>
+                  <span class="contact-lable">Office adress:</span>
+                </div>
+                <div class="contact__selected-right">
+                  <span class="contact-info info-city">Sherrill, NY</span>
+                  <span class="contact-info info-phone"><a class="phone-link" href="tel:+13159080004">+1	315	908 0004</a></span>
+                  <span class="contact-info info-adress">14 WEST Noyes BLVD</span>
+                  <button class="call__button button_bordered" onclick="window.location.href='tel:+13159080004'">Call us</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" id="footer">
+      <div class="wrapper">
+        <div class="layout-3-column footer__column">
+          <div class="footer__data">
+            <span class="footer-data-item">©</span>
+            <span class="footer-data-item">2022</span>
+            <span class="footer-data-item"><a href="https://github.com/a-reznikov" class="link-footer" target="_blank">github</a></span>
+          </div>
+          <span class="footer-data-item rss-text"><a href="https://rs.school/js-stage0/" class="link-footer" target="_blank">Rolling Scopes School</a></span>
+          <ul class="social__list">
+            <li class="social-item">
+              <a href="https://www.instagram.com/" class="social-link inst" target="_blank"></a>
+            </li>
+            <li class="social-item">
+              <a href="https://www.facebook.com/" class="social-link fb" target="_blank"></a>
+            </li>
+            <li class="social-item">
+              <a href="https://twitter.com/" class="social-link tw" target="_blank"></a>
+            </li>
+            <li class="social-item">
+              <a href="https://www.pinterest.com/" class="social-link pt" target="_blank"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>
