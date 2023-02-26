@@ -1233,6 +1233,12 @@ body {
   border-radius: 10px;
   transition: 0.3s;
 }
+.settings__container .settings__setup {
+  display: none;
+}
+.settings__container .settings__options {
+  display: none;
+}
 @media (max-width: 815px) {
   .settings__container {
     width: 540px;
@@ -1288,6 +1294,12 @@ body {
   font-size: 2.4rem;
   color: #070c24;
 }
+.settings__opened .settings__setup {
+  display: flex;
+}
+.settings__opened .settings__options {
+  display: block;
+}
 
 .setup__general.selected,
 .setup__photos.selected,
@@ -1297,7 +1309,6 @@ body {
 }
 
 .settings__setup {
-  display: flex;
   padding: 30px 40px;
   flex-direction: column;
   text-align: left;
