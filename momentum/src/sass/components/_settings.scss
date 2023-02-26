@@ -23,18 +23,47 @@
   z-index: -2;
   bottom: 60px;
   left: 30px;
-  width: 50vw;
-  height: 75vh;
+  height: 560px;
+  width: 560px;
   background: $color-light;
   border-radius: 10px;
   transition: .3s;
-  @include media-laptop {
-    width: 80vw;
+  @include media-tablet {
+    width: 540px;
+    .settings__setup {
+      padding: 15px 20px;
+    }
+    .settings__options {
+      padding: 15px 20px;
+    }
   }
   @include media-mobile {
-    width: 90vw;
+    flex-direction: column;
+    width: 350px;
+    .settings__setup {
+      border-right: 0px solid $color-text; 
+      border-bottom: 1px solid $color-text; 
+      padding: 10px 15px;
+      flex-direction: row;
+      justify-content: space-around;
+      >* {
+        margin: 10px;
+      }
+    }
+    .settings__options {
+      padding: 10px 15px;
+    }
+  }
+  @include media-mobile-micro {
+    height: 600px;
+    width: 250px;
     .settings__setup {
       padding: 10px 15px;
+      flex-direction: column;
+      justify-content: space-around;
+      >* {
+        margin: 0px;
+      }
     }
     .settings__options {
       padding: 10px 15px;
