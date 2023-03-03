@@ -691,6 +691,7 @@ body {
 .button-back:hover,
 .create__link:hover,
 .rss-link:hover,
+.git-footer:hover,
 .change-quote:hover {
   opacity: 1;
 }
@@ -705,6 +706,7 @@ body {
 .button-back:active,
 .create__link:active,
 .rss-link:active,
+.git-footer:active,
 .change-quote:active {
   border: 0;
   outline: 0;
@@ -852,7 +854,7 @@ body {
     order: 1;
     align-self: flex-end;
   }
-  .footer .rss-link {
+  .footer .footer-links {
     order: 2;
   }
 }
@@ -866,6 +868,18 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   align-self: flex-end;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer-links .git-footer {
+  text-decoration: none;
+  color: #ffffff;
   opacity: 0.8;
   transition: 0.3s;
 }

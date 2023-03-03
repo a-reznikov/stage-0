@@ -21,7 +21,7 @@
       order: 1;
       align-self: flex-end;
     }
-    .rss-link {
+    .footer-links {
       order: 2;
     }
   }
@@ -38,4 +38,16 @@
   align-self: flex-end;
   opacity: .8;
   transition: .3s;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .git-footer {
+    text-decoration: none;
+    color: $color-light;
+    opacity: .8;
+    transition: .3s;
+  }
 }

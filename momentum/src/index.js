@@ -438,7 +438,7 @@ const swichButtonsLang = document.querySelectorAll('.checkbox__lang');
 const swichButtonsSource = document.querySelectorAll('.checkbox__source');
 const optionsList = document.querySelectorAll('.options__list');
 const setupList = document.querySelectorAll('.setup');
-let saveSatting = [];
+let saveSatting = ['false'];
 let saveLang = [];
 let saveSource = [];
 
@@ -517,8 +517,10 @@ setupList.forEach(setup => {
   })
 });
 
+
 swichButtons.forEach(element => {
   element.addEventListener('click', function() {
+    saveSatting[0] = ['true'];
     let block = document.querySelector(`.${element.id}`);
     if (element.checked) {
       if (saveSatting.indexOf(element.id) === -1) {
@@ -584,18 +586,18 @@ function reloadBg() {
   } else if (sourcePhoto === 'unsplash') {
     if (tegPhotos.value !== "") {
       getLinkToImage(tegPhotos.value);
-      console.log('Source unsplash with teg', tegPhotos.value);
+      //console.log('Source unsplash with teg', tegPhotos.value);
     } else {
       getLinkToImage(getTimeOfDay());
-      console.log('Source unsplash with timeday')
+      //console.log('Source unsplash with timeday')
     }
   } else if (sourcePhoto === 'flickr') {
     if (tegPhotos.value !== "") {
       getLinkToImage(tegPhotos.value);
-      console.log('Source flickr with teg', tegPhotos.value);
+      //console.log('Source flickr with teg', tegPhotos.value);
     } else {
       getLinkToImage(getTimeOfDay());
-      console.log('Source flickr with timeday')
+      //console.log('Source flickr with timeday')
     }
   }
 }
@@ -701,7 +703,7 @@ function getLinks(setLinks) {
 linksList.addEventListener('click', function (event) {
   if (event.target.nodeName === 'DIV'){
     event.target.closest('li').remove();
-    console.log('Click from Remove')
+    //console.log('Click from Remove')
     newlinksHref = document.querySelectorAll('.links-item-href');
     saveLinks = {
       nameLinks: [],
@@ -727,7 +729,7 @@ function closeContainer(e) {
     }
   });
   if (linksContainer.classList.contains('links__opened') && !linksContainer.contains(e.target) && !linksTitle.contains(e.target) && isClickDelete === false) {
-    console.log('Click from Close')
+    //console.log('Click from Close')
     showLinks();
   }
 }
@@ -857,16 +859,17 @@ function getLocalStorage() {
   if(localStorage.getItem('name')) {
     inputName.value = localStorage.getItem('name');
   }
-  if(localStorage.getItem('city')) {
+  if (localStorage.getItem('city')) {
     city.value = localStorage.getItem('city');
   }
   if(localStorage.getItem('tag')) {
     tegPhotos.value = localStorage.getItem('tag');
   }
-  if(localStorage.getItem('setting')) {
+  if (localStorage.getItem('setting')) {
     let oldSettings = localStorage.getItem('setting').split(',');
-    //console.log('Load from SaveSettings', oldSettings);
-    getSettings(oldSettings);
+    let oldSettingsSlice = oldSettings.slice(1);
+    //console.log('Load from SaveSettings', oldSettingsSlice);
+    getSettings(oldSettingsSlice);
   } else {
     //console.log('Load from settings.blocks', settings.blocks);
     getSettings(settings.blocks);
