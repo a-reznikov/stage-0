@@ -26,10 +26,10 @@ let humidityText = '';
 function showTime() {
   const date = new Date();
   const currentTime = date.toLocaleTimeString();
-  const options = {weekday: 'long', month: 'long', day: 'numeric'};
+  const options = { weekday: 'long', month: 'long', day: 'numeric' };
   const currentDate = date.toLocaleDateString(`${langTime}`, options);
   time.textContent = currentTime;
-  dateFull.textContent =  currentDate;
+  dateFull.textContent = currentDate;
   getTimeOfDay();
   setTimeout(showTime, 1000);
 }
@@ -42,14 +42,14 @@ function getTimeOfDay() {
   const hours = date.getHours();
   let dayPart = Math.floor(hours / 6);
   let timeOfDay = '';
-  switch(dayPart) {
-    case 1:  timeOfDay = "morning";
+  switch (dayPart) {
+    case 1: timeOfDay = "morning";
       return timeOfDay;
-    case 2:  timeOfDay = "afternoon";
+    case 2: timeOfDay = "afternoon";
       return timeOfDay;
-    case 3:  timeOfDay = "evening";
+    case 3: timeOfDay = "evening";
       return timeOfDay;
-    case 0:  timeOfDay = "night";
+    case 0: timeOfDay = "night";
       return timeOfDay;
   }
 }
@@ -66,14 +66,14 @@ function greetingTranslation() {
     humidityText = 'Влажность: ';
     inputName.placeholder = "Введите Ваше имя...";
     tegPhotos.placeholder = "поиск по тегу...";
-    switch(`${getTimeOfDay()}`) {
-      case "morning":  greeting.textContent = `Доброе утро`;
+    switch (`${getTimeOfDay()}`) {
+      case "morning": greeting.textContent = `Доброе утро`;
         return greeting;
-      case "afternoon":  greeting.textContent = `Добрый день`;
+      case "afternoon": greeting.textContent = `Добрый день`;
         return greeting;
-      case "evening":  greeting.textContent = `Добрый вечер`;
+      case "evening": greeting.textContent = `Добрый вечер`;
         return greeting;
-      case "night":  greeting.textContent = `Доброй ночи`;
+      case "night": greeting.textContent = `Доброй ночи`;
         return greeting;
     }
   }
@@ -103,9 +103,9 @@ function getLinkToImage(tag) {
       .then(res => res.json())
       .then(data => {
         img.src = data.urls.regular;
-        img.onload = () => {      
+        img.onload = () => {
           body.style.backgroundImage = `url('${img.src}')`;
-        }; 
+        };
       });
   } else if (sourcePhoto === 'flickr') {
     const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=e75103dd642cdbd338bfce618d58606e&tags=${tag}&extras=url_h&format=json&nojsoncallback=1`;
@@ -120,19 +120,19 @@ function getLinkToImage(tag) {
         });
         let randomPhoto = Math.floor(Math.random() * photosArray.length + 1);
         img.src = photosArray[randomPhoto];
-        img.onload = () => {      
+        img.onload = () => {
           body.style.backgroundImage = `url('${img.src}')`;
-        }; 
+        };
       });
   }
 }
 
 function setBg(timeDay, numberPicture) {
   const img = new Image();
-  img.src = `https://raw.githubusercontent.com/a-reznikov/stage1-tasks/assets/images/${timeDay}/${numberPicture}.jpg`;
-  img.onload = () => {      
-    body.style.backgroundImage = `url('https://raw.githubusercontent.com/a-reznikov/stage1-tasks/assets/images/${timeDay}/${numberPicture}.jpg')`;
-  }; 
+  img.src = `https://raw.githubusercontent.com/a-reznikov/backgrounds/assets/images/${timeDay}/${numberPicture}.jpg`;
+  img.onload = () => {
+    body.style.backgroundImage = `url('https://raw.githubusercontent.com/a-reznikov/backgrounds/assets/images/${timeDay}/${numberPicture}.jpg')`;
+  };
 }
 
 setBg(getTimeOfDay(), getRandomNum(randomNum));
@@ -176,15 +176,15 @@ const humidity = document.querySelector('.humidity');
 const city = document.querySelector('.city');
 let speedWind = 'm/s';
 
-async function getWeather() {  
+async function getWeather() {
   if (city.value === "") {
     city.value = "Minsk"
   }
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=${langGlobal}&appid=bc50cc0ba8db1784f2c3e644ffa70527&units=metric`;
   const res = await fetch(url);
-  const data = await res.json(); 
+  const data = await res.json();
   //console.log(data.weather[0].id, data.weather[0].description, data.main.temp);
-  if (data.cod === '404' ) {
+  if (data.cod === '404') {
     weatherIcon.className = 'weather-icon owf';
     weatherIcon.classList.add(`owf-404`);
     weatherDescription.textContent = '';
@@ -203,7 +203,7 @@ async function getWeather() {
     wind.textContent = `${windText}${Math.round(data.wind.speed)} ${speedWind}`;
     humidity.textContent = `${humidityText}${data.main.humidity} %`;
   }
-  
+
 }
 
 function choozeCity(e) {
@@ -222,11 +222,11 @@ const quote = document.querySelector('.quote');
 const author = document.querySelector('.author');
 const changeQuote = document.querySelector('.change-quote');
 
-async function getQuotes() {  
+async function getQuotes() {
   let quotesLang = `quotes-${langGlobal}`;
   const quotes = `src/assets/quotes/${quotesLang}.json`;
   const res = await fetch(quotes);
-  const data = await res.json(); 
+  const data = await res.json();
   let randomQuote = Math.floor(Math.random() * 99);
   if (langGlobal === 'ru') {
     randomQuote = Math.floor(Math.random() * 19);
@@ -280,9 +280,9 @@ let playSongButton = document.querySelectorAll('.play-song');
 const audio = new Audio();
 
 if (langGlobal === 'en') {
-  musicPlayNow.textContent =  'Music dont play now';
+  musicPlayNow.textContent = 'Music dont play now';
 } else {
-  musicPlayNow.textContent =  'Музыка не воспроизводится';
+  musicPlayNow.textContent = 'Музыка не воспроизводится';
 }
 
 let timePause = 0;
@@ -290,7 +290,7 @@ let previousSong = 0;
 
 function playAudio() {
   //console.log('playList[playNum]', playList[playNum].title);
-  musicPlayNow.textContent =  playList[playNum].title;
+  musicPlayNow.textContent = playList[playNum].title;
   const previousPlayButton = playItem[previousSong].querySelector('.play-song');
   playItem[previousSong].classList.remove('play-item-now');
   previousPlayButton.classList.remove('pause');
@@ -323,7 +323,7 @@ let playItemArr = Array.prototype.slice.call(playItem);
 // });
 
 playItemArr.forEach(song => {
-  song.addEventListener('click', function() {
+  song.addEventListener('click', function () {
     previousSong = playNum;
     playNum = playItemArr.indexOf(song);
     if (previousSong === playNum) {
@@ -368,7 +368,7 @@ const volumeButton = player.querySelector(".volume");
 audio.muted = false;
 
 function volumeMute() {
- // console.log("click mute")
+  // console.log("click mute")
   if (audio.muted === false) {
     volumeButton.classList.remove("ico-play");
     volumeButton.classList.add("ico-mute");
@@ -504,7 +504,7 @@ function clearSelectedSetup() {
 
 
 setupList.forEach(setup => {
-  setup.addEventListener('click', function() {
+  setup.addEventListener('click', function () {
     clearSelectedSetup();
     setup.classList.toggle('selected');
     optionsList.forEach(element => {
@@ -519,7 +519,7 @@ setupList.forEach(setup => {
 
 
 swichButtons.forEach(element => {
-  element.addEventListener('click', function() {
+  element.addEventListener('click', function () {
     saveSatting[0] = ['true'];
     let block = document.querySelector(`.${element.id}`);
     if (element.checked) {
@@ -671,7 +671,7 @@ function createNewLink() {
   LinksDelete.classList.add('links__delete');
   linksItemHref.textContent = inputLinksName.value;
   linksItemHref.href = `${inputLinksLink.value}`;
-  linksItemHref.target= "_blank";
+  linksItemHref.target = "_blank";
   linksList.append(linksItem);
   linksItem.append(linksItemHref);
   linksItem.append(LinksDelete);
@@ -691,7 +691,7 @@ function getLinks(setLinks) {
     LinksDelete.classList.add('links__delete');
     linksItemHref.textContent = element;
     linksItemHref.href = `${setLinks.hrefLinks[setLinks.nameLinks.indexOf(element)]}`;
-    linksItemHref.target= "_blank";
+    linksItemHref.target = "_blank";
     linksList.append(linksItem);
     linksItem.append(linksItemHref);
     linksItem.append(LinksDelete);
@@ -701,7 +701,7 @@ function getLinks(setLinks) {
 
 
 linksList.addEventListener('click', function (event) {
-  if (event.target.nodeName === 'DIV'){
+  if (event.target.nodeName === 'DIV') {
     event.target.closest('li').remove();
     //console.log('Click from Remove')
     newlinksHref = document.querySelectorAll('.links-item-href');
@@ -774,74 +774,74 @@ const linksLink = document.querySelector('.links__link');
 
 function translateSettings() {
   if (langGlobal === 'en') {
-    setupGeneral.textContent =  'General';
-    setupPhotos.textContent =  'Photos';
-    setupLanguages.textContent =  'Languages';
-    optionGeneral.textContent =  'General';
-    descriptionGeneral.textContent =  'Customize your dashboard';
-    actionGeneral.textContent =  'Show:';
-    blockTime.textContent =  'Clock';
-    blockDate.textContent =  'Date';
-    blockGreeting.textContent =  'Greeting';
-    blockQuote.textContent =  'Quotes';
-    blockWeather.textContent =  'Weather';
-    blockPlayer.textContent =  'Audio player';
-    blockLinks.textContent =  'Links';
-    optionPhotos.textContent =  'Photos';
-    descriptionPhotos.textContent =  'Select a photo source';
-    actionPhotos.textContent =  'Sources:';
-    tagTitle.textContent =  'Get photos by tag (only in English):';
-    optionLanguages.textContent =  'Languages';
-    descriptionLanguages.textContent =  'Available languages for the app';
-    actionLanguages.textContent =  'Change:';
+    setupGeneral.textContent = 'General';
+    setupPhotos.textContent = 'Photos';
+    setupLanguages.textContent = 'Languages';
+    optionGeneral.textContent = 'General';
+    descriptionGeneral.textContent = 'Customize your dashboard';
+    actionGeneral.textContent = 'Show:';
+    blockTime.textContent = 'Clock';
+    blockDate.textContent = 'Date';
+    blockGreeting.textContent = 'Greeting';
+    blockQuote.textContent = 'Quotes';
+    blockWeather.textContent = 'Weather';
+    blockPlayer.textContent = 'Audio player';
+    blockLinks.textContent = 'Links';
+    optionPhotos.textContent = 'Photos';
+    descriptionPhotos.textContent = 'Select a photo source';
+    actionPhotos.textContent = 'Sources:';
+    tagTitle.textContent = 'Get photos by tag (only in English):';
+    optionLanguages.textContent = 'Languages';
+    descriptionLanguages.textContent = 'Available languages for the app';
+    actionLanguages.textContent = 'Change:';
 
   } else if (langGlobal === 'ru') {
-    setupGeneral.textContent =  'Общие';
-    setupPhotos.textContent =  'Фото';
-    setupLanguages.textContent =  'Язык';
-    optionGeneral.textContent =  'Общие';
-    descriptionGeneral.textContent =  'Настройте свою информационную панель';
-    actionGeneral.textContent =  'Показать:';
-    blockTime.textContent =  'Часы';
-    blockDate.textContent =  'Дата';
-    blockGreeting.textContent =  'Приветствие';
-    blockQuote.textContent =  'Цитаты';
-    blockWeather.textContent =  'Погода';
-    blockPlayer.textContent =  'Аудио плеер';
-    blockLinks.textContent =  'Ссылки';
-    optionPhotos.textContent =  'Фото';
-    descriptionPhotos.textContent =  'Выберите источник фотографий';
-    actionPhotos.textContent =  'Источники:';
-    tagTitle.textContent =  'Фотографий по тегам (только на английском языке):';
-    optionLanguages.textContent =  'Язык';
-    descriptionLanguages.textContent =  'Доступные языки для приложения';
-    actionLanguages.textContent =  'Изменить:';
+    setupGeneral.textContent = 'Общие';
+    setupPhotos.textContent = 'Фото';
+    setupLanguages.textContent = 'Язык';
+    optionGeneral.textContent = 'Общие';
+    descriptionGeneral.textContent = 'Настройте свою информационную панель';
+    actionGeneral.textContent = 'Показать:';
+    blockTime.textContent = 'Часы';
+    blockDate.textContent = 'Дата';
+    blockGreeting.textContent = 'Приветствие';
+    blockQuote.textContent = 'Цитаты';
+    blockWeather.textContent = 'Погода';
+    blockPlayer.textContent = 'Аудио плеер';
+    blockLinks.textContent = 'Ссылки';
+    optionPhotos.textContent = 'Фото';
+    descriptionPhotos.textContent = 'Выберите источник фотографий';
+    actionPhotos.textContent = 'Источники:';
+    tagTitle.textContent = 'Фотографий по тегам (только на английском языке):';
+    optionLanguages.textContent = 'Язык';
+    descriptionLanguages.textContent = 'Доступные языки для приложения';
+    actionLanguages.textContent = 'Изменить:';
   }
 }
 
 function translateAll() {
   if (langGlobal === 'en') {
-    musicPlayNow.textContent =  'Music dont play now';
-    linksTitle.textContent =  'Links';
-    chromeTab.textContent =  'New tab';
-    apps.textContent =  'Webstore Chrome';
-    newLinks.textContent =  'New Link';
-    createLink.textContent =  'Create';
-    linksName.textContent =  'Name';
-    linksLink.textContent =  'Link';
+    musicPlayNow.textContent = 'Music dont play now';
+    linksTitle.textContent = 'Links';
+    chromeTab.textContent = 'New tab';
+    apps.textContent = 'Webstore Chrome';
+    newLinks.textContent = 'New Link';
+    createLink.textContent = 'Create';
+    linksName.textContent = 'Name';
+    linksLink.textContent = 'Link';
     speedWind = 'm/s'
     if (city.value === "Минск") {
       city.value = "Minsk";
     }
   } else if (langGlobal === 'ru') {
-    musicPlayNow.textContent =  'Музыка не воспроизводится';
-    linksTitle.textContent =  'Ссылки';
-    chromeTab.textContent =  'Новая вкладка';
-    apps.textContent =  'Интернет-магазин Chrome';
-    newLinks.textContent =  'Новая ссылка';
-    createLink.textContent =  'Создать';
-    linksName.textContent =  'Название';
-    linksLink.textContent =  'Ссылка';
+    musicPlayNow.textContent = 'Музыка не воспроизводится';
+    linksTitle.textContent = 'Ссылки';
+    chromeTab.textContent = 'Новая вкладка';
+    apps.textContent = 'Интернет-магазин Chrome';
+    newLinks.textContent = 'Новая ссылка';
+    createLink.textContent = 'Создать';
+    linksName.textContent = 'Название';
+    linksLink.textContent = 'Ссылка';
     speedWind = 'м/с'
     if (city.value === "Minsk") {
       city.value = "Минск";
@@ -856,13 +856,13 @@ function translateAll() {
 
 
 function getLocalStorage() {
-  if(localStorage.getItem('name')) {
+  if (localStorage.getItem('name')) {
     inputName.value = localStorage.getItem('name');
   }
   if (localStorage.getItem('city')) {
     city.value = localStorage.getItem('city');
   }
-  if(localStorage.getItem('tag')) {
+  if (localStorage.getItem('tag')) {
     tegPhotos.value = localStorage.getItem('tag');
   }
   if (localStorage.getItem('setting')) {
@@ -874,7 +874,7 @@ function getLocalStorage() {
     //console.log('Load from settings.blocks', settings.blocks);
     getSettings(settings.blocks);
   }
-  if(localStorage.getItem('lang')) {
+  if (localStorage.getItem('lang')) {
     let oldSettingsLang = localStorage.getItem('lang').split(',');
     //console.log('Load from Save langGlobal =', oldSettingsLang[0]);
     saveLang[0] = oldSettingsLang[0];
@@ -918,7 +918,7 @@ function setLocalStorage() {
   localStorage.setItem('source', saveSource);
   localStorage.setItem('saveNameLinks', saveLinks.nameLinks);
   localStorage.setItem('saveHrefLinks', saveLinks.hrefLinks);
-  localStorage.setItem('tag', tegPhotos.value );
+  localStorage.setItem('tag', tegPhotos.value);
   //console.log('Reload', saveLang);
 }
 window.addEventListener('beforeunload', setLocalStorage);

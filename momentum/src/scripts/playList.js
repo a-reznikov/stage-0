@@ -1,19 +1,19 @@
 const playList = [
   {      
-    title: 'Aqua Caelestis',
-    src: 'src/assets/sounds/Aqua Caelestis.mp3',
+    title: 'Jacobs theme',
+    src: 'src/assets/sounds/Jacobs_theme_zatmenie.mp3',
   },  
   {      
-    title: 'River Flows In You',
-    src: 'src/assets/sounds/River Flows In You.mp3',
+    title: 'The road goes ever',
+    src: 'src/assets/sounds/The_road_goes_ever.mp3',
   },  
   {      
-    title: 'Summer Wind',
-    src: 'src/assets/sounds/Summer Wind.mp3',
+    title: 'Fellowship of the ring',
+    src: 'src/assets/sounds/Fellowship_of_the_ring.mp3',
   },  
   {      
-    title: 'Ennio Morricone',
-    src: 'src/assets/sounds/Ennio Morricone.mp3',
+    title: 'Concerning hobbits',
+    src: 'src/assets/sounds/Concerning_hobbits.mp3',
   }
 ]
 export default playList;
